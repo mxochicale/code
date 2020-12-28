@@ -17,6 +17,11 @@ chmod u+x pycharm.sh
 sh pycharm.sh
 ```
 
+## Customisation 
+### Integration with Github 
+* [Clone Git repositories using SSH](https://medium.com/@akshay.sinha/pycharm-integration-with-github-876510c6ca1f)
+
+
 ## References
 * https://tecadmin.net/how-to-install-pycharm-on-ubuntu-20-04/  
 * https://www.jetbrains.com/pycharm/download/#section=linux  
