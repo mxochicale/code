@@ -1,0 +1,7 @@
+name: skf
+dependencies:
+ - python=3.8.*
+ - scipy
+ - jupyter
+ - matplotlib
+ - numpy
