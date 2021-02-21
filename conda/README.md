@@ -1,6 +1,7 @@
-# Conda 
+# Anaconda [:link:](https://www.anaconda.com/)
 
-## Installation in Ubuntu 20.04 
-bash [download-installation](download-installation.sh)
+## Installation in Ubuntu 20.04
+In the terminal, enter:     
+bash [download-installation.sh](download-installation.sh)
 
 
