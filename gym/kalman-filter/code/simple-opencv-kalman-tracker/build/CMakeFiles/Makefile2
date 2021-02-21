@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world
+CMAKE_SOURCE_DIR = /home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world/build
+CMAKE_BINARY_DIR = /home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/simple-opencv-kalman-tracker.dir/clean
 CMakeFiles/simple-opencv-kalman-tracker.dir/all:
 	$(MAKE) -f CMakeFiles/simple-opencv-kalman-tracker.dir/build.make CMakeFiles/simple-opencv-kalman-tracker.dir/depend
 	$(MAKE) -f CMakeFiles/simple-opencv-kalman-tracker.dir/build.make CMakeFiles/simple-opencv-kalman-tracker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world/build/CMakeFiles --progress-num=1,2 "Built target simple-opencv-kalman-tracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker/build/CMakeFiles --progress-num=1,2 "Built target simple-opencv-kalman-tracker"
 .PHONY : CMakeFiles/simple-opencv-kalman-tracker.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/simple-opencv-kalman-tracker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simple-opencv-kalman-tracker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker/build/CMakeFiles 0
 .PHONY : CMakeFiles/simple-opencv-kalman-tracker.dir/rule
 
 # Convenience name for target.

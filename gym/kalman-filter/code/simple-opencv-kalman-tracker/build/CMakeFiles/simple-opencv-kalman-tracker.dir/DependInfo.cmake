@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world/src/main.cpp" "/home/mxochicale/Desktop/code/gym/kalman-filter/code/hello-world/build/CMakeFiles/simple-opencv-kalman-tracker.dir/src/main.cpp.o"
+  "/home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker/src/main.cpp" "/home/mxochicale/Desktop/code/gym/kalman-filter/code/simple-opencv-kalman-tracker/build/CMakeFiles/simple-opencv-kalman-tracker.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
