@@ -4,23 +4,22 @@
  ******************************************/
 
 // Module "core"
-#include <opencv2/core.hpp>
+#include <opencv2/core/core.hpp>
 
 // Module "highgui"
-#include <opencv2/highgui.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 // Module "imgproc"
-#include <opencv2/imgproc.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 // Module "video"
-//#include <opencv2/video.hpp>
+#include <opencv2/video/video.hpp>
 
 // Output
 #include <iostream>
-#include <stdio.h>
 
 // Vector
-//#include <vector>
+#include <vector>
 
 using namespace std;
 
@@ -29,9 +28,9 @@ using namespace std;
 #define MAX_H_BLUE 300
 // <<<<< Color to be tracked
 
-int main(int, char**)
-{
 
+int main()
+{
     // Camera frame
     cv::Mat frame;
 
@@ -88,27 +87,21 @@ int main(int, char**)
     cv::setIdentity(kf.measurementNoiseCov, cv::Scalar(1e-1));
     // <<<< Kalman Filter
 
-
-
     // Camera Index
     int idx = 0;
 
     // Camera Capture
-    cv::VideoCapture cap(idx);
-
-    //std::string gst_str = "v4l2src device=/dev/video0 ! video/x-raw, width=1280, height=720, format=(string)UYVY, framerate=(fraction)30/1 ! videoconvert ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink";
-    //cv::VideoCapture cap(gst_str, cv::CAP_GSTREAMER);
-	// https://forums.developer.nvidia.com/t/sony-camera-module-cannot-be-opened-with-opencv-on-xavier/84003#5397032
-
+    cv::VideoCapture cap;
 
     // >>>>> Camera Settings
-    if (!cap.isOpened())
+    if (!cap.open(idx))
     {
         cout << "Webcam not connected.\n" << "Please verify\n";
         return EXIT_FAILURE;
     }
-    //cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
-    //cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
+    cap.set(CV_CAP_PROP_FRAME_WIDTH, 1024);
+    cap.set(CV_CAP_PROP_FRAME_HEIGHT, 768);
     // <<<<< Camera Settings
 
     cout << "\nHit 'q' to exit...\n";
@@ -119,7 +112,6 @@ int main(int, char**)
     bool found = false;
 
     int notFoundCount = 0;
-
 
     // >>>>> Main loop
     while (ch != 'q' && ch != 'Q')
@@ -160,6 +152,7 @@ int main(int, char**)
 
             cv::rectangle(res, predRect, CV_RGB(255,0,0), 2);
         }
+
         // >>>>> Noise smoothing
         cv::Mat blur;
         cv::GaussianBlur(frame, blur, cv::Size(5, 5), 3.0, 3.0);
@@ -167,10 +160,8 @@ int main(int, char**)
 
         // >>>>> HSV conversion
         cv::Mat frmHsv;
-        cv::cvtColor(blur, frmHsv, cv::COLOR_BGR2HSV);
+        cv::cvtColor(blur, frmHsv, CV_BGR2HSV);
         // <<<<< HSV conversion
-
-        cv::imshow("Filter frmHsv", frmHsv);
 
         // >>>>> Color Thresholding
         // Note: change parameters for different colors
@@ -189,8 +180,8 @@ int main(int, char**)
 
         // >>>>> Contours detection
         vector<vector<cv::Point> > contours;
-        cv::findContours(rangeRes, contours, cv::RETR_EXTERNAL,
-                         cv::CHAIN_APPROX_NONE);
+        cv::findContours(rangeRes, contours, CV_RETR_EXTERNAL,
+                         CV_CHAIN_APPROX_NONE);
         // <<<<< Contours detection
 
         // >>>>> Filtering
@@ -234,6 +225,7 @@ int main(int, char**)
                         cv::FONT_HERSHEY_SIMPLEX, 0.5, CV_RGB(20,150,20), 2);
         }
         // <<<<< Detection result
+
         // >>>>> Kalman Update
         if (balls.size() == 0)
         {
@@ -243,8 +235,8 @@ int main(int, char**)
             {
                 found = false;
             }
-            ///else
-            //    kf.statePost = state;
+            /*else
+                kf.statePost = state;*/
         }
         else
         {
