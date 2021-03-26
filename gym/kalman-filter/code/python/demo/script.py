@@ -1,3 +1,6 @@
+# conda activate Filters
+# python script.py
+
 import cv2 as cv
 import numpy as np
 

@@ -2,6 +2,7 @@
 ## https://github.com/cyber-tuna/kalman_demo/blob/master/kalman_demo.py
 
 ## install environment and package 
+conda deactivate 
 conda create -n Filters python=3
 conda activate Filters
 conda install -c menpo opencv3
