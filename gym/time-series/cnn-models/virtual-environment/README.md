@@ -1,6 +1,5 @@
-
-
-## Create Virtual Environment 
+# Virtual Environment
+## Creation 
 Using `env.yml` create an environment
 ```
 conda deactivate
@@ -9,7 +8,6 @@ conda activate timeseries
 ```
 
 ## Update env
-
 ```
 conda env update --file env.yml  --prune
 conda activate timeseries
@@ -18,9 +16,8 @@ conda activate timeseries
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
 
-## Run environment 
+## Run env 
 Open a terminal and run: 
 ```
 conda activate timeseries
 ```
-
