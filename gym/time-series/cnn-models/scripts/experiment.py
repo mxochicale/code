@@ -1,8 +1,16 @@
 import os
-from pandas import read_csv
+from numpy import mean
+from numpy import std
 from numpy import dstack
-from keras.utils import to_categorical
+from pandas import read_csv
 
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Flatten
+from keras.layers import Dropout
+from keras.layers.convolutional import Conv1D
+from keras.layers.convolutional import MaxPooling1D
+from keras.utils import to_categorical
 
 # load a single file as a numpy array
 def load_file(filepath):
@@ -58,17 +66,54 @@ def load_dataset(prefix=''):
 	print(f'\n \n One hot encode trainy: \n {trainy[:30]}')
 	return trainX, trainy, testX, testy
 
+# fit and evaluate a model
+def evaluate_model(trainX, trainy, testX, testy):
+	verbose, epochs, batch_size = 0, 10, 32
+	n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.shape[1]
+	print(f'\n \n \n n_timesteps: {n_timesteps}, n_features: {n_features}, n_outputs: {n_outputs} \n \n ')
+	## Build model
+	model = Sequential()
+	model.add(Conv1D(filters=64, kernel_size=3, activation='relu', input_shape=(n_timesteps,n_features)))
+	model.add(Conv1D(filters=64, kernel_size=3, activation='relu'))
+	model.add(Dropout(0.5))
+	model.add(MaxPooling1D(pool_size=2))
+	model.add(Flatten())
+	model.add(Dense(100, activation='relu'))
+	model.add(Dense(n_outputs, activation='softmax'))
+	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+	## Summarise model
+	model.summary()
+	## fit network
+	model.fit(trainX, trainy, epochs=epochs, batch_size=batch_size, verbose=verbose)
+	## evaluate model
+	_, accuracy = model.evaluate(testX, testy, batch_size=batch_size, verbose=0)
+	return accuracy
+
+
+# summarize scores
+def summarize_results(scores):
+	print(scores)
+	m, s = mean(scores), std(scores)
+	print('Accuracy: %.3f%% (+/-%.3f)' % (m, s))
+
 # run an experiment
 def run_experiment(repeats=10):
 	print('Running experiment')
 	datapath='/home/mxochicale/Downloads/'
     # load data
 	trainX, trainy, testX, testy = load_dataset(datapath)
-	#print(trainX.shape, trainy.shape, testX.shape, testy.shape)
-
-	#for r in range(repeats):
-	#	print (r)
-
+	print(f'\n \n \n trainX.shape: {trainX.shape}, trainy.shape: {trainy.shape}, testX.shape: {testX.shape}, testy.shape: {testy.shape} \n \n \n')
+	evaluate_model(trainX, trainy, testX, testy)
+	# repeat experiment
+	scores = list()
+	for r in range(repeats):
+		score = evaluate_model(trainX, trainy, testX, testy)
+		score = score * 100.0
+		print('>#%d: %.3f' % (r+1, score))
+		scores.append(score)
+		
+	# summarize results
+	summarize_results(scores)
 
 
 def main():
