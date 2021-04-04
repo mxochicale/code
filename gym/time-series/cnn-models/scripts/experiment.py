@@ -47,14 +47,15 @@ def load_dataset(prefix=''):
 	print('TestX.shape:',testX.shape, 'Testy.shape:',testy.shape)
 	#print(testX)
 	# zero-offset class values
-	print(f'XXXXXXXXXtrainy: {trainy[:30]}')
+	print(f'\n \n Printing trainy[:30]: \n {trainy[:30]}')
 	trainy = trainy - 1
 	testy = testy - 1
-	print(f'XXXXXXXXXtrainy: {trainy[:30]}')
+	print(f'\n \n Printing trainy[:30]: \n {trainy[:30]}')
 	# one hot encode y
 	trainy = to_categorical(trainy)
 	testy = to_categorical(testy)
-	print(f'one hot encode trainy: {trainy[:30]}')
+
+	print(f'\n \n One hot encode trainy: \n {trainy[:30]}')
 	return trainX, trainy, testX, testy
 
 # run an experiment
