@@ -1,5 +1,3 @@
-
-
 ## default drivers
 ```
 sudo apt-get clean
