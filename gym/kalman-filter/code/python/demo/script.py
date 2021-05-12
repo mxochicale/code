@@ -1,5 +1,6 @@
 ## Usage
-# conda activate Filters
+# 
+
 # python script.py
 
 ## Reference
@@ -13,8 +14,8 @@ cursor_x = 250
 cursor_y = 250
 start = False
 
-img_height = 700
-img_width = 700
+img_height = 1000
+img_width = 1000
 
 img = np.zeros((img_height, img_width, 3), np.uint8)
 
@@ -45,43 +46,41 @@ def update_cursor_pos(event, x, y, flags, param):
 		cursor_x = x
 		cursor_y = y
 
-
-if __name__ == "__main__":
-
+def main():
 	cv.namedWindow("KalmanDemo")
 	cv.setMouseCallback('KalmanDemo', update_cursor_pos)
 
+	kalman.transitionMatrix = np.array([[1.,0.,.7,0.],[0.,1.,0.,.7],[0.,0.,1.,0.],[0.,0.,0.,1.]])
 	##state transition matrix (A) 
 	#[[1.  0.  0.7 0. ]
 	# [0.  1.  0.  0.7]
 	# [0.  0.  1.  0. ]
 	# [0.  0.  0.  1. ]]
-	kalman.transitionMatrix = np.array([[1.,0.,.7,0.],[0.,1.,0.,.7],[0.,0.,1.,0.],[0.,0.,0.,1.]])
 
+	kalman.measurementMatrix = np.array([[1.,0.,0.,0.],[0.,1.,0.,0.]])
 	##measurement matrix (H) 
 	#[[1. 0. 0. 0.]
  	#[0. 1. 0. 0.]]	
-	kalman.measurementMatrix = np.array([[1.,0.,0.,0.],[0.,1.,0.,0.]])
-	
+
+	kalman.processNoiseCov = 1e-4 * np.eye(4)
 	#process noise covariance matrix (Q) 
 	#[[0.0001 0.     0.     0.    ]
 	# [0.     0.0001 0.     0.    ]
 	# [0.     0.     0.0001 0.    ]
-	# [0.     0.     0.     0.0001]]
-	kalman.processNoiseCov = 1e-4 * np.eye(4)
+	# [0.     0.     0.     0.0001]]	
 
+	kalman.measurementNoiseCov = 1.5 * np.eye(2)	
 	#measurement noise covariance matrix (R) 
 	#[[15.  0.]
 	# [ 0. 15.]]
-	kalman.measurementNoiseCov = 15 * np.eye(2)	
-	
+
+
+	kalman.errorCovPost = 1. * np.eye(4)
 	#posteriori error estimate covariance matrix (P(k)): P(k)=(I-K(k)*H)*P'(k) 
 	#[[1. 0. 0. 0.]
 	# [0. 1. 0. 0.]
-        # [0. 0. 1. 0.]
+    # [0. 0. 1. 0.]
 	# [0. 0. 0. 1.]]
-	kalman.errorCovPost = 1. * np.eye(4)
-
 	
 	while(True):
 		if(start):
@@ -100,7 +99,7 @@ if __name__ == "__main__":
 			kalman.correct(measurement) # Updates the predicted state from the measurement. 
 			#print (kalman.correct(measurement))
 			
-			cv.circle(img, (int(measurement[0]) , int(measurement[1])),2, (255, 255, 0), thickness=4) 
+			cv.circle(img, (int(measurement[0]) , int(measurement[1])),2, (255, 255, 0), thickness=10) 
 			cv.circle(img, (int(kalman.statePost[0]) , int(kalman.statePost[1])),2, (0, 255, 255), thickness=-1) 
 
 		cv.imshow("KalmanDemo", img)
@@ -110,3 +109,6 @@ if __name__ == "__main__":
 			break
 
 	cv.destroyWindow("Kalman")
+
+if __name__ == "__main__":
+	main()	
