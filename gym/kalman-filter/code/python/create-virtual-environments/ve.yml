@@ -1,0 +1,14 @@
+name: kalman-ve
+dependencies:
+  - python=3.8
+  - matplotlib
+  - numpy 
+  - scipy
+  - pyqt
+  - pip
+  - pip:
+      - opencv-python
+
+### BLURS
+#  - menpo
+#  - sympy
