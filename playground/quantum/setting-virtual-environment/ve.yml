@@ -1,0 +1,19 @@
+name: quantum-ve
+dependencies:
+  - python=3.8 # pr 3.7 with pytorch 1.5.0
+  - pytorch=1.4.0
+  - cudatoolkit
+  - notebook
+  - matplotlib >= 3.3.4
+  - numpy >= 1.18.5
+  - typing
+  - scipy >= 1.4.1
+  - pandas
+  - pip
+#  - pip:
+#      - opencv-python
+
+#  - mayavi >= 4.7.2
+### BLURS
+#  - menpo
+#  - sympy
