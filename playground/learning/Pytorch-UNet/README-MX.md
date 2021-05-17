@@ -32,3 +32,16 @@ https://github.com/milesial/Pytorch-UNet/issues/155#issuecomment-693024341
     train_loader = DataLoader(train, batch_size=batch_size, shuffle=True, num_workers=1, pin_memory=False)
     val_loader = DataLoader(val, batch_size=batch_size, shuffle=False, num_workers=1, pin_memory=False, drop_last=True)
 ```
+* installed pytorch with CUDA compatibility
+```  
+conda activate pytorch-ve
+python train.py
+```
+got 
+` AssertionError: Caught AssertionError in DataLoader worker process 0.`
+with 
+```  
+    train_loader = DataLoader(train, batch_size=batch_size, shuffle=True, num_workers=1, pin_memory=False)
+    val_loader = DataLoader(val, batch_size=batch_size, shuffle=False, num_workers=1, pin_memory=False, drop_last=True)
+```
+more: https://github.com/milesial/Pytorch-UNet/issues/202 

@@ -8,20 +8,23 @@ dependencies:
   - python=3.8.*
   - pytorch=1.8.*
   - cudatoolkit=10.* #10.2 or 11.2
-#  - torchvision
-#  - Pillow
+  - Pillow
 #  - notebook
 #  - matplotlib >= 3.3.4
 #  - numpy >= 1.20.*
 #  - typing
 #  - scipy >= 1.4.1
 #  - pandas
-#  - pip
-#  - tqdm
+#  - torchvision
 #  - future
-#  - pip:
-#    - tensorboard
-#
+  - pip
+  - pip:
+     - tqdm
+     - tensorboard
+
+
+
+
 #### BLURS
 ##  - sympy
 ## TRAILS
