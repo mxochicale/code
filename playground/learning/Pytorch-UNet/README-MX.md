@@ -8,7 +8,7 @@ rm -rf .git
 ``` 
 
 ## Setting up virtual environment
-* [README](setting-virtual-environment/README.md)
+* [README](../../setting-virtual-environment/README.md)
 
 
 ## Download data in kaggle

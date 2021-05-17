@@ -1,0 +1,65 @@
+name: pytorch-ve
+channels:
+- defaults
+- pytorch
+#- conda-forge
+#- nvidia #for cudatoolkit 11.2
+dependencies:
+  - python=3.8.*
+  - pytorch=1.8.*
+  - cudatoolkit=10.* #10.2 or 11.2
+#  - torchvision
+#  - Pillow
+#  - notebook
+#  - matplotlib >= 3.3.4
+#  - numpy >= 1.20.*
+#  - typing
+#  - scipy >= 1.4.1
+#  - pandas
+#  - pip
+#  - tqdm
+#  - future
+#  - pip:
+#    - tensorboard
+#
+#### BLURS
+##  - sympy
+## TRAILS
+
+# FAIL
+# pytorch-1.8.0 with cudatoolkit-10.2.89 > import torch #>>> torch.cuda.is_available() #False
+#- python=3.7.* NO PYTORCH import
+
+# FAIL
+#- nvidia #for cudatoolkit 11.2
+#dependencies:
+#  - python=3.8.*
+#  - pytorch=1.8.*
+#pytorch                   1.8.0           cpu_py38hd248515_1    conda-forge
+#>>> import torch #>>> torch.cuda.is_available() #False
+
+### FAIL
+#name: pytorch-ve
+#channels:
+#- defaults
+#- pytorch
+#- conda-forge
+##- nvidia #for cudatoolkit 11.2
+#dependencies:
+#  - python=3.8.*
+#  - pytorch=1.8.*
+#  - cudatoolkit=11.2 #10.2 or 11.2
+##>>> import torch #>>> torch.cuda.is_available() #False
+
+# SUCCESS
+#name: pytorch-ve
+#channels:
+#- defaults
+#- pytorch
+##- conda-forge
+##- nvidia #for cudatoolkit 11.2
+#dependencies:
+#  - python=3.7.* or   - python=3.8.*
+#  - pytorch=1.4.0; 1.5.0; =1.8.*
+## >>> import torch >>> torch.cuda.is_available() True
+#WITH: cudatoolkit               10.2.89              hfd86e86_1
