@@ -1,7 +1,14 @@
-Python3 Installation
----
+# Python3 Installation
 
-# On Machine  Ubuntu 14.04.4 x64
+## python 38 on Ubuntu 18.04
+```
+sudo apt install python3.8
+```
+https://askubuntu.com/questions/1197683/how-do-i-install-python-3-8-in-lubuntu-18-04
+
+
+
+## python 3.7.9 on Machine  Ubuntu 14.04.4 x64
 
 Check the latest version here: https://www.python.org/ftp/python
 
