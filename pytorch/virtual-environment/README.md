@@ -3,6 +3,6 @@
 Using `env.yml` create an environment
 ```
 conda env create -f env.yml
-conda activate pytorch_tutorial
+conda activate pytorchVE
 
 
