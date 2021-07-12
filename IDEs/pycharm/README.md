@@ -44,6 +44,19 @@ https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-t
 * [Clone Git repositories using SSH](https://medium.com/@akshay.sinha/pycharm-integration-with-github-876510c6ca1f)
 
 
+## Spell Checker Spanish Dictionary
+```
+Agregando el diccionario de español:
+    Descarga los archivos aquí.
+    Descomprime el zip.
+    Dentro de la carpeta descomprimida en src/dict hay un archivo que dice spanish.0 y contiene muchas palabras en español, cambia su extensión a .dic.
+    En PyCharm adentro de Settings/Editor/Spelling, en donde dice "Custom Dictionaries", agrega el archivo spanish.dic mencionado antes.
+    Da click en "Apply" y listo, ahora PyCharm revisará también tu ortografía en español.
+```
+https://es.stackoverflow.com/questions/226011/    
+https://plugins.jetbrains.com/plugin/7851-spell-checker-spanish-dictionary    
+
+
 ## References
 * https://tecadmin.net/how-to-install-pycharm-on-ubuntu-20-04/  
 * https://www.jetbrains.com/pycharm/download/#section=linux  
