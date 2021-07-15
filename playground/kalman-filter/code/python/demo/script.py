@@ -13,8 +13,8 @@ cursor_x = 250
 cursor_y = 250
 start = False
 
-img_height = 700
-img_width = 700
+img_height = 1500
+img_width = 1500
 
 img = np.zeros((img_height, img_width, 3), np.uint8)
 
@@ -71,7 +71,7 @@ def main():
     # [0.     0.     0.0001 0.    ]
     # [0.     0.     0.     0.0001]]
 
-    kalman.measurementNoiseCov = 1.5 * np.eye(2)
+    kalman.measurementNoiseCov = 5e-1 * np.eye(2)
     # measurement noise covariance matrix (R)
     # [[15.  0.]
     # [ 0. 15.]]
@@ -100,8 +100,8 @@ def main():
             kalman.correct(measurement)  # Updates the predicted state from the measurement.
             # print (kalman.correct(measurement))
 
-            cv.circle(img, (int(measurement[0]), int(measurement[1])), 2, (255, 255, 0), thickness=6)
-            cv.circle(img, (int(kalman.statePost[0]), int(kalman.statePost[1])), 2, (0, 255, 255), thickness=5)
+            cv.circle(img, (int(measurement[0]), int(measurement[1])), 2, (255, 255, 0), thickness=1)
+            cv.circle(img, (int(kalman.statePost[0]), int(kalman.statePost[1])), 2, (0, 255, 255), thickness=10)
 
         cv.imshow("KalmanDemo", img)
 
