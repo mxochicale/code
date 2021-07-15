@@ -15,6 +15,9 @@
 // Module "video"
 //#include <opencv2/video.hpp>
 
+// Module "tracking" that includes KalmanFilter
+#include "opencv2/video/tracking.hpp"
+
 // Output
 #include <iostream>
 #include <stdio.h>

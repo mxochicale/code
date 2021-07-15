@@ -2,7 +2,8 @@
 
 ## build
 ```
-rm -rf build && sh build.sh 
+rm -rf build 
+bash build.bash 
 ```
 
 ## Reference 
