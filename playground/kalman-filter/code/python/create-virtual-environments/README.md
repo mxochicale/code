@@ -13,6 +13,7 @@ conda activate $NAME_OF_VENV
 
 ### Update env
 ```
+cd $HOME/x-files/code/playground/kalman-filter/code/python/create-virtual-environments
 conda env update --file ve.yml  --prune
 conda activate $NAME_OF_VENV
 ```

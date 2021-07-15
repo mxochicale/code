@@ -6,21 +6,21 @@ import scipy.stats
 
 np.set_printoptions(threshold=3)
 np.set_printoptions(suppress=True)
-import cv2
+import cv2 as cv
 
 
 def drawLines(img, points, r, g, b):
-    cv2.polylines(img, [np.int32(points)], isClosed=False, color=(r, g, b))
+    cv.polylines(img, [np.int32(points)], isClosed=False, color=(r, g, b))
 
 def drawCross(img, center, r, g, b):
     d = 5
     t = 2
-    LINE_AA = cv2.LINE_AA if cv2.__version__[0] == '3' else cv2.CV_AA
+    LINE_AA = cv.LINE_AA if cv.__version__[0] == '4' else cv.CV_AA
     color = (r, g, b)
     ctrx = center[0,0]
     ctry = center[0,1]
-    cv2.line(img, (ctrx - d, ctry - d), (ctrx + d, ctry + d), color, t, LINE_AA)
-    cv2.line(img, (ctrx + d, ctry - d), (ctrx - d, ctry + d), color, t, LINE_AA)
+    cv.line(img, (ctrx - d, ctry - d), (ctrx + d, ctry + d), color, t, LINE_AA)
+    cv.line(img, (ctrx + d, ctry - d), (ctrx - d, ctry + d), color, t, LINE_AA)
     
 
 def mouseCallback(event, x, y, flags,null):
@@ -139,8 +139,8 @@ weights = np.array([1.0]*N)
 
 # Create a black image, a window and bind the function to window
 img = np.zeros((HEIGHT,WIDTH,3), np.uint8)
-cv2.namedWindow(WINDOW_NAME)
-cv2.setMouseCallback(WINDOW_NAME,mouseCallback)
+cv.namedWindow(WINDOW_NAME)
+cv.setMouseCallback(WINDOW_NAME,mouseCallback)
 
 center=np.array([[-10,-10]])
 
@@ -152,33 +152,33 @@ DELAY_MSEC=50
 
 while(1):
 
-    cv2.imshow(WINDOW_NAME,img)
+    cv.imshow(WINDOW_NAME,img)
     img = np.zeros((HEIGHT,WIDTH,3), np.uint8)
     drawLines(img, trajectory,   0,   255, 0)
     drawCross(img, center, r=255, g=0, b=0)
     
     #landmarks
     for landmark in landmarks:
-        cv2.circle(img,tuple(landmark),10,(255,0,0),-1)
+        cv.circle(img,tuple(landmark),10,(255,0,0),-1)
     
     #draw_particles:
     for particle in particles:
-        cv2.circle(img,tuple((int(particle[0]),int(particle[1]))),1,(255,255,255),-1)
+        cv.circle(img,tuple((int(particle[0]),int(particle[1]))),1,(255,255,255),-1)
 
-    if cv2.waitKey(DELAY_MSEC) & 0xFF == 27:
+    if cv.waitKey(DELAY_MSEC) & 0xFF == 27:
         break
     
-    cv2.circle(img,(10,10),10,(255,0,0),-1)
-    cv2.circle(img,(10,30),3,(255,255,255),-1)
-    cv2.putText(img,"Landmarks",(30,20),1,1.0,(255,0,0))
-    cv2.putText(img,"Particles",(30,40),1,1.0,(255,255,255))
-    cv2.putText(img,"Robot Trajectory(Ground truth)",(30,60),1,1.0,(0,255,0))
+    cv.circle(img,(10,10),10,(255,0,0),-1)
+    cv.circle(img,(10,30),3,(255,255,255),-1)
+    cv.putText(img,"Landmarks",(30,20),1,1.0,(255,0,0))
+    cv.putText(img,"Particles",(30,40),1,1.0,(255,255,255))
+    cv.putText(img,"Robot Trajectory(Ground truth)",(30,60),1,1.0,(0,255,0))
 
     drawLines(img, np.array([[10,55],[25,55]]), 0, 255, 0)
     
 
 
-cv2.destroyAllWindows()
+cv.destroyAllWindows()
 
 
 def multinomal_resample(weights):
