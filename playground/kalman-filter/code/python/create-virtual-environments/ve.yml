@@ -1,4 +1,4 @@
-name: kalman-ve
+name: kalmanVE
 dependencies:
   - python=3.8
   - matplotlib
