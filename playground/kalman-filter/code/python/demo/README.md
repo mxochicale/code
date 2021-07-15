@@ -11,10 +11,14 @@ sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
 1. Open a terminal 
 2. Run:
 ```
-conda activate kalman-ve
+conda activate kalmanVE
 ```
 
-## Run Scripts
+## Run Script(s)
+Open a terminal and run
 ```
 python script.py
 ```
+then make a click and move mouse one as shonw in below 
+
+![fig](window-demo.png)
