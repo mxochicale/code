@@ -5,6 +5,7 @@
 ### Creation
 Using `ve.yml` create an environment
 ```
+cd $HOME/x-files/code/playground/kalman-filter/code/python/create-virtual-environments
 conda deactivate
 conda env create -f ve.yml
 conda activate $NAME_OF_VENV
@@ -29,8 +30,16 @@ Open a terminal and run:
 conda activate $NAME_OF_VENV
 ```
 
+### List created VEs
+Open a terminal and run: 
+```
+conda info --envs
+```
 
-* delete a no longer needed virtual environmnet
+
+
+### Delete env
+Delete a no longer needed virtual environmnet
 ```
 conda remove -n testing --all
 ```
