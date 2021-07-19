@@ -11,3 +11,5 @@ checkpoints/
 *.sw*
 ## runs paths and everything withtin it
 **/runs/*
+## ignores train_results
+**/train_results/*
