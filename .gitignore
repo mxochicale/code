@@ -13,3 +13,4 @@ checkpoints/
 **/runs/*
 ## ignores train_results
 **/train_results/*
+#!**\train_results\test1\eval.py
