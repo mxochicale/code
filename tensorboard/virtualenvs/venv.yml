@@ -1,0 +1,17 @@
+name: tfVE
+dependencies:
+  - python=3.8
+  - matplotlib
+  - numpy
+  - scikit-learn
+  - scipy
+  - Pillow
+  - dill
+  - pip
+  - cudatoolkit=11
+  - pip:
+     - tensorboard
+     - tensorflow-gpu
+     - keras
+     - opencv-python
+     - sklearn
