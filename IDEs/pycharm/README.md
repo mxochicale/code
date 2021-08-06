@@ -8,14 +8,17 @@ sudo snap install pycharm-community --classic
 ```
 
 ### Option Two [intermediate level]
+1. Run bash
 ```
 bash installation.bash
 ```
-which roughfly cotains:
+2. Import pycharm settings 
+it opens a window with `/home/username/.PycharmC2019.3/config` and click OK
+
+* `bash installation.bash` which roughfly cotains:
 ```
 cd ~/Downloads
-#wget https://download.jetbrains.com/python/pycharm-community-2020.3.1.tar.gz
-#wget https://download.jetbrains.com/python/pycharm-community-2021.1.tar.gz ## updated on Thu  8 Apr 00:41:56 BST 2021
+wget https://download.jetbrains.com/python/pycharm-community-2020.3.1.tar.gz
 tar -xzf pycharm-community-20*
 rm pycharm-community-20*
 cd ~/Downloads/pycharm-community-20*/bin/
@@ -55,6 +58,16 @@ Agregando el diccionario de español:
 ```
 https://es.stackoverflow.com/questions/226011/    
 https://plugins.jetbrains.com/plugin/7851-spell-checker-spanish-dictionary    
+
+
+## Uninstalling 
+
+Remove the following directories:
+
+Syntax
+    ~/.config/JetBrains/<product><version>
+    ~/.cache/JetBrains/<product><version>
+    ~/.local/share/JetBrains/<product><version>
 
 
 ## References
