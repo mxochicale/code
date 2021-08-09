@@ -31,6 +31,11 @@ unset __conda_setup
 
 ```
 
+## auto deactivation
+```
+conda config --set auto_activate_base false
+```
+https://github.com/stereolabs/zed-ros-wrapper/issues/569#issuecomment-780035597
 
 
 
