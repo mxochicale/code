@@ -27,8 +27,7 @@ sh pycharm.sh
 ```
 https://itsfoss.com/install-pycharm-ubuntu/
 
-* Create Desktop app launch
-
+3. Create Desktop app launch
 ```
     Start PyCharm.
     From the Tools menu, select "Create Desktop Entry..."
