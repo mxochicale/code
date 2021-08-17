@@ -1,20 +1,93 @@
-## default drivers
+
+# CUDA 
+
+## Hardware 
+GPU: rtx 2070
+OS: Ubuntu 20.04
+
+
+### CUDA 11.4
+
+Defatul installation: 
+
 ```
-sudo apt-get clean
+$ nvidia-smi
+Fri Aug  6 21:36:11 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.57.02    Driver Version: 470.57.02    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0  On |                  N/A |
+| N/A   58C    P8    10W /  N/A |    724MiB /  7973MiB |      2%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A       997      G   /usr/lib/xorg/Xorg                 35MiB |
+|    0   N/A  N/A      1647      G   /usr/lib/xorg/Xorg                235MiB |
+|    0   N/A  N/A      1773      G   /usr/bin/gnome-shell               41MiB |
+|    0   N/A  N/A      2240      G   /usr/lib/firefox/firefox          332MiB |
+|    0   N/A  N/A     14168      G   /usr/lib/firefox/firefox            1MiB |
+|    0   N/A  N/A     25900      G   ..._19099.log --shared-files       64MiB |
++-----------------------------------------------------------------------------+
+```
+
+
+
+### 
+
+* STEP 1: Setup NVDIA CUDA repository with deb(local) [ref1](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_network) [ref2](https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux)
+```
+cd ~/Downloads
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+```
+
+* STEP 2: Install CUDA
+```
 sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get autoremove
-sudo apt-get purge nvidia*
-sudo ubuntu-drivers autoinstall
-reboot
+sudo apt-get -y install cuda
 ```
 
-https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
+* STEP 3: set path to point to CUDA drivers [ref1](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html#ubuntu-x86_64) [ref2](https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux)
+```
+echo '#CUDA driver paths' >> ~/.bashrc
+echo 'export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc 
+echo '  ' >> ~/.bashrc
+```
+
+
+* STEP4: test and perpahs reboot the machine
+```
+mx19@sie085-lap:~$ source .bashrc 
+mx19@sie085-lap:~$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Wed_Jul_14_19:41:19_PDT_2021
+Cuda compilation tools, release 11.4, V11.4.100
+Build cuda_11.4.r11.4/compiler.30188945_0
+```
 
 
 
 
-## Using conda 
+
+
+
+
+
+
+## CUDA Version 11.2  
 
 ```
 mx19@sie085-lap:~$ nvidia-smi
@@ -52,12 +125,9 @@ Cuda compilation tools, release 10.2, V10.2.89
 
 
 
+### Manual installation
 
-
-
-## Manual installation
-
-### GPU dependencies 
+#### GPU dependencies 
 Ubuntu users working with GPU dependencies should pay attention to nvidia drivers of their machines as these should match with the conda version. 
 
 For instance, I use this:
@@ -66,21 +136,27 @@ For instance, I use this:
 wget http://us.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run
 sudo chmod +x NVIDIA-Linux-x86_64-440.100.run
 ```
+
+
 After installation
 ```
 ## Add the following to the end of file [https://sh-tsang.medium.com/tutorial-cuda-v10-2-cudnn-v7-6-5-installation-ubuntu-18-04-3d24c157473f] 
 export PATH=/usr/local/cuda/bin:$PATH  
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 ```
-Run the ~/.bashrc again: `source /.bashrc`
 
+Run the ~/.bashrc again: `source /.bashrc`
 Still not sure if cudnn are required by xononav but installed them
+
+
 ```
-## download and copy cudnn depencies of cudnn-10.2-linux-x64-v8.1.0.77.tgz from [https://developer.nvidia.com/rdp/cudnn-download] [https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73]
+### download and copy cudnn depencies of cudnn-10.2-linux-x64-v8.1.0.77.tgz from [https://developer.nvidia.com/rdp/cudnn-download] [https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73]
 sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
 sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 ```
+
+
 * Check versions
 ```
 mx19@sie085-lap:~$ nvidia-smi
@@ -114,7 +190,11 @@ Cuda compilation tools, release 10.2, V10.2.89
 
 
 
-## Virtual environment with python3.8
+
+
+
+
+### Virtual environment with python3.8
 Due to the  wxPython-4.1.0-cp38-cp38-linux_x86_64.whl dependnecies #787, python3.8 was used to create the virtual environment (ve) for xononav. Further comments will be added re conda ve. 
 
 ### Creation of ve with python3.8
@@ -171,4 +251,22 @@ then
 pip install -e .[dev]
 pip install torch torchvision  # https://pytorch.org/
 ```
+
+
+
+## In case you need to install the  default drivers
+```
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+sudo apt-get purge nvidia*
+sudo ubuntu-drivers autoinstall
+reboot
+```
+
+https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
+
+
+
 
