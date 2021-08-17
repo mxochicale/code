@@ -1,9 +1,33 @@
 ## github.com/j-min/test_single_gpu.py
 ## https://gist.github.com/j-min/baae1aa56e861cab9831b3722755ae6d
 
+
+from __future__ import print_function
+'''
+Basic Multi GPU computation example using TensorFlow library.
+Author: Aymeric Damien
+Project: https://github.com/aymericdamien/TensorFlow-Examples/
+'''
+
+'''
+This tutorial requires your machine to have 1 GPU
+"/cpu:0": The CPU of your machine.
+"/gpu:0": The first GPU of your machine
+'''
+
 import numpy as np
-import tensorflow as tf
 import datetime
+
+# Processing Units logs
+log_device_placement = True
+
+
+import numpy as np
+import datetime
+#import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() #https://github.com/theislab/scgen/issues/14
+
 
 ## Number of multiplications to perform
 n=10
@@ -31,8 +55,8 @@ with tf.device('/gpu:0'):
     a = tf.placeholder(tf.float32, [10000, 10000])
     b = tf.placeholder(tf.float32, [10000, 10000])
     # Compute A^n and B^n and store results in c1
-    c1.append(matpow(a, n))
-    c1.append(matpow(b, n))
+    c1.append(tf.pow(a, n))
+    c1.append(tf.pow(b, n))
 
 with tf.device('/cpu:0'):
   sum = tf.add_n(c1) #Addition of all elements in c1, i.e. A^n + B^n
@@ -44,5 +68,4 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=log_device_placement)
 t2_1 = datetime.datetime.now()
 
 print("Single GPU computation time: " + str(t2_1-t1_1))
-@mxochicale
 

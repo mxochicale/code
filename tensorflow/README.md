@@ -1,6 +1,5 @@
 # Tensorboard
 
-
 ## Hardware 
 GPU: rtx 2070
 OS: Ubuntu 20.04
@@ -36,7 +35,11 @@ Fri Aug  6 21:36:11 2021
 +-----------------------------------------------------------------------------+
 ```
 
-
-
-
-
+```
+$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Wed_Jul_14_19:41:19_PDT_2021
+Cuda compilation tools, release 11.4, V11.4.100
+Build cuda_11.4.r11.4/compiler.30188945_0
+```

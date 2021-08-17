@@ -31,9 +31,12 @@ You can list all discoverable environments with `conda info --envs`.
 
 ## delete a no longer needed virtual environmnet
 ```
-conda remove -n testing --all
+conda remove -n $ENV_NAME --all
 ```
 
 ## References 
 * https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
 * https://medium.freecodecamp.org/why-you-need-python-environments-and-how-to-manage-them-with-conda-85f155f4353c
+
+* various exmaples of conda environmets: 
+https://towardsdatascience.com/managing-cuda-dependencies-with-conda-89c5d817e7e1

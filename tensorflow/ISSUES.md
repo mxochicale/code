@@ -28,3 +28,26 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 
 potential solutions
 * https://github.com/tensorflow/tensorflow/issues/43947
+
+
+
+
+## link cusolver to env
+link cusolver to env [ref1](https://github.com/tensorflow/tensorflow/issues/43947#issuecomment-723951864)
+```
+ln -s /usr/local/cuda/lib64/libcusolver.so.11 $HOME//anaconda3/envs/tfVE/libcusolver.so.10
+```
+SORTED OUT 
+
+
+
+## `Could not load dynamic library 'libcudnn.so.8'` with python3.8 :
+
+> "for anyone reading this, the error was because the person did not install the cuda and cudaNN libraries on their linux box(server)
+please keep in mind that the cuda libraries and cudaNN libraries are 2 totally different things"
+https://github.com/tensorflow/tensorflow/issues/46310#issuecomment-868901156
+
+SORTED: See installation [nvidia//README.md)](../gpu/nvidia//README.md)
+
+
+

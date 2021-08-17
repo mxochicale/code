@@ -1,4 +1,9 @@
 name: tfVE
+
+channels:
+  - conda-forge
+  - defaults
+
 dependencies:
   - python=3.8
   - matplotlib
@@ -7,11 +12,12 @@ dependencies:
   - scipy
   - Pillow
   - dill
+  - cudatoolkit
   - pip
-  - cudatoolkit=11
   - pip:
-     - tensorboard
      - tensorflow-gpu
+     - tensorboard
      - keras
      - opencv-python
      - sklearn
+     #- cudann

@@ -41,7 +41,7 @@ Fri Aug  6 21:36:11 2021
 
 
 
-### 
+### CUDA installation 
 
 * STEP 1: Setup NVDIA CUDA repository with deb(local) [ref1](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_network) [ref2](https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux)
 ```
@@ -79,9 +79,42 @@ Build cuda_11.4.r11.4/compiler.30188945_0
 ```
 
 
+### cudnn installation 
+
+1. Download cuDNN v8.2.2 (July 6th, 2021), for CUDA 11.4
+[ref1](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#download) 
+[ref2](https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73) 
+
+
+```
+    Go to: NVIDIA cuDNN home page.	
+	Click Download.
+		* cuDNN Library for Linux (x86_64)
+		* cuDNN Runtime Library for Ubuntu20.04 x86_64 (Deb)
+		* cuDNN Developer Library for Ubuntu20.04 x86_64 (Deb)
+    Complete the short survey and click Submit.
+    Accept the Terms and Conditions. A list of available download versions of cuDNN displays.
+    Select the cuDNN version you want to install. A list of available resources displays.
+```
 
 
 
+2. Tar installation 
+
+    Navigate to your <cudnnpath> directory containing the cuDNN tar file.
+    Unzip the cuDNN package.
+
+    tar -xzvf cudnn-*.tgz
+
+    Copy the following files into the CUDA Toolkit directory.
+```
+cd ~/Downloads/cudNN/
+sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
+sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+```
+
+:tada: Ready to install your fav virtual environments
 
 
 
