@@ -1,126 +1,20 @@
-
-# CUDA 
-
-## Hardware 
-GPU: rtx 2070
-OS: Ubuntu 20.04
-
-
-### CUDA 11.4
-
-Defatul installation: 
-
+## default drivers
 ```
-$ nvidia-smi
-Fri Aug  6 21:36:11 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 470.57.02    Driver Version: 470.57.02    CUDA Version: 11.4     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0  On |                  N/A |
-| N/A   58C    P8    10W /  N/A |    724MiB /  7973MiB |      2%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|    0   N/A  N/A       997      G   /usr/lib/xorg/Xorg                 35MiB |
-|    0   N/A  N/A      1647      G   /usr/lib/xorg/Xorg                235MiB |
-|    0   N/A  N/A      1773      G   /usr/bin/gnome-shell               41MiB |
-|    0   N/A  N/A      2240      G   /usr/lib/firefox/firefox          332MiB |
-|    0   N/A  N/A     14168      G   /usr/lib/firefox/firefox            1MiB |
-|    0   N/A  N/A     25900      G   ..._19099.log --shared-files       64MiB |
-+-----------------------------------------------------------------------------+
-```
-
-
-
-### CUDA installation 
-
-* STEP 1: Setup NVDIA CUDA repository with deb(local) [ref1](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_network) [ref2](https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux)
-```
-cd ~/Downloads
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
-sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
-sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
-sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
-```
-
-* STEP 2: Install CUDA
-```
+sudo apt-get clean
 sudo apt-get update
-sudo apt-get -y install cuda
+sudo apt-get upgrade
+sudo apt-get autoremove
+sudo apt-get purge nvidia*
+sudo ubuntu-drivers autoinstall
+reboot
 ```
 
-* STEP 3: set path to point to CUDA drivers [ref1](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html#ubuntu-x86_64) [ref2](https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux)
-```
-echo '#CUDA driver paths' >> ~/.bashrc
-echo 'export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc 
-echo '  ' >> ~/.bashrc
-```
-
-
-* STEP4: test and perpahs reboot the machine
-```
-mx19@sie085-lap:~$ source .bashrc 
-mx19@sie085-lap:~$ nvcc --version
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2021 NVIDIA Corporation
-Built on Wed_Jul_14_19:41:19_PDT_2021
-Cuda compilation tools, release 11.4, V11.4.100
-Build cuda_11.4.r11.4/compiler.30188945_0
-```
-
-
-### cudnn installation 
-
-1. Download cuDNN v8.2.2 (July 6th, 2021), for CUDA 11.4
-[ref1](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#download) 
-[ref2](https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73) 
-
-
-```
-    Go to: NVIDIA cuDNN home page.	
-	Click Download.
-		* cuDNN Library for Linux (x86_64)
-		* cuDNN Runtime Library for Ubuntu20.04 x86_64 (Deb)
-		* cuDNN Developer Library for Ubuntu20.04 x86_64 (Deb)
-    Complete the short survey and click Submit.
-    Accept the Terms and Conditions. A list of available download versions of cuDNN displays.
-    Select the cuDNN version you want to install. A list of available resources displays.
-```
-
-
-
-2. Tar installation 
-
-    Navigate to your <cudnnpath> directory containing the cuDNN tar file.
-    Unzip the cuDNN package.
-
-    tar -xzvf cudnn-*.tgz
-
-    Copy the following files into the CUDA Toolkit directory.
-```
-cd ~/Downloads/cudNN/
-sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
-sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
-sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
-```
-
-:tada: Ready to install your fav virtual environments
+https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
 
 
 
 
-
-## CUDA Version 11.2  
+## Using conda 
 
 ```
 mx19@sie085-lap:~$ nvidia-smi
@@ -273,7 +167,7 @@ git pull
 git checkout master 
 pip install -U pip #to avoid HTTPError: 404 Client Error: Not Found for url: https://pypi.org/simple/numpy-stubs/
 ```
-due to a differnt python version one needs to amend  https://github.com/gift-surg/XonoNav/blob/master/setup.py manually
+due to a different python version one needs to amend  https://github.com/gift-surg/XonoNav/blob/master/setup.py manually
 ```
         #return f"wxPython @ https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-18.04/wxPython-{WXPYTHON_VERSION}-cp38-cp38-linux_x86_64.whl"
         return f"wxPython @ https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-18.04/wxPython-{WXPYTHON_VERSION}-cp37-cp37m-linux_x86_64.whl"
