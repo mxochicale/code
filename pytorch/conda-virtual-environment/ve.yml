@@ -1,0 +1,21 @@
+name: pytorchVE
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.8.*
+  - pytorch=1.9.1
+  - cudatoolkit=11.1
+  - matplotlib
+  - numpy
+  #- torchvision
+  #- torchaudio
+  #- pyyaml
+  #- pandas
+  #- pandas-datareader
+  #- tqdm
+  - pip
+  #- pip:
+  #  - opencv-python
+  #  - tensorboard

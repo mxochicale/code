@@ -6,7 +6,23 @@ In the terminal, enter: bash [download-installation.sh](download-installation.sh
 bash download-installation.bash
 ```
 
-## Deactivate/actiavet conda base
+## Path of installation
+```
+Anaconda3 will now be installed into this location:
+$HOME/anaconda3
+```
+
+
+## Deactivate conda base
+
+### auto deactivation
+```
+conda config --set auto_activate_base false
+```
+https://github.com/stereolabs/zed-ros-wrapper/issues/569#issuecomment-780035597
+
+
+### Deactivate/actiavet conda base from the bashrc
 
 Comment and uncomment the following lines in `.bashrc`:
 
@@ -30,12 +46,5 @@ unset __conda_setup
 
 
 ```
-
-## auto deactivation
-```
-conda config --set auto_activate_base false
-```
-https://github.com/stereolabs/zed-ros-wrapper/issues/569#issuecomment-780035597
-
 
 

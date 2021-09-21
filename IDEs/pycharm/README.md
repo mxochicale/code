@@ -18,7 +18,7 @@ it opens a window with `/home/username/.PycharmC2019.3/config` and click OK
 * `bash installation.bash` which roughfly cotains:
 ```
 cd ~/Downloads
-wget https://download.jetbrains.com/python/pycharm-community-2020.3.1.tar.gz
+wget https://download.jetbrains.com/python/pycharm-community-2020.*.tar.gz
 tar -xzf pycharm-community-20*
 rm pycharm-community-20*
 cd ~/Downloads/pycharm-community-20*/bin/
@@ -39,6 +39,14 @@ https://itsfoss.com/install-pycharm-ubuntu/
 Note: You may need a system restart before it appears.
 ```
 https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
+
+
+4. Remove installation
+```
+cd $HOME/Downloads
+rm -rf pycharm-community-2021.2.2/
+```
+
 
 
 ## Customisation 
