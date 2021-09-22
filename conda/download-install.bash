@@ -1,6 +1,8 @@
 ## 00 Welcome
 echo "Hi $USER"
 echo "This is a bash script to install conda in your LINUX/GNU machine"
+echo "USAGE:"
+echo "bash download-installation.bash"
 echo " "
 
 ## 01 Dependencies
@@ -26,20 +28,9 @@ bash $ANACONDA_VERSION
 ## 05 Source PATH 
 source ~/.bashrc
 
-## 06 Conda update
-conda update --all
-conda update -n base -c defaults conda
-
-## 07 auto deactivation
-conda config --set auto_activate_base false
-
-## 08 remove Download
+## Remove Download
 cd ~/Downloads
 rm $ANACONDA_VERSION
-
-### Uninstalling Anaconda 
-### rm -rf ~/anaconda3 ~/.condarc ~/.conda ~/.continuum
-#### Open the ~/.bashrc file and remove the Anaconda directory from the PATH environment variable:
 
 ## References 
 # https://linuxize.com/post/how-to-install-anaconda-on-ubuntu-20-04/

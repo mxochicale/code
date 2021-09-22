@@ -1,19 +1,22 @@
 # Anaconda [:link:](https://www.anaconda.com/)
 
-## Installation in Ubuntu 18.04, 20.04
+## 01 Installation in Ubuntu 18.04, 20.04
 In the terminal, enter: bash [download-installation.sh](download-installation.sh):
 ```
 bash download-installation.bash
 ```
 
-## Path of installation
+## 02 Update conda 
 ```
-Anaconda3 will now be installed into this location:
-$HOME/anaconda3
+conda update -n base -c defaults conda
 ```
 
+* auto deactivation
+conda config --set auto_activate_base false
 
-## Deactivate conda base
+
+
+## 03 Deactivate conda base
 
 ### auto deactivation
 ```
@@ -45,6 +48,19 @@ unset __conda_setup
 
 
 
+```
+
+## Path of installation
+```
+Anaconda3 will now be installed into this location:
+$HOME/anaconda3
+```
+
+
+## Uninstalling Anaconda  
+```
+rm -rf ~/anaconda3 ~/.condarc ~/.conda ~/.continuum
+#### Open the ~/.bashrc file and remove the Anaconda directory from the PATH environment variable:
 ```
 
 
