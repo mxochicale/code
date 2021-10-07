@@ -31,7 +31,7 @@ conda activate timeseries
 conda create --name new_name --copy --clone old_name
 conda remove --name old_name --all # or its alias: `conda env remove --name old_name`
 ```
-exmaple
+example
 ```
 conda create --name ve-python38-cuda11 --copy --clone ve-python38-cuda112
 conda remove --name ve-python38-cuda112 --all

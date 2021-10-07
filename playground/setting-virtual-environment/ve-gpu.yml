@@ -1,13 +1,16 @@
-name: pytorch-ve
+name: playground-ve-gpu
 channels:
-- defaults
-- pytorch
+  - pytorch
+  - nvidia
+  - defaults
 #- conda-forge
 #- nvidia #for cudatoolkit 11.2
 dependencies:
   - python=3.8.*
-  - pytorch=1.8.*
-  - cudatoolkit=10.* #10.2 or 11.2
+  - pytorch=1.9.*
+  - cudatoolkit=11.1 #10.2 or 11.2
+  - numpy
+  - matplotlib
   - Pillow
 #  - notebook
 #  - matplotlib >= 3.3.4
@@ -19,8 +22,9 @@ dependencies:
 #  - future
   - pip
   - pip:
-     - tqdm
-     - tensorboard
+    - opencv-python
+#     - tqdm
+#     - tensorboard
 
 
 
