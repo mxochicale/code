@@ -5,7 +5,7 @@ channels:
   - defaults
 dependencies:
   - python=3.8.*
-  - pytorch=1.9.1
+  - pytorch=1.9.*
   - cudatoolkit=11.1
   - matplotlib
   - numpy
@@ -16,6 +16,6 @@ dependencies:
   #- pandas-datareader
   #- tqdm
   - pip
-  #- pip:
-  #  - opencv-python
+  - pip:
+    - opencv-python
   #  - tensorboard

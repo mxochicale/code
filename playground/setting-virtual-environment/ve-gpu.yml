@@ -1,0 +1,32 @@
+## USAGE:
+## conda env create -f ve-gpu.yml
+## conda env update --file ve-gpu.yml --prune
+name: playground-ve-gpu
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+#- conda-forge
+#- nvidia #for cudatoolkit 11.2
+dependencies:
+  - python=3.9.*
+  - pytorch=1.9.*
+  - cudatoolkit=11.1
+  - numpy
+  - matplotlib
+  - Pillow
+#  - notebook
+#  - matplotlib >= 3.3.4
+#  - numpy >= 1.20.*
+#  - typing
+#  - scipy >= 1.4.1
+#  - pandas
+#  - torchvision
+#  - future
+  - pip
+  - pip:
+    - opencv-python
+#     - tqdm
+#     - tensorboard
+
+
