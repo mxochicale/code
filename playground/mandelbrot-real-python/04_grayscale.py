@@ -1,5 +1,4 @@
-from PIL import Image
-
+from PIL import Image # type: ignore
 from mandelbrot_02 import MandelbrotSet
 
 if __name__ == "__main__":

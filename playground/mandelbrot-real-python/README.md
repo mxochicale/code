@@ -17,5 +17,18 @@ Run a given script whose name starts with a number, for example:
 $ python 01_scatter_plot.py
 ```
 
+## Running Code Style Checks
+
+```
+flake8
+mypy .
+black --check .
+```
+
+## Running Python Code Formatter
+```
+black .
+```
+
 ## References
 https://github.com/realpython/materials/tree/mandelbrot/mandelbrot-set-python

@@ -1,12 +1,14 @@
+## USAGE:
+## conda env create -f ve-cpu.yml
+## conda env update --file ve-cpu.yml --prune
 name: playground-ve-cpu
 channels:
   - pytorch
   - nvidia
   - defaults
   - conda-forge
-#- nvidia #for cudatoolkit 11.2
 dependencies:
-  - python=3.8.*
+  - python=3.9.* #3.10.* Create conflicts
   - pytorch=1.9.*
 #  - cudatoolkit=11.1 #10.2 or 11.2
   - numpy
@@ -19,6 +21,9 @@ dependencies:
   - scipy #mandelbrot
   - six #mandelbrot
   - notebook
+  - flake8
+  - black 
+  - mypy
 #  - matplotlib >= 3.3.4
 #  - numpy >= 1.20.*
 #  - typing

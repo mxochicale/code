@@ -1,5 +1,5 @@
-from PIL import Image
-from PIL.ImageColor import getrgb
+from PIL import Image # type: ignore
+from PIL.ImageColor import getrgb # type: ignore
 
 from mandelbrot_03 import MandelbrotSet
 from viewport_02 import Viewport
@@ -7,9 +7,7 @@ from viewport_02 import Viewport
 
 def hsb(hue_degrees: int, saturation: float, brightness: float):
     return getrgb(
-        f"hsv({hue_degrees % 360},"
-        f"{saturation * 100}%,"
-        f"{brightness * 100}%)"
+        f"hsv({hue_degrees % 360}," f"{saturation * 100}%," f"{brightness * 100}%)"
     )
 
 

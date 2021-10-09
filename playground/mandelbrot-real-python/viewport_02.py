@@ -2,7 +2,7 @@
 
 from typing import NamedTuple
 
-from PIL import Image
+from PIL import Image # type: ignore
 
 
 class Viewport(NamedTuple):
@@ -42,7 +42,4 @@ class Pixel(NamedTuple):
         self.viewport.image.putpixel((self.x, self.y), value)
 
     def __complex__(self):
-        return (
-            complex(self.x, -self.y) * self.viewport.scale
-            + self.viewport.offset
-        )
+        return complex(self.x, -self.y) * self.viewport.scale + self.viewport.offset

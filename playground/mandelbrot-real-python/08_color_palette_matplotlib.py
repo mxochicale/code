@@ -1,5 +1,5 @@
-import matplotlib.cm
-from PIL import Image
+import matplotlib.cm # type: ignore
+from PIL import Image # type: ignore
 
 from mandelbrot_03 import MandelbrotSet
 from viewport_02 import Viewport
@@ -13,9 +13,7 @@ def paint(mandelbrot_set, viewport, palette, smooth):
 
 
 def denormalize(palette):
-    return [
-        tuple(int(channel * 255) for channel in color) for color in palette
-    ]
+    return [tuple(int(channel * 255) for channel in color) for color in palette]
 
 
 if __name__ == "__main__":

@@ -2,8 +2,7 @@
 
 from typing import NamedTuple
 
-from PIL import Image
-
+from PIL import Image # type: ignore
 
 class Viewport(NamedTuple):
     image: Image.Image

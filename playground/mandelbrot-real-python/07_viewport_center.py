@@ -1,5 +1,5 @@
-from PIL import Image
-from PIL import ImageEnhance
+from PIL import Image # type: ignore
+from PIL import ImageEnhance # type: ignore
 
 from mandelbrot_03 import MandelbrotSet
 from viewport_02 import Viewport

@@ -1,3 +1,6 @@
+## USAGE:
+## conda env create -f ve-gpu.yml
+## conda env update --file ve-gpu.yml --prune
 name: playground-ve-gpu
 channels:
   - pytorch
@@ -6,9 +9,9 @@ channels:
 #- conda-forge
 #- nvidia #for cudatoolkit 11.2
 dependencies:
-  - python=3.8.*
+  - python=3.9.*
   - pytorch=1.9.*
-  - cudatoolkit=11.1 #10.2 or 11.2
+  - cudatoolkit=11.1
   - numpy
   - matplotlib
   - Pillow
@@ -27,46 +30,3 @@ dependencies:
 #     - tensorboard
 
 
-
-
-#### BLURS
-##  - sympy
-## TRAILS
-
-# FAIL
-# pytorch-1.8.0 with cudatoolkit-10.2.89 > import torch #>>> torch.cuda.is_available() #False
-#- python=3.7.* NO PYTORCH import
-
-# FAIL
-#- nvidia #for cudatoolkit 11.2
-#dependencies:
-#  - python=3.8.*
-#  - pytorch=1.8.*
-#pytorch                   1.8.0           cpu_py38hd248515_1    conda-forge
-#>>> import torch #>>> torch.cuda.is_available() #False
-
-### FAIL
-#name: pytorch-ve
-#channels:
-#- defaults
-#- pytorch
-#- conda-forge
-##- nvidia #for cudatoolkit 11.2
-#dependencies:
-#  - python=3.8.*
-#  - pytorch=1.8.*
-#  - cudatoolkit=11.2 #10.2 or 11.2
-##>>> import torch #>>> torch.cuda.is_available() #False
-
-# SUCCESS
-#name: pytorch-ve
-#channels:
-#- defaults
-#- pytorch
-##- conda-forge
-##- nvidia #for cudatoolkit 11.2
-#dependencies:
-#  - python=3.7.* or   - python=3.8.*
-#  - pytorch=1.4.0; 1.5.0; =1.8.*
-## >>> import torch >>> torch.cuda.is_available() True
-#WITH: cudatoolkit               10.2.89              hfd86e86_1

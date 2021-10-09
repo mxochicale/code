@@ -2,7 +2,6 @@
 
 from typing import NamedTuple
 
-
 class MandelbrotSet(NamedTuple):
     max_iterations: int
 

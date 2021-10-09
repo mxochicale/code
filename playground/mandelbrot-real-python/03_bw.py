@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image # type: ignore
 
 from mandelbrot_01 import MandelbrotSet
 
