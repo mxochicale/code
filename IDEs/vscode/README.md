@@ -4,12 +4,22 @@
 ## Installation in Ubuntu 20.04x64
 Run [install.sh](install.sh)
 ```
-install.sh
+cd $HOME/repositories/code/IDEs/vscode
+sudo echo
+bash install.bash
 ```
 ## Customisation
 Adding plugings from the terminal
 ```
 code --install-extension DavidAnson.vscode-markdownlint
+```
+## Remove vscode
+```
+apt-key list
+sudo apt-key del rsa2048
+sudo rm /etc/apt/sources.list.d/vscode.list
+sudo apt remove code
+sudo apt update # should succeed now
 ```
 
 ## Reference
