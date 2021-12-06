@@ -2,12 +2,8 @@
 > PyCharm is an integrated development environment (IDE) used in computer programming, specifically for the Python language. It is developed by the Czech company JetBrains. [:books:](https://en.wikipedia.org/wiki/PyCharm)
 
 ## Installation (and tested) on Ubuntu 18.04,20.04 
-### Option One[easy]
-```
-sudo snap install pycharm-community --classic
-```
 
-### Option Two [intermediate level]
+### Option One [intermediate level]
 1. Run bash
 ```
 bash installation.bash
@@ -31,12 +27,13 @@ https://itsfoss.com/install-pycharm-ubuntu/
 ```
     Start PyCharm.
     From the Tools menu, select "Create Desktop Entry..."
-    Tick the corresponding box if you want the launcher for all users.
-    If you selected "Create entry for all users", you will be asked for your password.
-    A green message bubble should appear informing you that it was successful.
-    You should then be able to find PyCharm in the Unity Dash or pin it to the launcher.
+    # (seems to be optional)
+    # Tick the corresponding box if you want the launcher for all users.
+    # If you selected "Create entry for all users", you will be asked for your password.
+    # A green message bubble should appear informing you that it was successful.
+    # You should then be able to find PyCharm in the Unity Dash or pin it to the launcher.
+    # Note: You may need a system restart before it appears.
 
-Note: You may need a system restart before it appears.
 ```
 https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
 
@@ -45,6 +42,11 @@ https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-t
 ```
 cd $HOME/Downloads
 rm -rf pycharm-community-2021.2.2/
+```
+
+### Option Two [easy]
+```
+sudo snap install pycharm-community --classic
 ```
 
 
