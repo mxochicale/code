@@ -6,7 +6,7 @@ __pycache__/
 ## checkpoints
 checkpoints/
 ## jupyter notebooks checkpoints
-*/.ipynb_checkpoints/*
+**/.ipynb_checkpoints/*
 ## temporal vim files
 *.sw*
 ## runs paths and everything withtin it
