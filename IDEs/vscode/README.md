@@ -7,6 +7,9 @@ Run [install.sh](install.sh)
 cd $HOME/repositories/code/IDEs/vscode
 sudo echo
 bash install.bash
+#REMOVE apt repository
+sudo rm /etc/apt/sources.list.d/vscode.list
+
 ```
 ## Customisation
 Adding plugings from the terminal
