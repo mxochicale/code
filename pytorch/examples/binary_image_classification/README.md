@@ -4,7 +4,9 @@
 Current [ve.yml](../../conda-virtual-environment/ve.yml) was migrated to [codeVE.yml](../../../conda/create-virtual-environments/codeVE.yml)
 
 ## Datasets
-https://www.kaggle.com/dansbecker/hot-dog-not-hot-dog 
+https://www.kaggle.com/dansbecker/hot-dog-not-hot-dog
+
+* Path distribution 
 ```
 cd $HOME/datasets/hot-dog-not-hot-dog
 tree -d
@@ -24,6 +26,21 @@ tree -d
     └── not_hot_dog
 ```
 
+* Number files 
+```
+$/datasets/hot-dog-not-hot-dog/test: 2 directories, 500 files
+..
+├── hot_dog: 0 directories, 250 files
+└── not_hot_dog: 0 directories, 250 files
+
+$/datasets/hot-dog-not-hot-dog/train:2 directories, 498 files
+.
+├── hot_dog: 0 directories, 249 files
+└── not_hot_dog: 0 directories, 249 files
+```
+
+
+
 ## Script 
 ```
 cd $HOME/repositories/code/pytorch/examples/binary_image_classification
@@ -33,7 +50,8 @@ jupyter notebook
 
 ## Results
 
-Accuraty and loss curves with different values of epochs, batch_size and learning rate.
+### With `nn.CrossEntropyLoss()` and `optim.Adam(model.parameters(), lr=LEARNING_RATE)`
+Accuracy and loss curves with different values of epochs, batch_size and learning rate.
 
 * EPOCHS50__BATCHSIZE08__LEARNINGRATE0-001
 ![image](results/EPOCHS50__BATCHSIZE08__LEARNINGRATE0-001.png)
@@ -43,7 +61,6 @@ Accuraty and loss curves with different values of epochs, batch_size and learnin
 
 * EPOCHS50__BATCHSIZE32__LEARNINGRATE0-009
 ![image](results/EPOCHS50__BATCHSIZE32__LEARNINGRATE0-009.png)
-
 
 * EPOCHS50__BATCHSIZE04__LEARNINGRATE0-00001
 ![image](results/EPOCHS50__BATCHSIZE04__LEARNINGRATE0-00001.png)
@@ -57,7 +74,8 @@ Accuraty and loss curves with different values of epochs, batch_size and learnin
 * EPOCHS50__BATCHSIZE48__LEARNINGRATE0-00001
 ![image](results/EPOCHS50__BATCHSIZE48__LEARNINGRATE0-00001.png)
 
-
+* EPOCHS25__BATCHSIZE32__LEARNINGRATE0-00001
+![image](results/EPOCHS25__BATCHSIZE32__LEARNINGRATE0-000005.png)
 
 ## Issues
 * BATCH_SIZE = 64 #RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
