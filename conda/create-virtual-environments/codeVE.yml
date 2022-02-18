@@ -1,34 +1,34 @@
 ## USAGE
-# cd $HOME/repositories/code/conda/create-virtual-environments
+## cd $HOME/repositories/code/conda/create-virtual-environments
 ## conda list -n codeVE # show list of installed packages
-## conda env create -f codeVE.yml
-## conda env update --file codeVE.yml --prune
-## conda activate codeVE
-name: mxVE
+## conda env create -f codeVE.yml   ## INSTALL
+## conda env update --file codeVE.yml --prune  ## UPDATE
+## conda activate codeVE   ## ACTIVATE
+name: codeVE
 channels:
   - pytorch
   - nvidia
   - defaults
-  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm
+  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai
   - anaconda # seaborn; pandas; scikit-learn
 dependencies:
   - python=3.8.*
-  - pytorch=1.10.* #1.9.* with cudatoolkit=11.1#OK    #1.10.* with cudatoolkit=11.1 found conflict! #1.10.* with cudatoolkit=11.3 found conflict!
-  - cudatoolkit=11.3.*
+  - pytorch=1.9.* #1.9.* with cudatoolkit=11.1#OK    #1.10.* with cudatoolkit=11.1 found conflict! #1.10.* with cudatoolkit=11.3 found conflict!
+  - cudatoolkit=11.*.* # 11.3.* works with pytorch=1.10.*
   - matplotlib
   - numpy
   - notebook
   - jupyter_contrib_nbextensions # A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
-  - torchvision=0.11.*  #0.2.2#OK #0.10.0 #OK #0.10.1 #0.11.* have conflicts (TODO check version conflicts)
+  - torchvision=0.10.*  #0.2.2#OK #0.10.0 #OK #0.10.1 #0.11.* have conflicts (TODO check version conflicts)
   - seaborn
   - pandas
   - tqdm
   # #ERROR- scikit-learn=* #https://anaconda.org/anaconda/scikit-learn SOLUTION: conda install -n codeVE scikit-learn
+  - monai
+  # #MANUAL installation: pip install --upgrade --no-cache-dir gdown - gdown=4.3.* #Google Drive direct download of big files.
   #- torchaudio
   #- pyyaml
-  #- pandas
   #- pandas-datareader
-  #- tqdm
   - pip
   - pip:
     - opencv-python
