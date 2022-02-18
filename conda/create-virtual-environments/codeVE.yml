@@ -9,7 +9,7 @@ channels:
   - pytorch
   - nvidia
   - defaults
-  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai
+  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel
   - anaconda # seaborn; pandas; scikit-learn
 dependencies:
   - python=3.8.*
@@ -25,6 +25,7 @@ dependencies:
   - tqdm
   # #ERROR- scikit-learn=* #https://anaconda.org/anaconda/scikit-learn SOLUTION: conda install -n codeVE scikit-learn
   - monai
+  - nibabel=3.*
   # #MANUAL installation: pip install --upgrade --no-cache-dir gdown - gdown=4.3.* #Google Drive direct download of big files.
   #- torchaudio
   #- pyyaml

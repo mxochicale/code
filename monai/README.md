@@ -1,4 +1,4 @@
-# MONAI: Medical Open Network for AI [https://monai.io/]
+# MONAI: Medical Open Network for AI [:link:](https://monai.io/)
 
 ## Installation
 From monai only with conda-forge, use the following:
