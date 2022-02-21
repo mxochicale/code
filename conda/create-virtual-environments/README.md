@@ -62,7 +62,7 @@ conda deactivate
 ```
 
 
-* delete a no longer needed virtual environmnet
+* delete a no longer needed virtual environment 
 ```
 conda remove -n testing --all
 ```
