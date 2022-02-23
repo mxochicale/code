@@ -10,7 +10,7 @@ channels:
   - pytorch
   - nvidia
   - defaults
-  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel; gdown 
+  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel; gdown; imgaug
   - anaconda # seaborn; pandas; scikit-learn
 dependencies:
   - python=3.8.*
@@ -27,6 +27,7 @@ dependencies:
   - tqdm
   - monai
   - nibabel=3.*
+  - imgaug
   #- torchaudio
   #- pyyaml
   #- pandas-datareader
