@@ -8,7 +8,7 @@ https://www.kaggle.com/sammy123/lower-back-pain-symptoms-dataset
 
 ## Script 
 ```
-cd $HOME/repositories/code/pytorch/examples/binary_tabular_classification
+cd $HOME/repositories/code/playground/fundamentals-of-ai/binary_tabular_classification
 conda activate codeVE
 jupyter notebook
 ```

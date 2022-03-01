@@ -16,3 +16,7 @@ checkpoints/
 #!**\train_results\test1\eval.py
 ## ignores MNIST data paths
 **/data/**
+
+## ignores vgg16 models
+**/vgg16_cifar.pt
+

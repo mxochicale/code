@@ -8,7 +8,7 @@ https://www.kaggle.com/dansbecker/hot-dog-not-hot-dog
 
 ## Script 
 ```
-cd $HOME/repositories/code/pytorch/examples/dataloaders_loss_functions
+cd $HOME/repositories/code/playground/fundamentals-of-ai/dataloaders_loss_functions
 conda activate codeVE
 jupyter notebook
 ```

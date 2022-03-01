@@ -43,7 +43,7 @@ $/datasets/hot-dog-not-hot-dog/train:2 directories, 498 files
 
 ## Script 
 ```
-cd $HOME/repositories/code/pytorch/examples/binary_image_classification
+cd $HOME/repositories/code/playground/fundamentals-of-ai/binary_image_classification
 conda activate codeVE
 jupyter notebook
 ```
