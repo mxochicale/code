@@ -15,7 +15,7 @@ jupyter notebook
 
 ## Notes
 
-### logs for `for epoch in range(50)` executed in 4h 23m 36s, finished 23:15:14 2022-02-28
+### EPOCHS = 50 executed in 4h 23m 36s, finished 23:15:14 2022-02-28
 ``` 
 Loss in epoch 0 :::: 1.822487028503418
 Got 4458 / 10000 with accuracy 44.58
@@ -121,7 +121,22 @@ Got 7881 / 10000 with accuracy 78.81
 
 Saved model: `513M Mar  1 04:57 vgg16_cifar.pt`
 
+### `for batch_idx, (data,targets) in enumerate(test_dl):` executed in 9m 11s, finished 10:48:24 2022-03-02 [CPU]; executed in 23.9s, finished 11:06:07 2022-03-02 [GPU]
 
+```
+Got 7906 / 10000 with accuracy 79.06 [CPU]
+Got 7920 / 10000 with accuracy 79.20 [GPU]
+```
+
+
+### EPOCHS = 1 executed in 5m 17s, finished 09:00:56 2022-03-03
+``` 
+
+Loss in epoch 0 :::: 1.7990044103622436
+Got 4655 / 10000 with accuracy 46.55
+
+Saved model `513M Mar  3 09:02 vgg16_cifar_TMP.pt`
+```
 
 
 
@@ -152,4 +167,8 @@ https://towardsdatascience.com/the-w3h-of-alexnet-vggnet-resnet-and-inception-7b
 > Training an AlexNet takes about the same time as training Inception. 
 > The memory requirements are 10 times less with improved accuracy (about 9%)
 
+
+https://sofiadutta.github.io/datascience-ipynbs/pytorch/Image-Classification-using-PyTorch.html
+
+https://www.stefanfiott.com/machine-learning/cifar-10-classifier-using-cnn-in-pytorch/
 

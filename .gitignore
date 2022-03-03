@@ -18,5 +18,5 @@ checkpoints/
 **/data/**
 
 ## ignores vgg16 models
-**/vgg16_cifar.pt
+**/vgg16_cifar**
 
