@@ -1,17 +1,19 @@
 # PyCharm
 > PyCharm is an integrated development environment (IDE) used in computer programming, specifically for the Python language. It is developed by the Czech company JetBrains. [:books:](https://en.wikipedia.org/wiki/PyCharm)
 
-## Installation (and tested) on Ubuntu 18.04,20.04 
+
+## 1. pycharm-community Installation (and tested) on Ubuntu 18.04,20.04 
 
 ### Option One [intermediate level]
-1. Run bash
+* Installation
 ```
-bash installation.bash
+cd $HOME/repositories/code/IDEs/pycharm
+bash installation-community-version.bash
 ```
-2. Import pycharm settings 
+* Import pycharm settings 
 it opens a window with `/home/username/.PycharmC2019.3/config` and click OK
 
-* `bash installation.bash` which roughfly cotains:
+* `bash installation.bash` which roughly contains:
 ```
 cd ~/Downloads
 wget https://download.jetbrains.com/python/pycharm-community-2020.*.tar.gz
@@ -23,7 +25,7 @@ sh pycharm.sh
 ```
 https://itsfoss.com/install-pycharm-ubuntu/
 
-3. Create Desktop app launch
+* Create Desktop app launch
 ```
     Start PyCharm.
     From the Tools menu, select "Create Desktop Entry..."
@@ -37,26 +39,42 @@ https://itsfoss.com/install-pycharm-ubuntu/
 ```
 https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
 
-
-4. Remove installation
+* Remove installation
 ```
 cd $HOME/Downloads
 rm -rf pycharm-community-2021.2.2/
 ```
 
-### Option Two [easy]
+### Option Two for installation [easy]
 ```
 sudo snap install pycharm-community --classic
 ```
 
 
 
-## Customisation 
+## 2. The Python IDE for Professional Developers using 
+
+2.1. Request education licences as a student of teacher at [JetBrains Products for Learning](https://www.jetbrains.com/shop/eform/students). You need your academic email.
+2.2. Download and install it via temrinal
+``` 
+cd $HOME/repositories/code/IDEs/pycharm
+bash installation-professional-version-with-student-licence.bash 
+```
+2.3. Activate licences  
+![figs](figures/licenses-pycharm-professional-v2021-3-2.png)  
+
+See more: https://www.jetbrains.com/community/education/#students
+
+## 3 Customisation 
+### Setting conda environments
+Open File>Settings (or Ctrl+Alt+S) to set up conda virtual environment
+![fig](figures/setting-up-conda-env.png)
+
 ### Integration with Github 
 * [Clone Git repositories using SSH](https://medium.com/@akshay.sinha/pycharm-integration-with-github-876510c6ca1f)
 
 
-## Spell Checker Spanish Dictionary
+### Spell Checker Spanish Dictionary
 ```
 Agregando el diccionario de español:
     Descarga los archivos aquí.
@@ -68,9 +86,35 @@ Agregando el diccionario de español:
 https://es.stackoverflow.com/questions/226011/    
 https://plugins.jetbrains.com/plugin/7851-spell-checker-spanish-dictionary    
 
+## 4 DataSpell 
+> The IDE for Professional Data Scientists [:link:](https://www.jetbrains.com/dataspell/)
+* Download
+```
+bash installation-dataspell.bash
+#575M Jan 28 08:18  dataspell-2021.3.2.tar.gz
+``` 
 
-## Uninstalling 
+* Launch  
+``` 
+cd $HOME/Downloads/dataspell-2021.3.2/bin
+sh dataspell.sh
+```
 
+* Make use of default env
+Check list of env `conda env list`
+``` 
+TYPE: conda
+CONDA_INSTALLATION: $HOME/anaconda3/bin/conda
+CONDA_ENVIRONMENT: $HOME/anaconda3/envs/$ENV_NAME/bin/python
+``` 
+
+* remove settings and projects
+```
+rm -rf  $HOME/.config/JetBrains/DataSpell2021.3/
+rm -rf $HOME/.config/JetBrains/DataSpell2021.3/projects
+```
+
+## Uninstalling
 Remove the following directories:
 
 Syntax
