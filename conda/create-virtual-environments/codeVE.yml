@@ -11,7 +11,7 @@ channels:
   - nvidia
   - defaults
   - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel; gdown; imgaug; ipywidgets
-  - anaconda # seaborn; pandas; scikit-learn
+  - anaconda # seaborn; pandas; scikit-learn; jupyter
 dependencies:
   - python=3.8.*
   - pytorch=1.10.* 
@@ -21,6 +21,7 @@ dependencies:
   - numpy
   - notebook
   - jupyter_contrib_nbextensions # A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
+  - jupyter
   - ipywidgets
   - torchvision=0.10.*  #0.2.2#OK #0.10.0 #OK         [ #0.10.1 #0.11.* have conflicts (TODO check version conflicts)]
   - seaborn
