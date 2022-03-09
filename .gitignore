@@ -19,4 +19,5 @@ checkpoints/
 
 ## ignores vgg16 models
 **/vgg16_cifar**
+**/cifar-10-cnn-model**
 
