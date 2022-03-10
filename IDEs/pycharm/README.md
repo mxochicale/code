@@ -1,8 +1,10 @@
 # PyCharm
-> PyCharm is an integrated development environment (IDE) used in computer programming, specifically for the Python language. It is developed by the Czech company JetBrains. [:books:](https://en.wikipedia.org/wiki/PyCharm)
+> PyCharm is an integrated development environment (IDE) used in computer programming, specifically for the Python language. 
+> It is developed by the Czech company JetBrains. [:books:](https://en.wikipedia.org/wiki/PyCharm)  
 
+The following are instructions of the use of PyCharm under GNU/Linux with distributions of Ubuntu 18.04x64 and 20.04x64.
 
-## 1. pycharm-community Installation (and tested) on Ubuntu 18.04,20.04 
+## 1. pycharm-community Installation 
 
 ### Option One [intermediate level]
 * Installation
@@ -52,10 +54,10 @@ sudo snap install pycharm-community --classic
 
 
 
-## 2. The Python IDE for Professional Developers using 
+## 2. The Python IDE for Professional Developers using academic credentials 
 
-2.1. Request education licences as a student of teacher at [JetBrains Products for Learning](https://www.jetbrains.com/shop/eform/students). You need your academic email.
-2.2. Download and install it via temrinal
+2.1. Request education licences as a student of teacher at [JetBrains Products for Learning](https://www.jetbrains.com/shop/eform/students). You need your academic email.  
+2.2. Download and install it via terminal.  
 ``` 
 cd $HOME/repositories/code/IDEs/pycharm
 bash installation-professional-version-with-student-licence.bash 
@@ -65,7 +67,7 @@ bash installation-professional-version-with-student-licence.bash
 
 See more: https://www.jetbrains.com/community/education/#students
 
-## 3 Customisation 
+## 3. Customisation 
 ### Setting conda environments
 Open File>Settings (or Ctrl+Alt+S) to set up conda virtual environment
 ![fig](figures/setting-up-conda-env.png)
