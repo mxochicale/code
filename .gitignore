@@ -20,4 +20,14 @@ checkpoints/
 ## ignores vgg16 models
 **/vgg16_cifar**
 **/cifar-10-cnn-model**
+**/VGG18_random_weights.pth
+**/VGG18_best_model.pth
+**/VGG19_training_history.pkl
+**/VGG19_trained_weights.pth
+**/VGG18_last_epoch_model.pth
+**/VGG18_training_history_lr_scheduler.pkl
+**/VGG18_random_weights_dropouts.pth
+**/VGG18_dropout_best_model.pth
+**/VGG18_dropout_earlystopping_training_history.pkl
+**/VGG18_dropout_training_history_lr_scheduler.pkl
 
