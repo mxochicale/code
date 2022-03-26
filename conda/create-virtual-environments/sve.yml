@@ -1,6 +1,0 @@
-name: simple-virtual-environment
-dependencies:
-  - python=3.8
-  - matplotlib
-  - numpy 
-  - pip
