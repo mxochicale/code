@@ -10,7 +10,7 @@
 name: simpleVE
 channels:
   - defaults
-  - conda-forge # notebook; jupyter_contrib_nbextensions;
+  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm
   - anaconda # ipython
 dependencies:
   - python=3.*
@@ -19,5 +19,6 @@ dependencies:
   - jupyter
   - matplotlib
   - numpy
-  - ipython 
+  - ipython
+  - tqdm 
   - pip
