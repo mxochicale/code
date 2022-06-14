@@ -12,7 +12,8 @@ sudo apt install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libx
 cd ~/Downloads
 # Check latest version: https://repo.anaconda.com/archive/
 #ANACONDA_VERSION = Anaconda3-2020.11-Linux-x86_64.sh
-ANACONDA_VERSION="Anaconda3-5.3.1-Linux-x86_64.sh"
+#ANACONDA_VERSION="Anaconda3-5.3.1-Linux-x86_64.sh"
+ANACONDA_VERSION="Anaconda3-2022.05-Linux-x86_64.sh" # 658.8M 	2022-05-10 13:22:00 	a01150aff48fcb6fcd6472381652de04
 LINK=https://repo.anaconda.com/archive/$ANACONDA_VERSION
 wget $LINK
 
