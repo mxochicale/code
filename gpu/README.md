@@ -1,5 +1,5 @@
 # GPU
 
 ## NVIDIA
-
+## CUDA
 
