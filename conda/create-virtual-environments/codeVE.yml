@@ -1,6 +1,7 @@
 ## USAGE
 ## cd $HOME/repositories/code/conda/create-virtual-environments
 ## conda update --all                           ## UPDATE ALL base PACKAGES
+## conda update -n base -c defaults conda  ## UPDATE CONDA
 ## conda list -n codeVE # show list of installed packages
 ## conda env create -f codeVE.yml   		    ## INSTALL
 ## conda env update --file codeVE.yml --prune  	## UPDATE

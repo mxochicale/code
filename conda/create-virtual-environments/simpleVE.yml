@@ -15,6 +15,7 @@ channels:
 dependencies:
   - python=3.*
   - notebook
+  - requests
   - jupyter_contrib_nbextensions # A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
   - jupyter
   - matplotlib
