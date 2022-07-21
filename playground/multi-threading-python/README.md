@@ -72,10 +72,54 @@ time python example03.py
 
 ```
 
-
 * Remove photos:
 ```
 rm photo-1*
+```
+
+* example04.py
+
+``` 
+$ time python example04.py
+Start thread function
+End thread function
+thread.name: Thread-1 (threadFunc)
+Start thread function
+End thread function
+thread.name: Learning Threads
+None
+Start thread function
+139708453263104
+End thread function
+
+real	0m3.017s
+user	0m0.014s
+sys	0m0.000s
+
+```
+
+* example05.py
+``` 
+$ time python example05.py
+Thread arguments=> 100 and 200
+End thread function
+
+real	0m1.014s
+user	0m0.009s
+sys	0m0.005s
+
+```
+
+* example06.py
+``` 
+$ time python example06.py
+Thread... Argument PASSING_ARG1
+A thread is existing
+
+real	0m1.015s
+user	0m0.011s
+sys	0m0.003s
+
 ```
 
 
