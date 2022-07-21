@@ -123,6 +123,59 @@ sys	0m0.003s
 ```
 
 
+* multi.py
+```
+$ time python multi.py 
+singleprocessing
+counter1 done!
+counter2 done!
+time taken =  9.262816667556763
+multiprocessing
+counter2 done!
+counter1 done!
+time taken =  5.792382478713989
+
+real	0m15.076s
+user	0m18.002s
+sys	0m0.004s
+
+
+```
+
+* prime.py 
+```  
+ time python prime.py
+singleprocessing
+[False, False, True, True, False, True, False, True, False, False, False, True, False, True, False, False, False, True, False, True, False, False, False, True, False, False, False, False, False, True]
+time taken =  7.529933452606201
+multiprocessing
+[(0, False), (1, False), (2, True), (3, True), (4, False), (5, True), (6, False), (7, True), (8, False), (9, False), (10, False), (11, True), (12, False), (13, True), (14, False), (15, False), (16, False), (17, True), (18, False), (19, True), (20, False), (21, False), (22, False), (23, True), (24, False), (25, False), (26, False), (27, False), (28, False), (29, True)]
+time taken =  1.4778649806976318
+
+real	0m9.102s
+user	0m20.392s
+sys	0m0.148s
+
+```
+
+* downloader.py
+
+mkdir images 
+
+```  
+$ time python downloader.py 
+singleprocessing
+time taken =  3.482032299041748 
+
+multiprocessing
+time taken =  0.5417776107788086 
+
+real	0m4.105s
+user	0m0.409s
+sys	0m0.076s
+```
+
+rm images/* 
 
 
 ## References 
