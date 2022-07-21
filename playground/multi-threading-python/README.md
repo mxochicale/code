@@ -178,6 +178,36 @@ sys	0m0.076s
 rm images/* 
 
 
+* event00.py
+```
+$ time python event00.py
+value is False
+value is False
+value is True, quitting
+
+real	0m2.015s
+user	0m0.014s
+sys	0m0.000s
+
+```
+
+* event01.py
+``` 
+$ time python event01.py
+A: val=20
+B: val=30
+A: val=20
+B: val=30
+A: val=20
+B: val=30
+A: val=20
+B: val=30
+A: val=20
+
+
+```
+
+
 ## References 
 * https://www.youtube.com/watch?v=wOFnKB33Lls
 * https://towardsdatascience.com/multithreading-multiprocessing-python-180d0975ab29
