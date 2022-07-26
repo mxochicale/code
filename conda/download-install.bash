@@ -13,7 +13,8 @@ cd ~/Downloads
 # Check latest version: https://repo.anaconda.com/archive/
 #ANACONDA_VERSION = Anaconda3-2020.11-Linux-x86_64.sh
 #ANACONDA_VERSION="Anaconda3-5.3.1-Linux-x86_64.sh"
-ANACONDA_VERSION="Anaconda3-2022.05-Linux-x86_64.sh" # 658.8M 	2022-05-10 13:22:00 	a01150aff48fcb6fcd6472381652de04
+#ANACONDA_VERSION="Anaconda3-2022.05-Linux-x86_64.sh" # 658.8M 	2022-05-10 13:22:00 	a01150aff48fcb6fcd6472381652de04
+ANACONDA_VERSION="Anaconda3-5.3.1-Linux-x86_64.sh" 	#637.0M 	2018-11-19 13:38:46 	334b43d5e8468507f123dbfe7437078f
 LINK=https://repo.anaconda.com/archive/$ANACONDA_VERSION
 wget $LINK
 
