@@ -1,10 +1,28 @@
 # Anaconda [:link:](https://www.anaconda.com/)
 
+## Download the lastest version of conda 
+* Check latest version: https://repo.anaconda.com/archive/
+* Change version of anaconda
+
 ## 01 Installation in Ubuntu 18.04, 20.04
-In the terminal, enter: bash [download-installation.sh](download-installation.sh):
+In the terminal, enter: bash [download-install.sh](download-install.sh):
 ```
-bash download-installation.bash
+bash download-install.bash
 ```
+
+During the installation:
+
+
+```
+
+installation finished.
+Do you wish the installer to initialize Anaconda3
+by running conda init? [yes|no]
+[no] >>> yes
+
+
+```
+
 
 ## 02 Update conda 
 ```
@@ -46,9 +64,15 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+```
+
 
 
 ```
+## 05 Source PATH 
+source ~/.bashrc
+```
+
 
 ## Path of installation
 ```
