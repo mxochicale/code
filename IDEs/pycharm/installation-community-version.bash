@@ -11,7 +11,8 @@
 #VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.1.1.tar.gz #Tue  1 Jun 21:43:57 BST 2021
 #VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.2.tar.gz #Fri  6 Aug 14:49:19 BST 2021
 #VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.2.2.tar.gz #Mon 20 Sep 23:50:31 BST 2021
-VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.3.tar.gz #Mon  6 Dec 08:52:40 GMT 2021
+#VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.3.tar.gz #Mon  6 Dec 08:52:40 GMT 2021
+VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2022.2.3.tar.gz #Mon 17 Oct 10:28:46 BST 2022
 
 cd ~/Downloads
 rm -rf  pycharm-community-202*

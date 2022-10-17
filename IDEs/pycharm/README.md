@@ -7,6 +7,10 @@ The following are instructions of the use of PyCharm under GNU/Linux with distri
 ## 1. pycharm-community Installation 
 
 ### Option One [intermediate level]
+
+* Check the latest version from https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PC
+* Copy and paste in the new version link in installation-community-version.bash
+
 * Installation
 ```
 cd $HOME/repositories/code/IDEs/pycharm
