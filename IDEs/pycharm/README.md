@@ -13,7 +13,7 @@ The following are instructions of the use of PyCharm under GNU/Linux with distri
 
 * Installation
 ```
-cd $HOME/repositories/code/IDEs/pycharm
+cd $HOME/repositories/mxochicale/code/IDEs/pycharm
 bash installation-community-version.bash
 ```
 * Import pycharm settings 
