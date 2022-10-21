@@ -15,6 +15,29 @@ During the installation:
 
 ```
 
+Welcome to Anaconda3 2022.10
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>> 
+
+
+Do you accept the license terms? [yes|no]
+[no] >>> yes
+
+
+
+Anaconda3 will now be installed into this location:
+/home/mxochicale/anaconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/mxochicale/anaconda3] >>> 
+
+
 installation finished.
 Do you wish the installer to initialize Anaconda3
 by running conda init? [yes|no]
@@ -22,6 +45,8 @@ by running conda init? [yes|no]
 
 
 ```
+
+Open and close terminal
 
 
 ## 02 Update conda 
@@ -36,14 +61,14 @@ conda config --set auto_activate_base false
 
 ## 03 Deactivate conda base
 
-### auto deactivation
+### (Suggested) auto deactivation
 ```
 conda config --set auto_activate_base false
 ```
 https://github.com/stereolabs/zed-ros-wrapper/issues/569#issuecomment-780035597
 
 
-### Deactivate/actiavet conda base from the bashrc
+### (Optional) Deactivate/actiavet conda base from the bashrc
 
 Comment and uncomment the following lines in `.bashrc`:
 
