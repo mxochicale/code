@@ -4,7 +4,7 @@
 * Check latest version: https://repo.anaconda.com/archive/
 * Change version of anaconda
 
-## 01 Installation in Ubuntu 18.04, 20.04
+## 01 Installation in Ubuntu 18.04, 20.04, 22.04, 22.10 
 In the terminal, enter: bash [download-install.sh](download-install.sh):
 ```
 bash download-install.bash
