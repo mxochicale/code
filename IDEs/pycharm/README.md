@@ -16,20 +16,12 @@ The following are instructions of the use of PyCharm under GNU/Linux with distri
 cd $HOME/repositories/mxochicale/code/IDEs/pycharm
 bash installation-community-version.bash
 ```
-* Import pycharm settings 
-it opens a window with `/home/username/.PycharmC2019.3/config` and click OK
+  * Confirm that you have read and accept the terms of this User Agreement
+  * DATA SHARING: Don't send 
+  * Import a project
 
-* `bash installation.bash` which roughly contains:
-```
-cd ~/Downloads
-wget https://download.jetbrains.com/python/pycharm-community-2020.*.tar.gz
-tar -xzf pycharm-community-20*
-rm pycharm-community-20*
-cd ~/Downloads/pycharm-community-20*/bin/
-chmod u+x pycharm.sh
-sh pycharm.sh
-```
-https://itsfoss.com/install-pycharm-ubuntu/
+Reference https://itsfoss.com/install-pycharm-ubuntu/
+
 
 * Create Desktop app launch
 ```
@@ -43,7 +35,7 @@ https://itsfoss.com/install-pycharm-ubuntu/
     # Note: You may need a system restart before it appears.
 
 ```
-https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
+Reference https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
 
 * Remove installation
 ```
