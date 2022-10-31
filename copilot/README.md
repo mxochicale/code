@@ -46,8 +46,6 @@ GitHub Copilot can understand significantly more context than most code assistan
     // and give them a red border
     function process() {
 
-
-
 6. Using a framework
 
 GitHub Copilot is especially useful for working with APIs and frameworks you're unfamiliar with. Here, we'll use GitHub Copilot to create a simple Express server that returns the current time.
@@ -56,11 +54,9 @@ GitHub Copilot is especially useful for working with APIs and frameworks you're 
 
     // Express server on port 3000
 
-
 7. More examples
 
 https://github.com/github/copilot-docs/tree/main/gallery
-
 
 
 8. Keyboard shortcuts
@@ -84,9 +80,6 @@ The following lists the most common keyboard shortcuts relevant for GitHub Copil
 
 The GitHub Copilot status icon in the bottom panel of the VSCode window indicates whether GitHub Copilot is enabled or disabled. Its background is blue when enabled, and red when disabled. To enable or disable GitHub Copilot, click the icon. You will be asked whether you wish to toggle for the current file type, or globally.
 
-
-
-
 ## errors 
 
 * sorted out
@@ -95,5 +88,3 @@ The GitHub Copilot status icon in the bottom panel of the VSCode window indicate
 
 ```
 update vscode 1.61.2
-
-
