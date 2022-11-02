@@ -1,5 +1,5 @@
 ## USAGE
-## cd $HOME/repositories/code/conda/create-virtual-environments
+## cd ../create-virtual-environments
 ## conda list -n simpleVE # show list of installed packages
 ## conda update -n base -c defaults conda  ## UPDATE CONDA
 ## conda env create -f simpleVE.yml   		    ## INSTALL
@@ -16,10 +16,13 @@ dependencies:
   - python=3.*
   - notebook
   - requests
-  - jupyter_contrib_nbextensions # A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
+  - jupyter_contrib_nbextensions # other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
   - jupyter
   - matplotlib
   - numpy
   - ipython
+  - tox
+  - pytest
+  - pylint 
   - tqdm 
   - pip
