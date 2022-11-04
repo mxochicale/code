@@ -24,6 +24,7 @@ dependencies:
   - tox
   - pytest
   - pylint 
+  - pytest-mock
   - mock
   - tqdm 
   - pip
