@@ -16,6 +16,7 @@ nvcc -V
 3. Logs
 * size of deb package
 ```
+3.0G Sep 29 19:51 cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
 2.4G Aug 30 22:13 cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
 ```
 * Other [logs.md](logs.md)
