@@ -8,18 +8,19 @@ cd ~/Downloads
 ## CUDA 
 CUDA_URL=https://developer.download.nvidia.com/compute/cuda
 CUDA_VERSION=11.8.0
+UBUNTU_VERSION=ubuntu2204
 
 ## REPO with UBUNTU VERSION
 #CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
-CUDA_REPO_PKG=cuda-repo-ubuntu2204-11-8-local_$CUDA_VERSION-520.61.05-1_amd64.deb
+CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION-520.61.05-1_amd64.deb
 
 wget $CUDA_URL/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
-sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+sudo mv cuda-$UBUNTU_VERSION.pin /etc/apt/preferences.d/cuda-repository-pin-600
 wget $CUDA_URL/$CUDA_VERSION/local_installers/$CUDA_REPO_PKG
 sudo dpkg -i $CUDA_REPO_PKG  
 #sudo apt-key add /var/cuda-repo-ubuntu2004-11-4-local/7fa2af80.pub
-sudo cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings
+sudo cp /var/cuda-repo-$UBUNTU_VERSION-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings
 sudo apt-get update
 sudo apt-get -y install cuda
 
@@ -37,8 +38,8 @@ sudo apt-get -y install cuda
 
 
 ### Installs all CUDA Toolkit packages required to develop CUDA applications (e.g. nvcc). Does not include the driver.
-sudo apt install nvidia-cuda-toolkit
-sudo apt install nvidia-utils-510
+#sudo apt install nvidia-cuda-toolkit
+#sudo apt install nvidia-utils-510
 
 ## REBOOT MACHINE00
 
