@@ -1,15 +1,10 @@
 ## Manual installation
 
-### CUDA Toolkit 11.4
+### CUDA Toolkit
 1. Run bash in a terminal 
 
 ```
 bash installing_cuda.bash
-```
-
-* size of deb package
-```
-2.4G Aug 30 22:13 cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
 ```
 
 2. Check versions
@@ -17,13 +12,19 @@ bash installing_cuda.bash
 nvidia-smi
 nvcc -V
 ```
-See [LOGS.md](LOGS.md)
+
+3. Logs
+* size of deb package
+```
+2.4G Aug 30 22:13 cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
+```
+* Other [LOGS.md](LOGS.md)
 
 
-3. References  
+4. References  
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html  
-https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local  
-
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local    
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local   
 
 
 ### GPU dependencies 
