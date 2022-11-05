@@ -38,6 +38,7 @@ sudo apt-get -y install cuda
 
 ### Installs all CUDA Toolkit packages required to develop CUDA applications (e.g. nvcc). Does not include the driver.
 sudo apt install nvidia-cuda-toolkit
+sudo apt install nvidia-utils-510
 
 ## REBOOT MACHINE00
 
