@@ -2,6 +2,7 @@
 
 ## Sat  5 Nov 17:02:01 GMT 2022
 
+* Installation
 ```
 ...
 
@@ -38,6 +39,43 @@ Building for architecture x86_64
 Building initial module for 5.15.0-43-generic
 Can't load /var/lib/shim-signed/mok/.rnd into RNG
 4047B7761D7F0000:error:12000079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:106:Filename=/var/lib/shim-signed/mok/.rnd
+
+
+```
+* Versions
+
+```
+
+nvidia-smi
+Sat Nov  5 17:11:54 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 520.61.05    Driver Version: 520.61.05    CUDA Version: 11.8     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA RTX A200...  On   | 00000000:01:00.0 Off |                  N/A |
+| N/A   47C    P8     3W /  N/A |      4MiB /  8192MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      2090      G   /usr/lib/xorg/Xorg                  4MiB |
++-----------------------------------------------------------------------------+
+
+
+
+nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Sep_21_10:33:58_PDT_2022
+Cuda compilation tools, release 11.8, V11.8.89
+Build cuda_11.8.r11.8/compiler.31833905_0
 
 
 ```

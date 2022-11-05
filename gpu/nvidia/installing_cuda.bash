@@ -36,10 +36,22 @@ sudo apt-get -y install cuda
 # If you proceed but do not confirm the password upon reboot, Ubuntu will still be able to boot on your system 
 # but any hardware that requires third-party drivers to work correctly may not be usable.
 
+##################################
+#### Adding cuda paths to bashrc
+{
+echo ''
+echo ''
+echo '#============================================================'
+echo '#'
+echo '#  CUDA PATHS'
+echo '#'
+echo "export PATH=/usr/local/cuda/bin:${PATH}  "
+echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}  "
+echo ''
+echo ''
+echo ''
+} >> ~/.bashrc
 
-### Installs all CUDA Toolkit packages required to develop CUDA applications (e.g. nvcc). Does not include the driver.
-#sudo apt install nvidia-cuda-toolkit
-#sudo apt install nvidia-utils-510
 
 ## REBOOT MACHINE00
 
