@@ -18,7 +18,7 @@ nvcc -V
 ```
 2.4G Aug 30 22:13 cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
 ```
-* Other [LOGS.md](LOGS.md)
+* Other [logs.md](logs.md)
 
 
 4. References  
