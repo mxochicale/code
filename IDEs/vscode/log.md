@@ -1,5 +1,124 @@
 # LOG
 
+## Tue 29 Nov 00:44:40 GMT 2022
+
+
+* version
+```
+$ code --version
+1.73.1
+6261075646f055b99068d3688932416f2346dd3b
+x64
+
+
+```
+
+* logs
+```
+$ bash install.bash 
+[sudo] password for mxochicale: 
+Get:1 file:/var/cuda-repo-ubuntu2204-11-8-local  InRelease [1,575 B]
+Get:1 file:/var/cuda-repo-ubuntu2204-11-8-local  InRelease [1,575 B]
+Hit:2 http://gb.archive.ubuntu.com/ubuntu jammy InRelease
+Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                             
+Get:4 http://gb.archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]                                      
+Get:5 https://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]                                                    
+Get:6 http://gb.archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]             
+Get:7 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,127 B]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [497 kB]
+Get:9 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [731 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/main i386 Packages [214 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [108 kB]     
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [20.1 kB]     
+Get:13 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [409 kB]                
+Get:14 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [382 kB]              
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [62.3 kB]
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [480 kB]            
+Get:17 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [164 kB]             
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [618 kB]         
+Get:19 http://gb.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [94.9 kB]    
+Get:20 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [554 kB]                    
+Get:21 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [81.0 kB]                   
+Get:22 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [757 kB]         
+Get:23 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [13.3 kB]   
+Get:24 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [126 kB]            
+Get:25 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [257 kB]
+Get:26 http://gb.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Get:27 http://gb.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [11.6 kB]
+Fetched 5,909 kB in 2s (2,808 kB/s)                                           
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+29 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+wget is already the newest version (1.21.2-2ubuntu1).
+wget set to manually installed.
+software-properties-common is already the newest version (0.99.22.3).
+software-properties-common set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed
+  apt-transport-https
+0 to upgrade, 1 to newly install, 0 to remove and 29 not to upgrade.
+Need to get 1,506 B of archives.
+After this operation, 169 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://gb.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.8 [1,506 B]
+Fetched 1,506 B in 0s (25.5 kB/s)               
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 193245 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.4.8_all.deb ...
+Unpacking apt-transport-https (2.4.8) ...
+Setting up apt-transport-https (2.4.8) ...
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+Repository: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+Description:
+Archive for codename: stable components: main
+More info: https://packages.microsoft.com/repos/vscode
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Adding deb entry to /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_vscode-jammy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_repos_vscode-jammy.list
+Get:1 file:/var/cuda-repo-ubuntu2204-11-8-local  InRelease [1,575 B]
+Get:1 file:/var/cuda-repo-ubuntu2204-11-8-local  InRelease [1,575 B]
+Hit:2 http://gb.archive.ubuntu.com/ubuntu jammy InRelease                   
+Hit:3 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                       
+Hit:4 http://gb.archive.ubuntu.com/ubuntu jammy-updates InRelease                                                      
+Hit:5 http://gb.archive.ubuntu.com/ubuntu jammy-backports InRelease                                                    
+Hit:6 https://dl.google.com/linux/chrome/deb stable InRelease                                                    
+Get:7 https://packages.microsoft.com/repos/vscode stable InRelease [3,959 B]  
+Get:8 https://packages.microsoft.com/repos/vscode stable/main amd64 Packages [336 kB]
+Fetched 340 kB in 1s (398 kB/s)   
+Reading package lists... Done
+W: https://packages.microsoft.com/repos/vscode/dists/stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed
+  code
+0 to upgrade, 1 to newly install, 0 to remove and 29 not to upgrade.
+Need to get 96.7 MB of archives.
+After this operation, 397 MB of additional disk space will be used.
+Get:1 https://packages.microsoft.com/repos/vscode stable/main amd64 code amd64 1.73.1-1667967334 [96.7 MB]
+Fetched 96.7 MB in 18s (5,524 kB/s)                                                                                                                                                                       
+Selecting previously unselected package code.
+(Reading database ... 193249 files and directories currently installed.)
+Preparing to unpack .../code_1.73.1-1667967334_amd64.deb ...
+Unpacking code (1.73.1-1667967334) ...
+Setting up code (1.73.1-1667967334) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for shared-mime-info (2.1-2) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+
+```
 
 ## Mon 31 Oct 15:52:01 GMT 2022
 * Version
