@@ -7,12 +7,20 @@
 ## conda env update -f aiVE.yml --prune  	## UPDATE
 ## conda activate aiVE   			            ## ACTIVATE
 ## conda remove -n aiVE --all			        ## REMOVE
+
+## QUICK TEST OF THE AVAILABILITY OF CUDA
+## conda activate aiVE
+## python
+## import torch
+## torch.cuda.is_available()
+
 name: aiVE
 channels:
   - defaults
   - pytorch #https://github.com/pytorch/vision
   - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel; gdown; imgaug; ipywidgets; PyAV
   - nvidia
+  - huggingface # datasets
 #  - anaconda # seaborn; pandas; scikit-learn; jupyter
 dependencies:
   - pytorch=1.11.*
@@ -29,6 +37,7 @@ dependencies:
   - seaborn
   - pandas
   - tqdm
+  - datasets #https://pypi.org/project/datasets/
 #  - monai
 #  - nibabel=3.*
 #  - imgaug
@@ -38,6 +47,7 @@ dependencies:
   - pip
   - pip:
     - opencv-python
+    - einops #https://github.com/arogozhnikov/einops
   #  - tensorboard
   ## MANUAL INSTALLATION IN CONDA ENV
        ## ERROR-scikit-learn=* #https://anaconda.org/anaconda/scikit-learn
