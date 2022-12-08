@@ -31,16 +31,18 @@ dependencies:
   - matplotlib
   - numpy
   - notebook
-  #- jupyter_contrib_nbextensions # A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
   - jupyter
+  - jupyter_contrib_nbextensions 
+# A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231; 
+# Execute time: https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/execute_time/readme.html
   #- ipywidgets
   - seaborn
   - pandas
   - tqdm
   - datasets #https://pypi.org/project/datasets/
-#  - monai
-#  - nibabel=3.*
-#  - imgaug
+  #- monai
+  #- nibabel=3.*
+  #- imgaug
   #- torchaudio
   #- pyyaml
   #- pandas-datareader
