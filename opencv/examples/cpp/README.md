@@ -1,9 +1,9 @@
 # CPP Examples 
 
-## build
+## clean, build and execute 
 ```
-rm -rf build 
-bash build.bash 
+cd .. && rm -rf build  && bash build.bash  && cd build
+./*APP 
 ```
 
 ## execute 
