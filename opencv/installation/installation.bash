@@ -17,11 +17,12 @@ sudo apt-get install cmake gcc g++ libgtk2.0-dev libgtk-3-dev
 #>#NO_USED    libgstreamer1.0-dev
 
 cd ~/Downloads
+VERSION=4.6.0 #4.5.5 #See other tags https://github.com/opencv/opencv/tags
 mkdir -p ~/opencv_build && cd ~/opencv_build
 git clone https://github.com/opencv/opencv.git
-cd opencv && git checkout 4.6.0 && cd ..
+cd opencv && git checkout $VERSION && cd ..
 git clone https://github.com/opencv/opencv_contrib.git
-cd opencv_contrib && git checkout 4.6.0 && cd ..
+cd opencv_contrib && git checkout $VERSION && cd ..
 
 cd ~/opencv_build/opencv
 mkdir -p build && cd build
