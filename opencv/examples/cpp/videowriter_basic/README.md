@@ -1,11 +1,5 @@
 # Video Recording
 
-## build
-```
-rm -rf build 
-bash build.bash 
-```
-
 ## Reference 
 https://github.com/Myzhar/simple-opencv-kalman-tracker
 https://www.myzhar.com/blog/tutorials/tutorial-opencv-ball-tracker-using-kalman-filter/
