@@ -12,18 +12,17 @@ def display_bal():
     for balance in account_balances:
         print(f'balance: {balance}')
         if balance < 0:
-            print("Account balance of {} is below 0; add funds now." .format(balance))
+            print(f'Account balance of {balance} is below 0; add funds now.')
 
         elif balance == 0:
-            print("Account balance of {} is equal to 0; add funds soon." .format(balance))
+            print(f'Account balance of {balance} is equal to 0; add funds soon')
 
         else:
-            print("Account balance of {} is above 0.".format(balance))
+            print(f'Account balance of {balance} is above 0.')
 
 ## Use interact() function to start the interpreter with local namespace
-#code.interact(local=locals())
+code.interact(local=locals())
 #code.interact(banner="Start", local=locals(), exitmsg="End")
-code.interact(banner="In [for-loop] how-to-construct-for-loops-in-python-3", local=locals(), exitmsg="Out of for-loop")
-
+#code.interact(banner="In [for-loop] how-to-construct-for-loops-in-python-3", local=locals(), exitmsg="Out of for-loop")
 
 display_bal()
