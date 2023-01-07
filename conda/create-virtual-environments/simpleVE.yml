@@ -1,11 +1,12 @@
 ## USAGE
 ## cd ../create-virtual-environments
-## conda list -n simpleVE # show list of installed packages
-## conda update -n base -c defaults conda  ## UPDATE CONDA
-## conda env create -f simpleVE.yml   		    ## INSTALL
-## conda env update --file simpleVE.yml --prune  	## UPDATE
-## conda activate simpleVE   			            ## ACTIVATE
-## conda remove -n simpleVE --all			        ## REMOVE
+## conda update -n base -c defaults conda  ##> UPDATE CONDA
+## conda list -n *VE 		           ##> show list of installed packages
+## conda update -n base -c defaults conda  ##> UPDATE CONDA
+## conda env create -f *.yml   		   ##> INSTALL
+## conda env update -f *.yml --prune	   ##> UPDATE
+## conda activate *VE   		   ##> ACTIVATE
+## conda remove -n *VE --all		   ##> REMOVE
 
 name: simpleVE
 channels:
@@ -14,17 +15,20 @@ channels:
   - anaconda # ipython
 dependencies:
   - python=3.*
-  - notebook
-  - requests
-  - jupyter_contrib_nbextensions # other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
-  - jupyter
-  - matplotlib
-  - numpy
-  - ipython
-  - tox
-  - pytest
-  - pylint 
-  - pytest-mock
-  - mock
-  - tqdm 
   - pip
+  - pip:
+    - opencv-python
+    - notebook
+    - requests
+    - jupyter_contrib_nbextensions # other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
+    - jupyter
+    - matplotlib
+    - numpy
+    - ipython
+    - tox
+    - pytest
+    - pylint 
+    - pytest-mock
+    - mock
+    - tqdm
+    #- code 
