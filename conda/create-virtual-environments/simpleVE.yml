@@ -29,5 +29,7 @@ dependencies:
     - pytest
     - pylint 
     - pytest-mock
+    - pillow
+    - imutils #https://github.com/PyImageSearch/imutils 
     - mock
     - tqdm
