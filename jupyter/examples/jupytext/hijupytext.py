@@ -13,6 +13,8 @@
 #     name: python3
 # ---
 
+# ## Import python packages
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -53,14 +55,15 @@ for i in numbers:
 # plt.style.use('_mpl-gallery-nogrid')
 
 # Prepare some coordinates
-x, y, z = np.indices((8, 8, 8))
+x, y, z = np.indices((10, 10, 10))
 
 # Draw cuboids in the top left and bottom right corners
 cube1 = (x < 2) & (y < 2) & (z < 5)
-cube2 = (x >= 5) & (y >= 2) & (z >= 5)
+cube2 = (x >= 8) & (y >= 2) & (z >= 8)
 
 # Combine the objects into a single boolean array
 voxelarray = cube1 | cube2
+print(f' voxelarray.shape: {voxelarray.shape}')
 
 # Plot
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})

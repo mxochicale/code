@@ -9,7 +9,7 @@ checkpoints/
 **/.ipynb_checkpoints/**
 
 ## ignoring ipynb from /jupytext
-##**/hijupytext.ipynb
+**/hijupytext.ipynb
 
 ## temporal vim files
 *.sw*
