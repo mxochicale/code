@@ -14,14 +14,15 @@ channels:
   - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm
   - anaconda # ipython
 dependencies:
-  - python=3.11
+  - python=3.11 #3.12>ResolvePackageNotFound:
   - pip
   - pip:
     - opencv-python
     - notebook
     - requests
-    - jupyter_contrib_nbextensions # other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
     - jupyter
+    - jupytext
+    - jupyter_contrib_nbextensions # other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
     - matplotlib
     - numpy
     - ipython

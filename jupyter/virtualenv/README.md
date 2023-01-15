@@ -1,3 +1,0 @@
-# 
-
-See conda/create-VE
