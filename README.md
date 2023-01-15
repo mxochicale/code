@@ -8,7 +8,6 @@ cd && mkdir -p repositories/mxochicale && cd repositories/mxochicale
 git clone git@github.com:mxochicale/code.git
 ```
 
-## Contact 
-If you have specific questions about the content of this repository, you can drop us an email to [perez.xochicale@gmail.com](mailto:perez.xochicale@gmail.com?subject="[code]"). 
-If your question might be relevant to other people, please instead [open an issue](https://github.com/mxochicale/code/issues).
-
+## Issues and contact 
+Please [open an issue](https://github.com/mxochicale/code/issues) for questions that might be relevant to other people, or
+open an issue tagging me for specific questions [@mxochicale](https://github.com/mxochicale/). 
