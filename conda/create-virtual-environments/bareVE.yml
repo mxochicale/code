@@ -1,8 +1,29 @@
+## Some useful commands to manage your conda env:
+## LIST CONDA ENVS: conda list -n *VE # show list of installed packages
+## UPDATE CONDA: conda update -n base -c defaults conda
+## INSTALL CONDA EV: conda env create -f *VE.yml
+## UPDATE CONDA ENV: conda env update -f *VE.yml --prune
+## ACTIVATE CONDA ENV: conda activate *VE
+## REMOVE CONDA ENV: conda remove -n *VE --all
+
 name: bareVE
+channels:
+  - defaults
+  - conda-forge #pyside6
+  #- anaconda
+  #- fastai #opencv-python-headless
 dependencies:
-  - python=3.8
-  - matplotlib
-  - numpy 
-  - pandas
-  - notebook
+  - python=3.7
+  #- pyside6
+  #- python=3.8
+  #- matplotlib
+  #- numpy 
+  #- pandas
+  #- notebook
+  - pip>=22.2.2
+  - pip:
+     - pyside6
+     - opencv-contrib-python-headless
+     #- qimage2ndarray
+
 
