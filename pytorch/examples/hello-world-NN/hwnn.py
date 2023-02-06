@@ -2,7 +2,7 @@
 # https://www.digitalocean.com/community/tutorials/introduction-to-pytorch-build-a-neural-network-to-recognize-handwritten-digits
 
 ## Usage
-# conda activate pytorchVE
+# conda activate aiVE
 # python hwnn.py
 import torch
 import torch.nn as nn

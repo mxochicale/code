@@ -17,42 +17,42 @@
 name: aiVE
 channels:
   - defaults
-  - pytorch #https://github.com/pytorch/vision
-  - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel; gdown; imgaug; ipywidgets; PyAV
-  - nvidia
-  - huggingface # datasets
-#  - anaconda # seaborn; pandas; scikit-learn; jupyter
+  #- pytorch #https://github.com/pytorch/vision
+  #- conda-forge # notebook; jupyter_contrib_nbextensions; tqdm; monai; nibabel; gdown; imgaug; ipywidgets; PyAV
+  #- nvidia
+  #- huggingface # datasets
+  #- anaconda # seaborn; pandas; scikit-learn; jupyter
 dependencies:
-  - pytorch=1.11.*
-  - torchvision=0.12.*
   - python=3.10.*
-  - cudatoolkit=11.*.*
-  - av=9.*
-  - matplotlib
-  - numpy
-  - notebook
-  - jupyter
-  - jupyter_contrib_nbextensions 
-# A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231; 
-# Execute time: https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/execute_time/readme.html
-  #- ipywidgets
-  - seaborn
-  - pandas
-  - tqdm
-  - datasets #https://pypi.org/project/datasets/
-  #- monai
-  #- nibabel=3.*
-  #- imgaug
-  #- torchaudio
-  #- pyyaml
-  #- pandas-datareader
+  #- pytorch=1.13.* #=1.11.*
+  #- torchvision #=0.12.*
+  #- cudatoolkit #=11.*.*
   - pip
   - pip:
-    - opencv-python
-    - einops #https://github.com/arogozhnikov/einops
-  #  - tensorboard
-  ## MANUAL INSTALLATION IN CONDA ENV
-       ## ERROR-scikit-learn=* #https://anaconda.org/anaconda/scikit-learn
-       ## SOLUTION: conda install -n codeVE scikit-learn
-       ## gdown: Google Drive direct download of big files.
-       ## SOLUTION: pip install --upgrade --no-cache-dir gdown
+    # pip install torch torchvision networkx ##<<<<FOR TORCH 1.13 MAKE USE OF THE TERMINAL
+    - matplotlib
+    - numpy
+    - notebook
+    - jupyter
+    - jupyter_contrib_nbextensions 
+    - pillow
+    - av
+    #- opencv-python
+    #- einops #https://github.com/arogozhnikov/einops
+    #- seaborn
+    #- pandas
+    #- tqdm
+    #- datasets #https://pypi.org/project/datasets/
+    #- ipywidgets
+    #- monai
+    #- nibabel=3.*
+    #- imgaug
+    #- torchaudio
+    #- pyyaml
+    #- pandas-datareader
+    #- tensorboard
+    ## MANUAL INSTALLATION IN CONDA ENV
+    ## ERROR-scikit-learn=* #https://anaconda.org/anaconda/scikit-learn
+    ## SOLUTION: conda install -n codeVE scikit-learn
+    ## gdown: Google Drive direct download of big files.
+    ## SOLUTION: pip install --upgrade --no-cache-dir gdown
