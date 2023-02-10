@@ -10,20 +10,26 @@ name: bareVE
 channels:
   - conda-forge #pyside6
 dependencies:
-  - python=3.11
+  - python=3.10
+  #- python=3.11
   #- python=3.8
   - pip
   - pip:
-     - numpy
-     #- pyside6 #https://pypi.org/project/PySide6/#history
+     ### VERSIONS of pyside6: https://pypi.org/project/PySide6/#history
+     - pyside6>=6.4.2
+     ### VERSIONS of VTK https://gitlab.kitware.com/vtk/vtk/-/tags
+     - vtk>=9.2.5
+     ### VERSIONS of opencv-contrib-python-headless  https://pypi.org/project/opencv-contrib-python-headless/#history
+     - opencv-contrib-python-headless
+     #- qimage2ndarray
+     #- notebook
+     #- pandas
+     #- numpy
      #- matplotlib
      #- opencv-python
-     #- opencv-contrib-python-headless #https://pypi.org/project/opencv-contrib-python-headless/#history
      #- araviq6
      #- civiq6
      #- cv2PySide6
      #- qimage2ndarray
-     #- pandas
-     #- notebook
 
 
