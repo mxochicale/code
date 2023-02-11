@@ -1,12 +1,14 @@
 # The Visualization Toolkit (VTK)  
-> Free software system for 3D computer graphics, image processing and visualization [:linkm:](https://en.wikipedia.org/wiki/VTK)
+Free software system for 3D computer graphics, image processing and visualization [:link:](https://vtk.org/)
 
 ## History
-VTK was initially created in 1993 as companion software to the book The Visualization Toolkit: An Object-Oriented Approach to 3D Graphics.[5] The book and software were written by three researchers (Will Schroeder, Ken Martin and Bill Lorensen) on their own time and with permission from General Electric (thus the ownership of the software resided with, and continues to reside with, the authors). After the core of VTK was written, users and developers around the world began to improve and apply the system to real-world problems.[3]
+> VTK was initially created in 1993 as companion software to the book The Visualization Toolkit: An Object-Oriented Approach to 3D Graphics.[5] The book and software were written by three researchers (Will Schroeder, Ken Martin and Bill Lorensen) on their own time and with permission from General Electric (thus the ownership of the software resided with, and continues to reside with, the authors). After the core of VTK was written, users and developers around the world began to improve and apply the system to real-world problems.[3]
 https://en.wikipedia.org/wiki/VTK
 
-## Visualisation pipeline (OpenGL pipeline)
-VTK made use of the following pipeline, which seems to be inspired by OpenGL pipeline, to contruct geometric representations that are rendendered by the graphics pipeline:
+## Visualisation pipeline
+VTK made use of the following pipeline, which seems to be inspired by [OpenGL pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview), to contruct geometric representations that are rendendered by the graphics pipeline.
+![fig](vtk_pipeline.png)
+
 1. SOURCE/READER: Load data, use source classes (vtkSphereSource, vtkCubeSource, vtkConeSource), or read data from files (Polydata, StructuredGrid).
 	* VTK Data objects: – vtkImageData, vtkRectilinearGrid, vtkStructuredGrid, vtkPolyData, vtkUnstructuredGrid
 	* Usually you create an iterator: `cube = vtk.vtkCubeSource()` and you can accesss vtkPolyData instance `polyData = cube.GetOutput()`
@@ -28,13 +30,14 @@ VTK made use of the following pipeline, which seems to be inspired by OpenGL pip
 6. INTERACTORS: 
 	* The `vtkRenderWindowInteractor` class provides platform-independent window interaction via the mouse and keyboard
 
+See https://mt4sd.ulpgc.es/slicer-int/images/7/71/VTK.pdf for further reference.
+
 * Launch and see further details in [cube-vtk.py](cube-vtk.py) 
 ```
 conda activate bareVE
 python cube-vtk.py 
-```
-![fig](vtk_pipeline.png)
-See https://mt4sd.ulpgc.es/slicer-int/images/7/71/VTK.pdf for further reference.
+```  
+
 
 
 ## References 
