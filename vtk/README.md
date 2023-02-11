@@ -2,7 +2,7 @@
 Free software system for 3D computer graphics, image processing and visualization [:link:](https://vtk.org/)
 
 ## History
-> VTK was initially created in 1993 as companion software to the book The Visualization Toolkit: An Object-Oriented Approach to 3D Graphics.[5] The book and software were written by three researchers (Will Schroeder, Ken Martin and Bill Lorensen) on their own time and with permission from General Electric (thus the ownership of the software resided with, and continues to reside with, the authors). After the core of VTK was written, users and developers around the world began to improve and apply the system to real-world problems.[3]
+> VTK was initially created in 1993 as companion software to the book The Visualization Toolkit: An Object-Oriented Approach to 3D Graphics.[5] The [book](https://github.com/lorensen/VTKExamples/blob/master/src/VTKBook/01Chapter1.md) and software were written by three researchers (Will Schroeder, Ken Martin and Bill Lorensen) on their own time and with permission from General Electric (thus the ownership of the software resided with, and continues to reside with, the authors). After the core of VTK was written, users and developers around the world began to improve and apply the system to real-world problems.[3]
 https://en.wikipedia.org/wiki/VTK
 
 ## Visualisation pipeline
@@ -38,9 +38,8 @@ conda activate bareVE
 python cube-vtk.py 
 ```  
 
-
-
 ## References 
 * https://kitware.github.io/vtk-examples/site/Python/#tutorial
 * https://www.toptal.com/data-science/3d-data-visualization-with-open-source-tools-an-example-using-vtk 
-
+* https://github.com/lorensen/VTKExamples/blob/master/src/VTKBook/01Chapter1.md 
+* https://github.com/lorensen/VTKExamples/tree/master/src/VTKBookLaTeX 
