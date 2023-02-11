@@ -24,7 +24,8 @@ ANACONDA_VERSION="Anaconda3-2023.03-1-Linux-x86_64.sh"
 #on Sat 20 May 07:22:22 BST 2023
 
 LINK=https://repo.anaconda.com/archive/$ANACONDA_VERSION
-wget $LINK
+echo downloading $LINK
+wget -N $LINK
 
 ### 03 Verify hash 
 sha256sum $ANACONDA_VERSION

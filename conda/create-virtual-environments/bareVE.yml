@@ -20,7 +20,7 @@ dependencies:
      ### VERSIONS of VTK https://gitlab.kitware.com/vtk/vtk/-/tags
      - vtk>=9.2.5
      ### VERSIONS of opencv-contrib-python-headless  https://pypi.org/project/opencv-contrib-python-headless/#history
-     - opencv-contrib-python-headless
+     - opencv-contrib-python-headless>=4.7.0.68
      #- qimage2ndarray
      #- notebook
      #- pandas
