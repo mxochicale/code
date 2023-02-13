@@ -32,12 +32,16 @@ VTK made use of the following pipeline, which seems to be inspired by [OpenGL pi
 
 See https://mt4sd.ulpgc.es/slicer-int/images/7/71/VTK.pdf for further reference.
 
-* Launch and see further details in [cube-vtk.py](cube-vtk.py) 
+## Examples 
+To launch scripts, open a terminal, activate virtual envirohment and run python script:
 ```
 conda activate bareVE
-python cube-vtk.py 
-```  
-
+python *.py 
+```
+### Tutorial  
+### Examples 
+### Examples-pyside6-vtk
+ 
 ## References 
 * https://kitware.github.io/vtk-examples/site/Python/#tutorial
 * https://www.toptal.com/data-science/3d-data-visualization-with-open-source-tools-an-example-using-vtk 
