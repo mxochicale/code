@@ -38,6 +38,11 @@ To launch scripts, open a terminal, activate virtual envirohment and run python 
 conda activate bareVE
 python *.py 
 ```
+Useful command to debut apps
+```
+kill $(ps auxf | grep 'python *.py' | grep -v grep)
+kill $(ps auxf | grep 'pytest' | grep -v grep)
+```
 ### Tutorial  
 ### Examples 
 ### Examples-pyside6-vtk
