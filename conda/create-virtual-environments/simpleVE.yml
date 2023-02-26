@@ -10,9 +10,9 @@
 
 name: simpleVE
 channels:
-  - defaults
   - conda-forge # notebook; jupyter_contrib_nbextensions; tqdm
-  - anaconda # ipython
+  #- defaults
+  #- anaconda # ipython
 dependencies:
   - python=3.11 #3.12>ResolvePackageNotFound:
   - pip
@@ -21,10 +21,12 @@ dependencies:
     - notebook
     - requests
     - jupyter
-    - jupytext
+    #- jupytext
     - jupyter_contrib_nbextensions # other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
     - matplotlib
     - numpy
+    - plot-likert
+    - pandas
     - ipython
     - tox
     - pytest
