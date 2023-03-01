@@ -19,8 +19,8 @@ class Menu(QMainWindow):
     def initUI(self):
         self.setGeometry(190, 300, 300, 200)
         self.setWindowTitle("Simple menu")
-
-        self.container = QWidget()
+        print(type(self))
+        self.container = QWidget(self)
         vl = QVBoxLayout(self.container)
         self.setCentralWidget(self.container)
         self.resize(640, 480)
