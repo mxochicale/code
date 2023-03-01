@@ -2,23 +2,23 @@
 > PyCharm is an integrated development environment (IDE) used in computer programming, specifically for the Python language. 
 > It is developed by the Czech company JetBrains. [:books:](https://en.wikipedia.org/wiki/PyCharm)  
 
-The following are instructions of the use of PyCharm under GNU/Linux with distributions of Ubuntu 18.04x64 and 20.04x64.
+The following are instructions of the use of PyCharm under GNU/Linux with distributions of Ubuntu 18.04x64, 20.04x64, 22.04x64.
 
 ## 1. pycharm-community Installation 
 
 ### Option One [intermediate level]
 
 * Check the latest version from https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PC
-* Copy and paste in the new version link in installation-community-version.bash
+* Copy and paste in the new version link in [installation-community-version.bash](installation-community-version.bash)
 
 * Installation
 ```
 cd $HOME/repositories/mxochicale/code/IDEs/pycharm
 bash installation-community-version.bash
 ```
-  * Confirm that you have read and accept the terms of this User Agreement
-  * DATA SHARING: Don't send 
-  * Import a project
+* Confirm that you have read and accept the terms of this User Agreement
+* DATA SHARING: Don't send 
+* Import a project
 
 Reference https://itsfoss.com/install-pycharm-ubuntu/
 
@@ -40,15 +40,13 @@ Reference https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-lau
 * Remove installation
 ```
 cd $HOME/Downloads
-rm -rf pycharm-community-2021.2.2/
+rm -rf pycharm-community-* 
 ```
 
 ### Option Two for installation [easy]
 ```
 sudo snap install pycharm-community --classic
 ```
-
-
 
 ## 2. The Python IDE for Professional Developers using academic credentials 
 
