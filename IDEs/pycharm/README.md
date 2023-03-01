@@ -25,9 +25,10 @@ Reference https://itsfoss.com/install-pycharm-ubuntu/
 
 * Create Desktop app launch
 ```
-    Start PyCharm.
-    From the Tools menu, select "Create Desktop Entry..."
-    # (seems to be optional)
+    * Start PyCharm.
+    * Go to Tools menu, 
+    * Select "Create Desktop Entry..." and click OKAY.
+    # TICKING THE CORRESPONDING BOX IS OPTIONAL
     # Tick the corresponding box if you want the launcher for all users.
     # If you selected "Create entry for all users", you will be asked for your password.
     # A green message bubble should appear informing you that it was successful.
