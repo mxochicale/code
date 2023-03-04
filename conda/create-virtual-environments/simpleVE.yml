@@ -27,6 +27,8 @@ dependencies:
     - numpy
     - plot-likert
     - pandas
+    - scipy
+    - pingouin # statistical package
     - ipython
     - tox
     - pytest
