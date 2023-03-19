@@ -7,8 +7,6 @@
 cd $HOME/repositories/mxochicale/code/IDEs/vscode
 sudo echo
 bash install.bash
-#REMOVE apt repository
-sudo rm /etc/apt/sources.list.d/vscode.list
 ```
 
 ## Extensions 

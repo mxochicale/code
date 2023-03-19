@@ -1,11 +1,141 @@
 # LOG
 
-## Tue 29 Nov 00:44:40 GMT 2022
-
-
+## Sun 19 Mar 10:01:27 GMT 2023
 * version
 ```
-$ code --version
+1.76.2
+ee2b180d582a7f601fa6ecfdad8d9fd269ab1884
+x64
+
+```
+* log
+```
+
+bash install.bash 
+[sudo] password for mxochicale: 
+Hit:1 http://gb.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://gb.archive.ubuntu.com/ubuntu focal-updates InRelease                         
+Hit:3 http://security.ubuntu.com/ubuntu focal-security InRelease                          
+Hit:4 http://gb.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:5 https://repo.skype.com/deb stable InRelease            
+Reading package lists... Done                                
+Building dependency tree       
+Reading state information... Done
+187 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+apt-transport-https is already the newest version (2.0.9).
+The following packages were automatically installed and are no longer required:
+  evince-common gir1.2-goa-1.0 libevdocument3-4 libevview3-3 libkpathsea6 libspectre1 libsynctex2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  distro-info python3-software-properties software-properties-gtk ubuntu-advantage-desktop-daemon ubuntu-advantage-tools
+Suggested packages:
+  shunit2
+The following NEW packages will be installed
+  distro-info ubuntu-advantage-desktop-daemon
+The following packages will be upgraded:
+  python3-software-properties software-properties-common software-properties-gtk ubuntu-advantage-tools wget
+5 to upgrade, 2 to newly install, 0 to remove and 182 not to upgrade.
+Need to get 663 kB of archives.
+After this operation, 906 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://gb.archive.ubuntu.com/ubuntu focal/main amd64 distro-info amd64 0.23ubuntu1 [17.1 kB]
+Get:2 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-advantage-tools amd64 27.13.6~20.04.1 [173 kB]
+Get:3 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 wget amd64 1.20.3-1ubuntu2 [348 kB]
+Get:4 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 software-properties-common all 0.99.9.11 [10.4 kB]
+Get:5 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-advantage-desktop-daemon amd64 1.10~20.04.1 [23.5 kB]
+Get:6 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 software-properties-gtk all 0.99.9.11 [69.1 kB]
+Get:7 http://gb.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-software-properties all 0.99.9.11 [21.6 kB]
+Fetched 663 kB in 0s (4,180 kB/s)                      
+debconf: Unable to initialise frontend: Dialog
+debconf: (Dialogue frontend requires a screen at least 13 lines tall and 31 columns wide.)
+debconf: falling back to frontend: Readline
+Preconfiguring packages ...
+Selecting previously unselected package distro-info.
+(Reading database ... 275082 files and directories currently installed.)
+Preparing to unpack .../0-distro-info_0.23ubuntu1_amd64.deb ...
+Unpacking distro-info (0.23ubuntu1) ...
+Preparing to unpack .../1-ubuntu-advantage-tools_27.13.6~20.04.1_amd64.deb ...
+Unpacking ubuntu-advantage-tools (27.13.6~20.04.1) over (20.3) ...
+Preparing to unpack .../2-wget_1.20.3-1ubuntu2_amd64.deb ...
+Unpacking wget (1.20.3-1ubuntu2) over (1.20.3-1ubuntu1) ...
+Preparing to unpack .../3-software-properties-common_0.99.9.11_all.deb ...
+Unpacking software-properties-common (0.99.9.11) over (0.98.9.5) ...
+Selecting previously unselected package ubuntu-advantage-desktop-daemon.
+Preparing to unpack .../4-ubuntu-advantage-desktop-daemon_1.10~20.04.1_amd64.deb ...
+Unpacking ubuntu-advantage-desktop-daemon (1.10~20.04.1) ...
+Preparing to unpack .../5-software-properties-gtk_0.99.9.11_all.deb ...
+Unpacking software-properties-gtk (0.99.9.11) over (0.98.9.5) ...
+Preparing to unpack .../6-python3-software-properties_0.99.9.11_all.deb ...
+Unpacking python3-software-properties (0.99.9.11) over (0.98.9.5) ...
+Setting up distro-info (0.23ubuntu1) ...
+Setting up wget (1.20.3-1ubuntu2) ...
+Setting up python3-software-properties (0.99.9.11) ...
+Setting up ubuntu-advantage-tools (27.13.6~20.04.1) ...
+Installing new version of config file /etc/logrotate.d/ubuntu-advantage-tools ...
+Installing new version of config file /etc/ubuntu-advantage/uaclient.conf ...
+debconf: Unable to initialise frontend: Dialog
+debconf: (Dialogue frontend requires a screen at least 13 lines tall and 31 columns wide.)
+debconf: falling back to frontend: Readline
+Created symlink /etc/systemd/system/multi-user.target.wants/ua-reboot-cmds.service → /lib/systemd/system/ua-reboot-cmds.service.
+Created symlink /etc/systemd/system/timers.target.wants/ua-timer.timer → /lib/systemd/system/ua-timer.timer.
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-advantage.service → /lib/systemd/system/ubuntu-advantage.service.
+Setting up ubuntu-advantage-desktop-daemon (1.10~20.04.1) ...
+ubuntu-advantage-desktop-daemon.service is a disabled or a static unit, not starting it.
+Setting up software-properties-common (0.99.9.11) ...
+Setting up software-properties-gtk (0.99.9.11) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.3) ...
+Processing triggers for shared-mime-info (1.15-1) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.3) ...
+Processing triggers for man-db (2.9.1-1) ...
+OK
+Hit:1 http://gb.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://gb.archive.ubuntu.com/ubuntu focal-updates InRelease                                                                                  
+Hit:3 http://gb.archive.ubuntu.com/ubuntu focal-backports InRelease                                                                                
+Hit:4 https://repo.skype.com/deb stable InRelease                                                                                                  
+Get:5 https://packages.microsoft.com/repos/vscode stable InRelease [1,867 B]                                                                       
+Hit:6 http://security.ubuntu.com/ubuntu focal-security InRelease                                                
+Get:7 https://packages.microsoft.com/repos/vscode stable/main amd64 Packages [162 kB]
+Fetched 164 kB in 1s (184 kB/s)   
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  evince-common gir1.2-goa-1.0 libevdocument3-4 libevview3-3 libkpathsea6 libspectre1 libsynctex2
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed
+  code
+0 to upgrade, 1 to newly install, 0 to remove and 182 not to upgrade.
+Need to get 94.8 MB of archives.
+After this operation, 394 MB of additional disk space will be used.
+Get:1 https://packages.microsoft.com/repos/vscode stable/main amd64 code amd64 1.76.2-1678817801 [94.8 MB]
+Fetched 94.8 MB in 14s (6,580 kB/s)                                                                                                                
+Selecting previously unselected package code.
+(Reading database ... 275222 files and directories currently installed.)
+Preparing to unpack .../code_1.76.2-1678817801_amd64.deb ...
+Unpacking code (1.76.2-1678817801) ...
+Setting up code (1.76.2-1678817801) ...
+Error in file "/usr/share/applications/org.kde.kdeconnect_open.desktop": "*/*" is an invalid MIME type ("*" is an unregistered media type)
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for shared-mime-info (1.15-1) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+
+```
+
+
+## Tue 29 Nov 00:44:40 GMT 2022
+* version
+```
+code --version
 1.73.1
 6261075646f055b99068d3688932416f2346dd3b
 x64
