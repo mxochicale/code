@@ -80,7 +80,18 @@ The following lists the most common keyboard shortcuts relevant for GitHub Copil
 
 The GitHub Copilot status icon in the bottom panel of the VSCode window indicates whether GitHub Copilot is enabled or disabled. Its background is blue when enabled, and red when disabled. To enable or disable GitHub Copilot, click the icon. You will be asked whether you wish to toggle for the current file type, or globally.
 
-## errors 
+## GitHub Copilot extension
+
+https://docs.github.com/en/copilot/getting-started-with-github-copilot/getting-started-with-github-copilot-in-visual-studio-code
+
+https://docs.github.com/en/copilot/getting-started-with-github-copilot/getting-started-with-github-copilot-in-visual-studio
+
+https://docs.github.com/en/copilot/getting-started-with-github-copilot/getting-started-with-github-copilot-in-a-jetbrains-ide
+
+https://docs.github.com/en/copilot/getting-started-with-github-copilot/getting-started-with-github-copilot-in-neovim
+
+
+## Errors 
 
 * sorted out
 ```
