@@ -13,8 +13,14 @@
 #VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.2.2.tar.gz #Mon 20 Sep 23:50:31 BST 2021
 #VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2021.3.tar.gz #Mon  6 Dec 08:52:40 GMT 2021
 #VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2022.2.3.tar.gz #Mon 17 Oct 10:28:46 BST 2022
-VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2022.3.2.tar.gz 	#Wed  1 Mar 13:02:39 GMT 2023   
+#VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2022.3.2.tar.gz 	#Wed  1 Mar 13:02:39 GMT 2023   
 											# Build #PC-223.8617.48, built on January 24, 2023
+
+VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2023.1.1.tar.gz 	#Mon  1 May 01:36:15 BST 2023
+    #Version: 2023.1.1
+    #Build: 231.8770.66
+    #28 April 2023
+
 #VERSION_LINK=? #:r !date
 		#copy build version from the app
 

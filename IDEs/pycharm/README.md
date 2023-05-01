@@ -28,12 +28,16 @@ Reference https://itsfoss.com/install-pycharm-ubuntu/
     * Start PyCharm.
     * Go to Tools menu, 
     * Select "Create Desktop Entry..." and click OKAY.
-    # TICKING THE CORRESPONDING BOX IS OPTIONAL
-    # Tick the corresponding box if you want the launcher for all users.
-    # If you selected "Create entry for all users", you will be asked for your password.
-    # A green message bubble should appear informing you that it was successful.
-    # You should then be able to find PyCharm in the Unity Dash or pin it to the launcher.
-    # Note: You may need a system restart before it appears.
+    	#You can create a desktop entry for easier starting PyCharm from a system menu
+	#and better desktop integration
+	# [X] Create the entry for all users (require user privilages)
+ 	
+	# TICKING THE CORRESPONDING BOX IS OPTIONAL
+    	# Tick the corresponding box if you want the launcher for all users.
+    	# If you selected "Create entry for all users", you will be asked for your password.
+    	# A green message bubble should appear informing you that it was successful.
+    	# You should then be able to find PyCharm in the Unity Dash or pin it to the launcher.
+    	# Note: You may need a system restart before it appears.
 
 ```
 Reference https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
@@ -49,20 +53,17 @@ rm -rf pycharm-community-*
 sudo snap install pycharm-community --classic
 ```
 
-## 2. The Python IDE for Professional Developers using academic credentials 
+## 2. Customisation 
+### Opening multiple projects
+Open a project, while another one is already opened.
+Then, depending on the option selected in the Project Opening section of the System Settings page of the Settings dialog (Ctrl+Alt+S), 
+PyCharm can ask you for the following alternatives:
+If the New Window option is selected, the new project silently opens in a new window.
+![fig](figures/multiple-projects.png)
 
-2.1. Request education licences as a student of teacher at [JetBrains Products for Learning](https://www.jetbrains.com/shop/eform/students). You need your academic email.  
-2.2. Download and install it via terminal.  
-``` 
-cd $HOME/repositories/code/IDEs/pycharm
-bash installation-professional-version-with-student-licence.bash 
-```
-2.3. Activate licences  
-![figs](figures/licenses-pycharm-professional-v2021-3-2.png)  
+See more: https://www.jetbrains.com/help/pycharm/open-projects.html#multiple
 
-See more: https://www.jetbrains.com/community/education/#students
 
-## 3. Customisation 
 ### Setting conda environments
 Open File>Settings (or Ctrl+Alt+S) to set up conda virtual environment
 ![fig](figures/setting-up-conda-env.png)
@@ -111,14 +112,30 @@ rm -rf  $HOME/.config/JetBrains/DataSpell2021.3/
 rm -rf $HOME/.config/JetBrains/DataSpell2021.3/projects
 ```
 
+
+## The Python IDE for Professional Developers using academic credentials 
+
+2.1. Request education licences as a student of teacher at [JetBrains Products for Learning](https://www.jetbrains.com/shop/eform/students). You need your academic email.  
+2.2. Download and install it via terminal.  
+``` 
+cd $HOME/repositories/code/IDEs/pycharm
+bash installation-professional-version-with-student-licence.bash 
+```
+2.3. Activate licences  
+![figs](figures/licenses-pycharm-professional-v2021-3-2.png)  
+
+See more: https://www.jetbrains.com/community/education/#students
+
+
 ## Uninstalling
 Remove the following directories:
 
 Syntax
+```
     ~/.config/JetBrains/<product><version>
     ~/.cache/JetBrains/<product><version>
     ~/.local/share/JetBrains/<product><version>
-
+```
 
 ## References
 * https://tecadmin.net/how-to-install-pycharm-on-ubuntu-20-04/  
