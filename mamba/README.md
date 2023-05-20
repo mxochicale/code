@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 # mamba
 > The Fast Cross-Platform Package Manager
 
 ## Installation of mamba
 1. install [conda](../conda)
+=======
+# mamba, The Fast Cross-Platform Package Manager
+
+## Installation of mamba
+1. install [conda](conda)
+>>>>>>> 61c7822fced2cb13d6a9571ecf1b901d532be150
 2. install mamba:
 
 ```
