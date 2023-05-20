@@ -1,0 +1,24 @@
+## Some useful commands to manage your conda env:
+## LIST MAMBA ENVS: mamba list -n *VE # show list of installed packages
+## UPDATE MAMBA: mamba update -n base mamba
+## INSTALL MAMBA EV: mamba env create -f *VE.yml
+## ACTIVATE MAMBA ENV: mamba activate *VE
+## REMOVE MAMBA ENV: mamba remove -n *VE --all
+
+name: bareVE
+channels:
+  #- defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+     - pyside6
+     - opencv-contrib-python-headless
+     #- matplotlib
+     #- pandas
+     #- notebook
+     #- numpy 
+     #- qimage2ndarray
+
+

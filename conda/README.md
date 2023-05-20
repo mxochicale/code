@@ -15,7 +15,7 @@ During the installation:
 
 ```
 
-Welcome to Anaconda3 2022.10
+Welcome to Anaconda3 $YEAR
 
 In order to continue the installation process, please review the license
 agreement.
@@ -35,8 +35,7 @@ Anaconda3 will now be installed into this location:
   - Press CTRL-C to abort the installation
   - Or specify a different location below
 
-[/home/mxochicale/anaconda3] >>> 
-
+[/home/mxochicale/anaconda3] >>> [PRESS ENTER]
 
 installation finished.
 Do you wish the installer to initialize Anaconda3
