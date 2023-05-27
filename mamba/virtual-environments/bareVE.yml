@@ -10,10 +10,11 @@ channels:
   #- defaults
   - conda-forge
 dependencies:
-  - python=3.11
+  - python=3.10
   - pip
   - pip:
      - pyside6
+     - pglive #Live pyqtgraph plot > https://github.com/domarm-comat/pglive
      - opencv-contrib-python-headless
      #- matplotlib
      #- pandas
