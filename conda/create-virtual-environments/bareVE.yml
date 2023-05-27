@@ -14,7 +14,6 @@ channels:
   #- fastai #opencv-python-headless
 dependencies:
   - python=3.10
-  #- pyside6
   #- python=3.8
   #- matplotlib
   #- numpy 
@@ -24,7 +23,8 @@ dependencies:
   - pip:
      - pyside6
      - opencv-contrib-python-headless
-     - cv2PySide6
+     - araviq6
+     #- cv2PySide6
      #- qimage2ndarray
 
 
