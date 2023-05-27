@@ -8,7 +8,7 @@
 
 name: bareVE
 channels:
-  - defaults
+  #- defaults
   - conda-forge #pyside6
   #- anaconda
   #- fastai #opencv-python-headless
@@ -19,11 +19,12 @@ dependencies:
   #- numpy 
   #- pandas
   #- notebook
-  - pip>=22.2.2
+  - pip
   - pip:
      - pyside6
      - opencv-contrib-python-headless
      - araviq6
+     #- civiq6
      #- cv2PySide6
      #- qimage2ndarray
 

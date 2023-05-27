@@ -7,11 +7,12 @@ and emits numpy array. The processor then receives it and emits processed array.
 https://github.com/JSS95/araviq6/blob/master/doc/source/examples/PySide6/array.camera.py
 """
 
+import sys
 import cv2  # type: ignore
 import numpy as np
 from PySide6.QtCore import Qt
-from PySide6.QtMultimedia import QMediaCaptureSession, QVideoSink
-from PySide6.QtWidgets import QMainWindow
+from PySide6.QtMultimedia import QMediaCaptureSession, QVideoSink, QCamera
+from PySide6.QtWidgets import QMainWindow, QApplication
 from araviq6 import (
     FrameToArrayConverter,
     ArrayWorker,
@@ -22,7 +23,7 @@ from araviq6 import (
 
 class BlurWorker(ArrayWorker):
     def processArray(self, array: np.ndarray) -> np.ndarray:
-        return cv2.GaussianBlur(array, (0, 0), 25)
+        return cv2.GaussianBlur(array, (0, 0), 10)
 
 
 class Window(QMainWindow):
@@ -58,10 +59,6 @@ class Window(QMainWindow):
 
 
 if __name__ == "__main__":
-    from PySide6.QtWidgets import QApplication
-    from PySide6.QtMultimedia import QCamera
-    import sys
-
     app = QApplication(sys.argv)
     window = Window()
     window.show()
