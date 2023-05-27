@@ -14,3 +14,6 @@ sudo apt-get install libxcb-cursor-dev
 #sudo apt purge ibus #qt.dbus.integration: Could not connect "org.freedesktop.IBus" to globalEngineChanged(QString)
 kill -9 $(ps aux | grep 'python ' | grep -v 'grep')
 ```
+
+## References
+* pglive: https://github.com/domarm-comat/pglive/tree/main/pglive/examples_pyside6 

@@ -3,11 +3,11 @@ from math import sin
 from threading import Thread
 from time import sleep
 
-from PySide6.QtWidgets import QApplication
-
 from pglive.sources.data_connector import DataConnector
 from pglive.sources.live_plot import LiveLinePlot
 from pglive.sources.live_plot_widget import LivePlotWidget
+from PySide6.QtWidgets import QApplication
+
 
 """
 Line plot is displayed in this example.
