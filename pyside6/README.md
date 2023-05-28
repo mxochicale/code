@@ -3,7 +3,7 @@
 > https://wiki.qt.io/Qt_for_Python
 
 ## Installation
-Create conda env. In this case, we use bareVE
+Create conda env. In this case, we use [eVE](../conda/create-virtual-environments/eVE.yml)
 
 ## References 
 https://doc.qt.io/qtforpython/examples/index.html   
