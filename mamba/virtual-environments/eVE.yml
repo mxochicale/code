@@ -1,10 +1,10 @@
 ## Some useful commands to manage your conda env:
-## LIST CONDA ENVS: conda list -n *VE # show list of installed packages
-## UPDATE CONDA: conda update -n base -c defaults conda
-## INSTALL CONDA EV: mamba env create -f *VE.yml
-## UPDATE CONDA ENV: mamba env update -f *VE.yml --prune
-## ACTIVATE CONDA ENV: conda activate *VE
-## REMOVE CONDA ENV: conda remove -n *VE --all
+## LIST MAMBA ENVS: mamba list -n *VE # show list of installed packages
+## UPDATE MAMBA: mamba update -n base mamba
+## INSTALL MAMBA EV: mamba env create -f *VE.yml
+## UPDATE MAMBA ENV: mamba env update -f *VE.yml --prune
+## ACTIVATE MAMBA ENV: mamba activate *VE
+## REMOVE MAMBA ENV: mamba remove -n *VE --all
 
 name: eVE # experimental and light Virtual Environmnet
 channels:
@@ -17,13 +17,15 @@ dependencies:
      - pyside6 #https://pypi.org/project/PySide6/#history
      - matplotlib
      - opencv-python
+     - scikit-learn
+     - notebook
+     - pandas
+     - seaborn
      #- opencv-contrib-python-headless #https://pypi.org/project/opencv-contrib-python-headless/#history
      - araviq6
      #- civiq6
      #- cv2PySide6
      #- qimage2ndarray
      #- numpy 
-     #- pandas
-     #- notebook
 
 
