@@ -2,7 +2,8 @@
 > The Fast Cross-Platform Package Manager
 
 ## Installation of mamba
-1. install mamba
+
+### 1. install mamba
 Download mamba 
 ```
 cd ~/Downloads  
@@ -47,20 +48,33 @@ mamba update -n base mamba
 
 
 ```
+6. Deleate sh file 
+File size of: 82M Jun 29 07:28  `Mambaforge-Linux-x86_64.sh`
+```
+rm -rf Mambaforge-Linux-x86_64.sh 
+```
+
+7. Just checking size of path
+```
+$ du -sh mambaforge/
+843M	mambaforge/
+
+$ tree
+2214 directories, 22680 files
+```
 
 
 
+### 2. install mamba environment:
 
-2. install mamba environment:
-
-## install simpel mamba envirohment
+#### install simpel mamba envirohment
 ```
 mamba update -n base mamba
 mamba create -n VE python=3.8 pip -c conda-forge
 mamba activate VE
 ```
 
-## Installation of mamba environmnets using yml
+#### Installation of mamba environmnets using yml
 ```
 mamba update -n base mamba
 mamba env create -f *VE.yml
@@ -69,7 +83,7 @@ mamba remove -n *VE --all
 #Run 'mamba init' to be able to run mamba activate/deactivate
 ```
 
-## Remove mamba
+### 3. Remove mamba
 
 
 1. Any modifications to your shell rc files that were made by Miniforge:
@@ -97,5 +111,4 @@ https://mamba.readthedocs.io/en/latest/user_guide/mamba.html
 https://pythonspeed.com/articles/faster-conda-install/  
 https://twitter.com/QuantStack   
 https://github.com/conda-forge/miniforge#uninstallation   
-
 
