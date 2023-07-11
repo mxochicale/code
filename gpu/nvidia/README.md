@@ -9,9 +9,37 @@ lshw -c video
 ### CUDA Toolkit 
 0. Check versions
 Explore site to find your OS and arquitecuter: 
-
-http://developer.download.nvidia.com/compute/cuda/repos/ 
 https://developer.nvidia.com/cuda-zone
+
+Remove Outdated Signing Key:
+
+```
+sudo apt-key del 7fa2af80
+```
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#prepare-ubuntu
+
+
+
+1. Using CUDA toolkit 12.2 for Download Installer for Linux Ubuntu 22.04 x86_64
+```
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda
+
+export PATH=/usr/local/cuda-12.2/bin${PATH:+:${PATH}}
+```
+
+
+
+✅ CUDA installation: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html 
+Alternatively see for cuda versions: http://developer.download.nvidia.com/compute/cuda/repos/ 
+
+
+
 
 1. Run bash in a terminal 
 
