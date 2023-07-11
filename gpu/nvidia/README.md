@@ -1,6 +1,18 @@
 ## Manual installation
 
-### CUDA Toolkit 11.4
+### Checking hardware
+```
+lshw -c video
+```
+
+
+### CUDA Toolkit 
+0. Check versions
+Explore site to find your OS and arquitecuter: 
+
+http://developer.download.nvidia.com/compute/cuda/repos/ 
+https://developer.nvidia.com/cuda-zone
+
 1. Run bash in a terminal 
 
 ```
@@ -70,5 +82,7 @@ reboot
 https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
 
 
-
+### References 
+* https://ubuntuforums.org/showthread.php?t=2486334 
+* https://www.youtube.com/watch?v=ttxtV966jyQ 
 
