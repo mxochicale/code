@@ -29,17 +29,27 @@ sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
 sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cuda
-
 export PATH=/usr/local/cuda-12.2/bin${PATH:+:${PATH}}
 ```
+2. Set your password for machine onwer key
 
+![fig](machine-owner-key.png)
 
+3. Reboot and setup your machine-owner-key
+4. Check driver 
+
+```
+
+nvidia-smi
+```
 
 ✅ CUDA installation: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html 
 Alternatively see for cuda versions: http://developer.download.nvidia.com/compute/cuda/repos/ 
 
 
 
+
+### Using bash script
 
 1. Run bash in a terminal 
 
