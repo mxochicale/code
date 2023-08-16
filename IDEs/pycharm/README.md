@@ -8,22 +8,22 @@ The following are instructions of the use of PyCharm under GNU/Linux with distri
 
 ### Option One [intermediate level]
 
-* Check the latest version from https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PC
-* Copy and paste in the new version link in [installation-community-version.bash](installation-community-version.bash)
+* 1.1 Check the latest version from 
+ https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PC
+* 1.2 Copy and paste in the new version link in [installation-community-version.bash](installation-community-version.bash)
 
-* Installation
+* 1.3 Installation
 ```
 cd $HOME/repositories/mxochicale/code/IDEs/pycharm
 bash installation-community-version.bash
 ```
-* Confirm that you have read and accept the terms of this User Agreement
-* DATA SHARING: Don't send 
-* Import a project
+* 1.4 Usage
+  * Confirm that you have read and accept the terms of this User Agreement
+  * DATA SHARING: Don't send 
+  * Import a project
+  * Reference https://itsfoss.com/install-pycharm-ubuntu/
 
-Reference https://itsfoss.com/install-pycharm-ubuntu/
-
-
-* Create Desktop app launch
+* 1.5 Create Desktop app launch
 ```
     * Start PyCharm.
     * Go to Tools menu, 
@@ -37,12 +37,12 @@ Reference https://itsfoss.com/install-pycharm-ubuntu/
     	# If you selected "Create entry for all users", you will be asked for your password.
     	# A green message bubble should appear informing you that it was successful.
     	# You should then be able to find PyCharm in the Unity Dash or pin it to the launcher.
-    	# Note: You may need a system restart before it appears.
+    	# **Note: You may need a system restart before it appears.**
 
 ```
 Reference https://askubuntu.com/questions/391439/how-can-i-set-up-pycharm-to-launch-from-the-launcher
 
-* Remove installation
+* 1.6 Remove installation
 ```
 cd $HOME/Downloads
 rm -rf pycharm-community-* 
