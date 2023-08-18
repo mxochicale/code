@@ -1,8 +1,20 @@
 # LOG
+## Fri 18 Aug 15:28:49 BST 2023
+* version
+```
+code --version
+
+1.81.1
+6c3e3dba23e8fadc360aed75ce363ba185c49794
+x64
+```
+
+
 
 ## Sun 19 Mar 10:01:27 GMT 2023
 * version
 ```
+code --version
 1.76.2
 ee2b180d582a7f601fa6ecfdad8d9fd269ab1884
 x64
