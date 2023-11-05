@@ -1,0 +1,9 @@
+name: default
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - python==3.9.*
+  - pip
+  - pip:
+    - opencv-python-headless
