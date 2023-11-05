@@ -2,6 +2,18 @@
 
 
 
+## Creating for the first time
+
+### Create codespaces  
+1. Select branch
+2. Go to Code> create codespace on `branch-name` 
+
+### Create python 
+1. `Install enable suggested extensions Python + Jupyter`
+2. `Python`
+3. Python env
+4. pythonm 3.11
+
 
 ## References
 https://www.sckaiser.com/blog/2023/01/30/conda-codespaces.html  
