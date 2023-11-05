@@ -19,23 +19,20 @@ Click Codespaces: Add Dev Container Configuration Files.
 4. Select additional feature `Nothing`
 
 
-Creates:  solid guacamole 
+Creates:  solid guacamole  https://github.com/codespaces/solid-guacamole-5gqwv79vg77274jg
 In the terminal: 
 ```
 conda info
 conda env list
 ```
 
-
-### Create python 
-1. `Install enable suggested extensions Python + Jupyter`
-2. `Python`
-3. Python env
-4. pythonm 3.11
-
-
-
-
+## Running demo scripts 
+* Activate solid guacamole  https://github.com/codespaces/solid-guacamole-5gqwv79vg77274jg
+* Select Kernel
+* `Install enable suggested extensions Python + Jupyter`
+* Python environment 
+* demo (Python VERSION) /opt/conda/envs/demo/bin/python
+* Run notebook
 
 
 ## References
@@ -45,3 +42,5 @@ https://blog.shibayan.jp/entry/20220309/1646754054
 https://www.youtube.com/watch?v=RIchFX_gYb0  
 https://github.com/microsoft/AI-For-Beginners/blob/main/.devcontainer/Dockerfile   
 * Prebuild configuration: https://github.com/mxochicale/code/settings/codespaces
+* https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers#using-a-predefined-dev-container-configuration
+
