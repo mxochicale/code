@@ -37,6 +37,9 @@ VTK made use of the following pipeline, which seems to be inspired by [OpenGL pi
 See https://mt4sd.ulpgc.es/slicer-int/images/7/71/VTK.pdf for further reference.
 
 ## Examples 
+https://gitlab.kitware.com/vtk/vtk-examples/
+https://examples.vtk.org/site/   
+
 * Create VEs
 ```
 mamba update -n base mamba
@@ -57,6 +60,7 @@ kill $(ps auxf | grep 'pytest' | grep -v grep)
 ## Content
 * [Tutorial](tutorial)
 * [Examples](examples)
+* [Medical demos](medical_demos)
 * [Examples-pyside6-vtk](examples-pyside6-vtk)
  
 ## References 
