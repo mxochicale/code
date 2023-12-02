@@ -17,7 +17,8 @@ dependencies:
      ### VERSIONS of pyside6: https://pypi.org/project/PySide6/#history
      - pyside6>=6.4.2
      ### VERSIONS of VTK https://gitlab.kitware.com/vtk/vtk/-/tags
-     - vtk>=9.2.5
+     #- vtk>=9.2.5
+     - vtk>=9.3.0
      ### VERSIONS of opencv-contrib-python-headless  https://pypi.org/project/opencv-contrib-python-headless/#history
      - opencv-contrib-python-headless>=4.7.0.68
      #- qimage2ndarray
