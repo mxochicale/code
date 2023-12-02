@@ -5,33 +5,35 @@
 * [Quickstart for GitHub Codespaces](https://docs.github.com/en/codespaces/getting-started/quickstart).
 
 ## Create codespaces  
-1. Select branch
-2. Go to Code> create codespace on `branch-name` 
-3. `New with options`
+1. Open your repository and go to `Code`>`Codespaces`
+2. Select branch
+3. Create codespace on `branch-name`. #This will take 3-ish minutes to prebuild container
+4. `New with options`
 
-## predefined dev container configuration
-
+## (First time) Predefined dev container configuration
 1. Access the Visual Studio Code Command Palette (Shift+Command+P / Ctrl+Shift+P), then start typing "add dev". 
 Click Codespaces: Add Dev Container Configuration Files.
 2. Create a new config file
 3. Select container conf template: Miniconda (Python3)
 4. Select additional feature `Nothing`
 
-
-Creates:  solid guacamole  https://github.com/codespaces/solid-guacamole-5gqwv79vg77274jg
+Creates: `docker_funny_name_ID`  https://github.com/codespaces/`docker_funny_name_ID`
 In the terminal: 
 ```
 conda info
 conda env list
 ```
 
-## Running demo scripts 
-* Activate solid guacamole  https://github.com/codespaces/solid-guacamole-5gqwv79vg77274jg
+## (Already created) Running demo scripts 
+* Activate `docker_funny_name_ID`  https://github.com/codespaces/`docker_funny_name_ID`
+* Open notebook 
 * Select Kernel
-* `Install enable suggested extensions Python + Jupyter`
-* Python environment 
-* demo (Python VERSION) /opt/conda/envs/demo/bin/python
+  * `Install enable suggested extensions Python + Jupyter`
+  * Python environment 
+  * demo (Python VERSION) /opt/conda/envs/demo/bin/python
 * Run notebook
+* Stop running container
+* Maybe go https://github.com/codespaces/ to delete it
 
 
 ## References
