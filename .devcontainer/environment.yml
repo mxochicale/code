@@ -1,4 +1,4 @@
-name: demo
+name: demoVE
 channels:
   - conda-forge
   - default
