@@ -7,7 +7,8 @@
 ## 01 Installation in Ubuntu 18.04, 20.04, 22.04, 22.10 
 In the terminal, enter: bash [download-install.sh](download-install.sh):
 ```
-bash download-install.bash
+bash download-install-miniconda.bash ##70-ish MB of space
+bash download-install.bash  #750-ish MB
 ```
 
 During the installation:
@@ -107,7 +108,8 @@ $HOME/anaconda3
 
 ## Uninstalling Anaconda  
 ```
-rm -rf ~/anaconda3 ~/.condarc ~/.conda ~/.continuum
+rm -rf ~/anaconda3 ~/.condarc 
+#~/.conda 
 #### Open the ~/.bashrc file and remove the Anaconda directory from the PATH environment variable:
 ```
 

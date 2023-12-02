@@ -1,6 +1,7 @@
 # Creating virtual environments
 
 ## Sort of automatic creation 
+See virtual environments [here](../../pyVEs)
 
 ### Creation
 Using `env.yml` create an environment

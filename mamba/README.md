@@ -67,6 +67,8 @@ $ tree
 
 ### 2. install mamba environment:
 
+See various [virtual environments](../pyVEs)
+
 #### install simpel mamba envirohment
 ```
 mamba update -n base mamba
