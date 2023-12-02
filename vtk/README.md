@@ -33,9 +33,16 @@ VTK made use of the following pipeline, which seems to be inspired by [OpenGL pi
 See https://mt4sd.ulpgc.es/slicer-int/images/7/71/VTK.pdf for further reference.
 
 ## Examples 
-To launch scripts, open a terminal, activate virtual envirohment and run python script:
+* Create VEs
 ```
-conda activate bareVE
+mamba update -n base mamba
+cd $HOME/repositories/mxochicale/code/pyVEs
+mamba env create -f bareVE.yml
+```
+
+* To launch scripts, open a terminal, activate virtual envirohment and run python script:
+```
+mamba activate bareVE
 python *.py 
 ```
 Useful command to debut apps
@@ -43,9 +50,10 @@ Useful command to debut apps
 kill $(ps auxf | grep 'python *.py' | grep -v grep)
 kill $(ps auxf | grep 'pytest' | grep -v grep)
 ```
-### Tutorial  
-### Examples 
-### Examples-pyside6-vtk
+## Content
+* [Tutorial](tutorial)
+* [Examples](examples)
+* [Examples-pyside6-vtk](examples-pyside6-vtk)
  
 ## References 
 * https://kitware.github.io/vtk-examples/site/Python/#tutorial

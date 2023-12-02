@@ -1,10 +1,9 @@
 ## Some useful commands to manage your conda env:
-## LIST CONDA ENVS: conda list -n *VE # show list of installed packages
-## UPDATE CONDA: conda update -n base -c defaults conda
-## INSTALL CONDA EV: conda env create -f *VE.yml
-## UPDATE CONDA ENV: conda env update -f *VE.yml --prune
-## ACTIVATE CONDA ENV: conda activate *VE
-## REMOVE CONDA ENV: conda remove -n *VE --all
+## LIST MAMBA ENVS: mamba list -n *VE # show list of installed packages
+## UPDATE MAMBA: mamba update -n base mamba
+## INSTALL MAMBA EV: mamba env create -f *VE.yml
+## ACTIVATE MAMBA ENV: mamba activate *VE
+## REMOVE MAMBA ENV: mamba remove -n *VE --all
 
 name: bareVE
 channels:
@@ -31,5 +30,6 @@ dependencies:
      #- civiq6
      #- cv2PySide6
      #- qimage2ndarray
+     #- pglive #Live pyqtgraph plot > https://github.com/domarm-comat/pglive
 
 
