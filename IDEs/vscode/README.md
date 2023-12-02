@@ -1,8 +1,11 @@
 # Visual Studio Code 
 > Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS [:books:](https://en.wikipedia.org/wiki/Visual_Studio_Code).
 
+GitHub: https://github.com/microsoft/vscode
+Versions: https://code.visualstudio.com/updates/
+
 ## Installation in Ubuntu 20.04x64/22.04x64
-* Run [install.sh](install.sh)
+* Run [install.sh](install.sh). See [logs](logs.md).
 ```
 cd $HOME/repositories/mxochicale/code/IDEs/vscode
 sudo echo
