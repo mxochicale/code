@@ -9,6 +9,13 @@
 2. Select branch
 3. Create codespace on `branch-name`. #This will take 3-ish minutes to prebuild container
 
+The creation of codespace make use of 
+  * [Dockerfile](../.devcontainer/Dockerfile) 
+  * [devcontainer.json](../.devcontainer/devcontainer.json)
+  * [demoVE.yaml](demoVE.yml)
+  * [noop.txt](noop.txt)
+
+
 ## (First time) Predefined dev container configuration
 1. Access the Visual Studio Code Command Palette (Shift+Command+P / Ctrl+Shift+P), then start typing "add dev". 
 Click Codespaces: Add Dev Container Configuration Files.
@@ -17,11 +24,7 @@ Click Codespaces: Add Dev Container Configuration Files.
 4. Select additional feature `Nothing`
 
 Creates: `docker_funny_name_ID`  https://github.com/codespaces/`docker_funny_name_ID`
-In the terminal: 
-```
-conda info
-conda env list
-```
+You can check in the terminal these commands: `conda info` and `conda env list`
 
 ## (Already created) Running demo scripts 
 * Activate `docker_funny_name_ID`  https://github.com/codespaces/`docker_funny_name_ID`
@@ -29,7 +32,7 @@ conda env list
 * Select Kernel (top right icon)
   * `Install enable suggested extensions Python + Jupyter`
   * Python environment 
-  * demo (Python VERSION) /opt/conda/envs/demo/bin/python
+  * demoVE (Python VERSION) /opt/conda/envs/demoVE/bin/python
 * Run notebook
 * Stop running container (bottom left menu)
 * Maybe go https://github.com/codespaces/ to delete it
