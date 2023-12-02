@@ -1,0 +1,11 @@
+name: demoVE
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - python==3.11.*
+  - pip
+  - pip:
+    - opencv-python-headless
+    - ipykernel # required for jupyter notebook in VS Code
+    - matplotlib
