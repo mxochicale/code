@@ -35,3 +35,5 @@ checkpoints/
 **/VGG18_dropout_earlystopping_training_history.pkl
 **/VGG18_dropout_training_history_lr_scheduler.pkl
 
+##VTK
+**/Frog
