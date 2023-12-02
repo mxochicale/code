@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 # Copy environment.yml (if found) to a temp location so we update the environment. Also
 # copy "noop.txt" so the COPY instruction does not fail if no environment.yml exists.
 COPY ../codespaces/demoVE.yml* ../codespaces/noop.txt /tmp/conda-tmp/
-RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/demoVE.yml; fi \
+RUN if [ -f "/tmp/conda-tmp/demoVE.yml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/demoVE.yml; fi \
     && rm -rf /tmp/conda-tmp
 
 # [Optional] Uncomment to install a different version of Python than the default
