@@ -1,14 +1,13 @@
 # Codespaces
 
+## New to codespaces?
+* [Start here](https://docs.github.com/en/codespaces). Learn the core concepts and how to get started.
+* [Quickstart for GitHub Codespaces](https://docs.github.com/en/codespaces/getting-started/quickstart).
 
-
-## Creating for the first time
-
-### Create codespaces  
+## Create codespaces  
 1. Select branch
 2. Go to Code> create codespace on `branch-name` 
 3. `New with options`
-
 
 ## predefined dev container configuration
 
