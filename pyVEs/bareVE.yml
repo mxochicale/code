@@ -4,6 +4,7 @@
 ## INSTALL MAMBA EV: mamba env create -f *VE.yml
 ## ACTIVATE MAMBA ENV: mamba activate *VE
 ## REMOVE MAMBA ENV: mamba remove -n *VE --all
+## mamba env update --prune -n bareVE -f bareVE.yaml
 
 name: bareVE
 channels:
@@ -24,7 +25,6 @@ dependencies:
      - vtk>=9.3.0
      ### VERSIONS of opencv-contrib-python-headless  https://pypi.org/project/opencv-contrib-python-headless/#history
      - opencv-contrib-python-headless>=4.7.0.68
-     #
      - h5py
      #- pyvista #https://pypi.org/project/pyvista/#history #https://github.com/pyvista/pyvista/tags
      #- qimage2ndarray
