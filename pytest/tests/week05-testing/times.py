@@ -1,11 +1,6 @@
 import datetime
 import requests
 
-#References
-# https://github.com/UCL-COMP0233-22-23/times-tests
-# https://github.com/UCL-MPHY0021-21-22/RSE-Classwork/issues/16
-# https://gist.github.com/alessandrofelder/8fb8e34f29970cd8e05c4c18d30f98f5
-
 def time_range(start_time, end_time, number_of_intervals=1, gap_between_intervals_s=0):
     start_time_s = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
     end_time_s = datetime.datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
@@ -22,15 +17,21 @@ def iss_passes(lat, lon, n=5):
     Returns a time_range-like output for intervals of time when the International Space Station
     passes at a given location and for a number of days from today.
     """
-    iss_request = requests.get("http://api.open-notify.org/iss-pass.json",
+    #http://open-notify.org/Open-Notify-API/
+    #iss_request = requests.get("http://api.open-notify.org/iss-pass.json") #404
+    #iss_request = requests.get("http://api.open-notify.org/iss-pass.json",
+    iss_request = requests.get("http://api.open-notify.org/iss-now.json",
                                params={
                                    "lat": lat,
                                    "lon": lon,
-                                   "n": n})    
+                                   "n": n})   
+    print(iss_request.status_code)
     if iss_request.status_code != 200:
         # if the request failed for some reason
         return []
-    response = iss_request.json()['response']
+    #response = iss_request.json()['response']
+    response = iss_request.json()
+    print(response)
     return [(datetime.datetime.fromtimestamp(x['risetime']).strftime("%Y-%m-%d %H:%M:%S"),
              (datetime.datetime.fromtimestamp(x['risetime'] + x['duration'])).strftime("%Y-%m-%d %H:%M:%S"))
             for x in response]
