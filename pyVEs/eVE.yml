@@ -5,7 +5,7 @@
 ## UPDATE MAMBA ENV: mamba env update -f *VE.yml --prune
 ## ACTIVATE MAMBA ENV: mamba activate *VE
 ## REMOVE MAMBA ENV: mamba remove -n *VE --all
-## mamba env update --prune -n eVE -f eVE.yaml
+## mamba env update --prune -n eVE -f eVE.yml
 
 name: eVE # experimental and light Virtual Environmnet
 channels:
@@ -21,6 +21,12 @@ dependencies:
      - pytest-mock
      - pyyaml
      - requests
+     - xgboost #https://github.com/dmlc/xgboost/tags
+     - lightgbm #https://github.com/microsoft/LightGBM/tags
+     - scikit-learn #https://github.com/scikit-learn/scikit-learn/tags
+     - tqdm #https://github.com/tqdm/tqdm/tags
+     - pylint #https://github.com/pylint-dev/pylint/tags
+     - seaborn #https://github.com/mwaskom/seaborn/tags
      ### VERSIONS of pyside6: https://pypi.org/project/PySide6/#history
      #- pyside6>=6.4.2
      ### VERSIONS of VTK https://gitlab.kitware.com/vtk/vtk/-/tags
