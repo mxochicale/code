@@ -35,6 +35,10 @@ checkpoints/
 **/VGG18_dropout_earlystopping_training_history.pkl
 **/VGG18_dropout_training_history_lr_scheduler.pkl
 
+## ignores others models
+yolov9-c.pt
+
+
 ##VTK
 **/Frog
 FullHead.mhd
