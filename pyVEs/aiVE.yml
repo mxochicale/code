@@ -1,12 +1,11 @@
 ## USAGE
-## cd $HOME/repositories/code/conda/create-virtual-environments
-## conda update --all                           ## UPDATE ALL base PACKAGES
-## conda update -n base -c defaults conda  ## UPDATE CONDA
-## conda list -n aiVE # show list of installed packages
-## conda env create -f aiVE.yml   		    ## INSTALL
-## conda env update -f aiVE.yml --prune  	## UPDATE
-## conda activate aiVE   			            ## ACTIVATE
-## conda remove -n aiVE --all			        ## REMOVE
+## LIST MAMBA ENVS: mamba list -n *VE # show list of installed packages
+## UPDATE MAMBA: mamba update -n base mamba
+## INSTALL MAMBA EV: mamba env create -f *VE.yml
+## UPDATE MAMBA ENV: mamba env update -f *VE.yml --prune
+## ACTIVATE MAMBA ENV: mamba activate *VE
+## REMOVE MAMBA ENV: mamba remove -n *VE --all
+## mamba env update --prune -n *VE -f eVE.yml
 
 ## QUICK TEST OF THE AVAILABILITY OF CUDA
 ## conda activate aiVE
@@ -23,7 +22,8 @@ channels:
   #- huggingface # datasets
   #- anaconda # seaborn; pandas; scikit-learn; jupyter
 dependencies:
-  - python=3.10.*
+  #- python=3.10.*
+  - python=3.11.*
   #- pytorch=1.13.* #=1.11.*
   #- torchvision #=0.12.*
   #- cudatoolkit #=11.*.*
@@ -32,11 +32,14 @@ dependencies:
     # pip install torch torchvision networkx ##<<<<FOR TORCH 1.13 MAKE USE OF THE TERMINAL
     - matplotlib
     - numpy
-    - notebook
-    - jupyter
-    - jupyter_contrib_nbextensions 
-    - pillow
-    - av
+    - yolov9pip
+    ### VERSIONS of opencv-contrib-python-headless  https://pypi.org/project/opencv-contrib-python-headless/#history
+    #- opencv-contrib-python-headless
+    - opencv-python
+    #- notebook
+    #- jupyter
+    #- pillow
+    #- av
     #- opencv-python
     #- einops #https://github.com/arogozhnikov/einops
     #- seaborn
