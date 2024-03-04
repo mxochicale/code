@@ -27,6 +27,7 @@ dependencies:
      - tqdm #https://github.com/tqdm/tqdm/tags
      - pylint #https://github.com/pylint-dev/pylint/tags
      - seaborn #https://github.com/mwaskom/seaborn/tags
+     - pandas
      ### VERSIONS of pyside6: https://pypi.org/project/PySide6/#history
      #- pyside6>=6.4.2
      ### VERSIONS of VTK https://gitlab.kitware.com/vtk/vtk/-/tags
@@ -41,7 +42,6 @@ dependencies:
      #- matplotlib
      #- scikit-learn
      #- notebook
-     #- pandas
      #- seaborn
      #- araviq6
      #- civiq6

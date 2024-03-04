@@ -1,8 +1,5 @@
 # xgboost.XGBClassifier
 
-## Installing Dependencies
-Install [eVE](../../../pyVEs/eVE.yml) virtual environment
-
 ## Running notebooks
 ```
 mamba activate eVE
