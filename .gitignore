@@ -21,6 +21,7 @@ checkpoints/
 
 ## ignores data paths
 **/data/**
+**/playground/geospatial/data
 
 ## ignores vgg16 models
 **/vgg16_cifar**
