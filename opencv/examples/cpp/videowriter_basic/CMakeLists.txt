@@ -11,8 +11,7 @@ set(${PROJECT_NAME}_SRC
 find_package(OpenCV 4 REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-#########################################################
-# Executable
+#Executable
 add_executable( ${PROJECT_NAME} ${${PROJECT_NAME}_SRC} )
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
 
