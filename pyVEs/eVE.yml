@@ -27,6 +27,9 @@ dependencies:
      - tqdm #https://github.com/tqdm/tqdm/tags
      - pylint #https://github.com/pylint-dev/pylint/tags
      - seaborn #https://github.com/mwaskom/seaborn/tags
+     - rasterio
+     - earthpy #https://github.com/earthlab/earthpy
+     - geopandas #https://github.com/geopandas/geopandas
      ### VERSIONS of pyside6: https://pypi.org/project/PySide6/#history
      #- pyside6>=6.4.2
      ### VERSIONS of VTK https://gitlab.kitware.com/vtk/vtk/-/tags

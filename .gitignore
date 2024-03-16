@@ -18,7 +18,8 @@ checkpoints/
 ## ignores train_results
 **/train_results/*
 #!**\train_results\test1\eval.py
-## ignores MNIST data paths
+
+## ignores data paths
 **/data/**
 
 ## ignores vgg16 models
