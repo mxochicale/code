@@ -14,7 +14,7 @@ unzip opencv_contrib.zip
 # Create build directory and switch into it
 mkdir -p build && cd build
 # Configure
-cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x -DWITH_FFMPEG=ON -DOPENCV_GENERATE_PKGCONFIG=ON
 
 ### leaving the folling lines for reference
 #cmake -D CMAKE_BUILD_TYPE=RELEASE \
