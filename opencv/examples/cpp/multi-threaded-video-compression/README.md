@@ -2,8 +2,8 @@
 
 ## Running app
 ```
-bash build.bash
-./build/video 10 #video compression 0-100
+./app build
+./app run 10 #video compression 0-100
 ```
 
 ## Reference

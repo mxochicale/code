@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(video)
+project(main)
 
 #Set Source Code Path
 set(SRC_PATH src)

@@ -22,6 +22,7 @@ checkpoints/
 ## ignores data paths
 **/data/**
 **/playground/geospatial/data
+**/live.avi
 
 ## ignores vgg16 models
 **/vgg16_cifar**
@@ -40,10 +41,10 @@ checkpoints/
 ## ignores others models
 yolov9-c.pt
 
-
 ##VTK
 **/Frog
 FullHead.mhd
 FullHead.raw.gz
 
-
+## ignores build paths
+**/build
