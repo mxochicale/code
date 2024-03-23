@@ -1,0 +1,32 @@
+#!/bin/bash
+# chmod u+x build_bash #Don't forget
+
+build() {
+  echo "Building application"
+  parse_args=("$@")
+  echo ${parse_args[1]}
+  rm -rf build 
+  mkdir build && cd build
+  cmake ..
+  make
+}
+
+run() {
+  echo "Running application"
+  ./build/main $ARG
+}
+
+main() {
+  CMD=$1
+  ARG=$2
+  if type ${CMD} > /dev/null 2>&1; then
+    #"$CMD" "${ARGS[@]}"
+    "$CMD" "$ARG"
+  else
+    echo "$CMD Command is not avaiable"
+    exit 1
+  fi
+}
+
+main "$@"
+
