@@ -1,7 +1,10 @@
 #!/bin/bash
+#PyCharm Community Edition
+#Free, built on open source
 
 # 1. Check the latest version from 
-	# https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PC
+    # https://www.jetbrains.com/pycharm/download/?section=linux
+    # Click download to see version, for example 2023.3.5.tar.gz
 # 2. Copy and paste in the new version link line:
 # 3. Run the bash:
 #    bash installation-community-version.bash
@@ -21,7 +24,7 @@
     #Build: 231.8770.66
     #28 April 2023
 
-VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2023.2.tar.gz 	#Wed 16 Aug 02:26:14 BST 2023
+#VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2023.2.tar.gz 	#Wed 16 Aug 02:26:14 BST 2023
 	#Version: 2023.2
 	#Build #PC-232.8660.197, built on July 26, 2023
 	#Runtime version: 17.0.7+7-b1000.6 amd64
@@ -31,6 +34,12 @@ VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2023.2.tar.
 	#Memory: 2048M
 	#Cores: 20
 	#Current Desktop: ubuntu:GNOME
+
+VERSION_LINK=https://download.jetbrains.com/python/pycharm-community-2023.3.5.tar.gz # Sun 24 Mar 16:54:30 GMT 2024
+    ## Pycharm>Help>About
+    #Build #PC-233.15026.15, built on March 21, 2024
+    #Runtime version: 17.0.10+1-b1087.23 amd64
+    #VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 
 #VERSION_LINK=? #:r !date
 		#copy build version from the app

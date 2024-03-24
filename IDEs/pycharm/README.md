@@ -3,6 +3,12 @@
 > It is developed by the Czech company JetBrains. [:books:](https://en.wikipedia.org/wiki/PyCharm)  
 
 The following are instructions of the use of PyCharm under GNU/Linux with distributions of Ubuntu 18.04x64, 20.04x64, 22.04x64.
+NOTE. No need to create a new branch and PR, just add #45 in the commit message with the version, e.g.: 
+```
+git add .
+git commit -m 'pycharm-community-2023.3.5. #45'
+git push origin main
+```
 
 ## 1. pycharm-community Installation 
 
