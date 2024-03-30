@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
-project(videowriter)
+project(main)
+#project(videowriter)
 
 #Set Source Code Path
 set(SRC_PATH src)
