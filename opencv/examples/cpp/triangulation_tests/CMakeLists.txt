@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(triangulation_tests)
+project(main)
 
 #Set Source Code Path
 set(SRC_PATH src)

@@ -1,0 +1,41 @@
+#!/bin/bash
+# chmod u+x app #<<< Don't forget
+
+build() {
+  echo "Building $ARG1 application"
+  cd $ARG1
+  #parse_args=("$@")
+  #echo ${parse_args[1]}
+  rm -rf build 
+  mkdir build && cd build
+  cmake ..
+  make
+}
+
+run() {
+  echo "Running $ARG1 application"
+  cd $ARG1
+  ./build/main $ARG2
+}
+
+clean() {
+  echo "Cleaning building of $ARG1"
+  cd $ARG1
+  rm -rf build live.avi
+}
+
+main() {
+  CMD=$1
+  ARG1=$2
+  ARG2=$3
+  if type ${CMD} > /dev/null 2>&1; then
+    "$CMD" $ARG1
+    #"$CMD" "${ARGS[@]}"
+  else
+    echo "$CMD Command is not avaiable"
+    exit 1
+  fi
+}
+
+main $@
+

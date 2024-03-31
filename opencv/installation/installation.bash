@@ -1,43 +1,42 @@
-# References
-# https://linuxize.com/post/how-to-install-opencv-on-ubuntu-20-04/
-# https://linuxtus.com/uninstall-install-opencv-ubuntu-22-04/
+## Dependencies 20.04, 22.04
+sudo apt update && sudo apt install -y cmake gcc g++ unzip libgtk2.0-dev libgtk-3-dev wget 
 
-#># Dependencies 20.04
-#>sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
-#>    libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
-#>    libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
-#>    gfortran openexr libatlas-base-dev python3-dev python3-numpy \
-#>    libtbb2 libtbb-dev libdc1394-22-dev libopenexr-dev \
-#>    libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
-
-## Dependencies 22.04
-sudo apt-get install cmake gcc g++ libgtk2.0-dev libgtk-3-dev
-#>#NO_USED  python3-dev python3-numpy \
-#>#NO_USED    libavcodec-dev libavformat-dev libswscale-dev libgstreamer-plugins-base1.0-dev \
-#>#NO_USED    libgstreamer1.0-dev
-
-cd ~/Downloads
-VERSION=4.6.0 #4.5.5 #See other tags https://github.com/opencv/opencv/tags
+############################
+# Build core modules with opencv_contrib
+#
+# Download and unpack sources
+rm -rf ~/opencv_build
 mkdir -p ~/opencv_build && cd ~/opencv_build
-git clone https://github.com/opencv/opencv.git
-cd opencv && git checkout $VERSION && cd ..
-git clone https://github.com/opencv/opencv_contrib.git
-cd opencv_contrib && git checkout $VERSION && cd ..
-
-cd ~/opencv_build/opencv
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip #[94M]
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip #[57MB]
+unzip opencv.zip
+unzip opencv_contrib.zip
+# Create build directory and switch into it
 mkdir -p build && cd build
+# Configure
+#DEFAULT# cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
+cmake -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x -D WITH_FFMPEG=ON -D OPENCV_GENERATE_PKGCONFIG=ON -D WITH_GSTREAMER=ON -D BUILD_EXAMPLES=OFF
 
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D INSTALL_C_EXAMPLES=ON \
-    -D INSTALL_PYTHON_EXAMPLES=ON \
-    -D OPENCV_GENERATE_PKGCONFIG=ON \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \
-    -D BUILD_EXAMPLES=ON ..
+### keeping the folling lines for reference
+#cmake -D CMAKE_BUILD_TYPE=RELEASE \
+#    -D CMAKE_INSTALL_PREFIX=/usr/local \
+#    -D INSTALL_C_EXAMPLES=ON \
+#    -D INSTALL_PYTHON_EXAMPLES=ON \
+#    -D OPENCV_GENERATE_PKGCONFIG=ON \
+#    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules \
+#    -D BUILD_EXAMPLES=ON ..
 
+# Build
+cmake --build .
+#start 9:09 / 47% at 9:53/100% ~10:15
+
+#Build - run actual compilation process:
 make -j8
 
+#Since /usr/local is owned by the root user, the installation should be performed with elevated privileges (sudo):
 sudo make install
 
 ## verify
+#DONT FORGET TO ADD  -D OPENCV_GENERATE_PKGCONFIG=ON \
 pkg-config --modversion opencv4
+

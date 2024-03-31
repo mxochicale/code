@@ -1,24 +1,12 @@
 # CPP Examples 
 
-## clean, build and execute 
+## Building, running and cleaning applications
 ```
-cd .. && rm -rf build  && bash build.bash  && cd build
-./*APP 
-```
-
-## execute 
-```
-cd build
-./*APP
-vlc live.avi
-```
-## clean 
-
-```  
-cd .. && rm -rf build
+#BUILD
+./app build multi-threaded-video-compression
+#RUN
+./app run multi-threaded-video-compression 1 #video compression 0-100
+#CLEAN
+./app clean multi-threaded-video-compression
 ```
 
-
-## Reference 
-* Modern C++ Course: OpenCV 4 C++ in GNU/Linux (Tutorial 3, I. Vizzo, 2020)
-  https://www.youtube.com/watch?v=GL9dBulpv5w
