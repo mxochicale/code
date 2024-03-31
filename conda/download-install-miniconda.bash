@@ -14,9 +14,13 @@ echo " "
 
 ## 02 Download 
 cd ~/Downloads
-## Check latest version: i
+## Check latest version: 
 ## https://repo.anaconda.com/miniconda/
-MINICONDA_VERSION="Miniconda3-latest-Linux-x86_64.sh" # 	71.0M	2023-02-07 21:27:22	32d73e1bc33fda089d7cd9ef4c1be542616bd8e437d1f77afeeaf7afdb019787
+MINICONDA_VERSION="Miniconda3-latest-Linux-x86_64.sh" 
+
+##LOGS
+#71.0M	2023-02-07 21:27:22	32d73e1bc33fda089d7cd9ef4c1be542616bd8e437d1f77afeeaf7afdb019787
+#62.7M	2019-01-02 10:05:14	f387eded3fa4ddc3104b7775e62d59065b30205c2758a8b86b4c27144adafcc4 on Sun 31 Mar 06:05:42 BST 2024
 
 LINK=https://repo.anaconda.com/miniconda/$MINICONDA_VERSION
 echo downloading $LINK
@@ -31,12 +35,15 @@ sha256sum $MINICONDA_VERSION
 ## 04 Install
 bash $MINICONDA_VERSION
 #01. press Enter (and keep pressing until you read licences)
-#02. Yes to `Do you accept the licences terms?`
+#02. Yes to `Do you accept the license terms? [yes|no]`
 #03. Enter to default location: $HOME/miniconda3
 #04. Yes to `Do you wish the installer to initialize Anaconda3 by running conda init? [yes|no]
-#05 Source PATH: source ~/.bashrc
-#06. type: conda config --set auto_activate_base false
 
+#05 Source PATH: 
+source ~/.bashrc
+
+#06. type: 
+conda config --set auto_activate_base false
 
 ## Remove Download
 cd ~/Downloads
