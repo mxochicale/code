@@ -3,7 +3,9 @@
 
 ## Installation 
 ```
-installation.bash
+bash installation.bash
+#uninstall
+#sudo apt-get remove r-base r-base-core  
 ```
 
 ## Test installation
