@@ -24,6 +24,7 @@ checkpoints/
 **/playground/geospatial/data
 **/live.avi
 **/01_ann/dataset
+**/02_cnn/dataset
 
 ## ignores vgg16 models
 **/vgg16_cifar**
