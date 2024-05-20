@@ -57,8 +57,55 @@ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 ```
 
+### cuDNN 
+#### Download Installer for Linux Ubuntu 22.04 x86_64
+* system
+```
+uname -m
+lsb_release -a
+```
 
-## In case you need to install the  default drivers
+* Download
+```
+https://developer.nvidia.com/cudnn-downloads
+https://developer.nvidia.com/rdp/cudnn-archive
+#https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
+#https://medium.com/geekculture/install-cuda-and-cudnn-on-windows-linux-52d1501a8805#68ce
+cd ~/Downloads
+wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-9.1.1.17_cuda12-archive.tar.xz #Length: 862719644 (823M) [application/octet-stream]
+```
+
+* Installation
+```
+#https://gist.github.com/primus852/b6bac167509e6f352efb8a462dcf1854
+tar -xf ${CUDNN_TAR_FILE}
+cd $HOME/Downloads/cudnn-linux-x86_64-9.1.1.17_cuda12-archive
+
+# copy the following files into the cuda toolkit directory.
+sudo cp -P include/* /usr/local/cuda/include
+sudo cp -P lib/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/lib64/libcudnn* 
+
+#EXAMPLES
+#sudo cp -P cuda/include/cudnn.h /usr/local/cuda-11.7/include
+#sudo cp -P include/* /usr/local/cuda/include/
+#sudo cp -P cuda/lib/libcudnn* /usr/local/cuda-11.7/lib64/
+#sudo cp -P lib64/* /usr/local/cuda/lib64/
+#sudo chmod a+r /usr/local/cuda-11.7/lib64/libcudnn*
+
+```
+
+* Installing using deb package
+```
+#wget https://developer.download.nvidia.com/compute/cudnn/9.1.1/local_installers/cudnn-local-repo-ubuntu2204-9.1.1_1.0-1_amd64.deb  #Length: 1750279558 (1.6G)
+#sudo dpkg -i cudnn-local-repo-ubuntu2204-9.1.1_1.0-1_amd64.deb
+#sudo cp /var/cudnn-local-repo-ubuntu2204-9.1.1/cudnn-*-keyring.gpg /usr/share/keyrings/
+#sudo apt-get update
+#sudo apt-get -y install cudnn
+#sudo apt-get -y install cudnn-cuda-12
+```
+
+### In case you need to install the  default drivers
 ```
 sudo apt-get clean
 sudo apt-get update

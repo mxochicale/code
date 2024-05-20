@@ -2,8 +2,8 @@
 
 ## compile hello.cu
 ```
-nvcc -o hello hello.cu #or
-bash build-hello-cu.bash
+nvcc -o hello hello.cu
+nvcc -o hellogpu hellogpu.cu
 ```
 output: 
 ```
