@@ -42,13 +42,13 @@ Format Video Capture:
 
 ## clean, build and execute 
 ```
-bash build.bash
+bash conf_build
 ```
 
 
 ## execute 
 ```
-./build/videowriter
+./build/main
 vlc live.avi
 ```
 

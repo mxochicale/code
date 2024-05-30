@@ -4,7 +4,7 @@
 int main() {
     std::cout << "Hello, OpenCV\n";
 
-    cv::Mat image = cv::imread("../lena.png", cv::IMREAD_GRAYSCALE);
+    cv::Mat image = cv::imread("lena.png", cv::IMREAD_GRAYSCALE);
     if (image.empty()) {
         std::cerr << "Image not found\n";
         return 1;

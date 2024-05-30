@@ -1,0 +1,16 @@
+
+## Setting paths
+source_dir=$PWD
+build_dir=${source_dir}/build
+rm -rf $
+mkdir -p $build_dir
+
+
+## Configure
+#cmake -S ${source_dir} -B ${build_dir} -D CMAKE_BUILD_TYPE=Release 
+cmake -S ${source_dir} -B ${build_dir} -G Ninja -D CMAKE_BUILD_TYPE=Release 
+
+## Build
+cmake --build ${build_dir} -j
+
+#ctest --test-dir ${build_dir}

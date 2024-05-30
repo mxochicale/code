@@ -11,10 +11,7 @@ v4l2-ctl --list-devices
 
 ## Build and run app
 ```
-rm -rf build && mkdir -p build && cd build
-cmake .. && make
-./main
-rm -rf build/
+bash conf_build 
 ```
 
 ## Gstreamer
