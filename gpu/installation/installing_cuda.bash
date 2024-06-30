@@ -1,28 +1,32 @@
 ## Instructions
-### 1. Explore http://developer.download.nvidia.com/compute/cuda/repos/ to find your OS and arquitecuter 
+### 1. Explore https://developer.nvidia.com/cuda-downloads to find your OS and arquitecuter 
 ### 2. Manually update version variables 
 ### 3. Run it: bash installing_cuda.bash
 
+## CHANGING PATHS
 cd ~/Downloads
 
-## CUDA 
+## SETTING VARIABLES
 CUDA_URL=https://developer.download.nvidia.com/compute/cuda
-CUDA_VERSION=11.8.0
+CUDA_VERSION_dots=12.5.0  #CUDA_VERSION=11.8.0
+CUDA_VERSION_dashes=12-5
 UBUNTU_VERSION=ubuntu2204
 
 ## REPO with UBUNTU VERSION
 #CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
-CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION-520.61.05-1_amd64.deb
+#CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION_dots-520.61.05-1_amd64.deb
+#CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION_dots-520.61.05-1_amd64.deb
+CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-555.42.02-1_amd64.deb #Length: 3302514250 (3.1G) 
 
-wget $CUDA_URL/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+wget $CUDA_URL/repos/ubuntu2204/x86_64/cuda-$UBUNTU_VERSION.pin -O cuda-$UBUNTU_VERSION.pin 
 sudo mv cuda-$UBUNTU_VERSION.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget $CUDA_URL/$CUDA_VERSION/local_installers/$CUDA_REPO_PKG
+wget $CUDA_URL/$CUDA_VERSION_dots/local_installers/$CUDA_REPO_PKG -O $CUDA_REPO_PKG
 sudo dpkg -i $CUDA_REPO_PKG  
-#sudo apt-key add /var/cuda-repo-ubuntu2004-11-4-local/7fa2af80.pub
-sudo cp /var/cuda-repo-$UBUNTU_VERSION-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings
+
+sudo cp /var/cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local/cuda-*-keyring.gpg /usr/share/keyrings
 sudo apt-get update
-sudo apt-get -y install cuda
+sudo apt-get -y install cuda-toolkit-$CUDA_VERSION_dashes
 
 #Configuring Secure Boot ├──────────────────────────────────────────────────────────────────────────────────────────┐
 #                                  
@@ -37,7 +41,8 @@ sudo apt-get -y install cuda
 # but any hardware that requires third-party drivers to work correctly may not be usable.
 
 ##################################
-#### Adding cuda paths to bashrc
+#### Adding cuda paths to bashrc file [https://sh-tsang.medium.com/tutorial-cuda-v10-2-cudnn-v7-6-5-installation-ubuntu-18-04-3d24c157473f] 
+#### You might need to check .bashrc to avoid duplication of cuda paths
 {
 echo ''
 echo ''

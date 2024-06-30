@@ -1,7 +1,7 @@
 CUDA_PATH=/usr/local/cuda
 HOST_COMPILER ?= g++
 NVCC=${CUDA_PATH}/bin/nvcc -ccbin ${HOST_COMPILER}
-TARGET=hellogpu
+TARGET=hello
 
 INCLUDES= -I${CUDA_PATH}/samples/common/inc
 NVCC_FLAGS=-m64 -lineinfo
@@ -15,7 +15,7 @@ SMS = 52 60 61 70 75 80
 endif
 $(foreach sm, ${SMS}, $(eval GENCODE_FLAGS += -gencode arch=compute_$(sm),code=sm_$(sm)))
 
-hellogpu: hellogpu.cu
+hello: hello.cu
 	${NVCC} ${INCLUDES} ${ALL_CCFLAGS} ${GENCODE_FLAGS} -o $@ $<
 
 clean:

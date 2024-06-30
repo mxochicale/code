@@ -19,7 +19,8 @@ int main(int argc, char* argv[])
     double lr_decay = 0.00005f;
 
     bool load_pretrain = false;
-    bool file_save = false;
+    bool file_save = false; //default
+    //bool file_save = true; //debug
 
     int batch_size_test = 10;
     int num_steps_test = 1000;
@@ -28,6 +29,7 @@ int main(int argc, char* argv[])
     /* Welcome Message */
     std::cout << "== MNIST training with CUDNN ==" << std::endl;
 
+    /////////////////////
     // phase 1. training
     std::cout << "[TRAIN]" << std::endl;
 
@@ -73,7 +75,7 @@ int main(int argc, char* argv[])
         train_target->to(cuda);
         
         // forward
-        model.forward(train_data);
+        model.forward(train_data); //<<<<  Error: libcublasLt.so.12: 
         tp_count += model.get_accuracy(train_target);
 
         // back-propagation
@@ -97,8 +99,9 @@ int main(int argc, char* argv[])
             float accuracy =  100.f * tp_count / monitoring_step / batch_size_train;
             
             std::cout << "step: " << std::right << std::setw(4) << step << \
-                         ", loss: " << std::left << std::setw(5) << std::fixed << std::setprecision(3) << loss << \
-                         ", accuracy: " << accuracy << "%" << std::endl;
+                         	", loss: " << std::left << std::setw(5) \
+				<< std::fixed << std::setprecision(3) << loss << \
+				", accuracy: " << accuracy << "%" << std::endl;
 
             tp_count = 0;
         }
@@ -108,6 +111,7 @@ int main(int argc, char* argv[])
     if (file_save)
         model.write_file();
 
+    ///////////////////////
     // phase 2. inferencing
     // step 1. load test set
     std::cout << "[INFERENCE]" << std::endl;
@@ -153,6 +157,7 @@ int main(int argc, char* argv[])
 
     std::cout << "loss: " << std::setw(4) << loss << ", accuracy: " << accuracy << "%" << std::endl;
 
+    ///////////////////////////////////////
     // Good bye
     std::cout << "Done." << std::endl;
 

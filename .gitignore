@@ -50,3 +50,8 @@ FullHead.raw.gz
 
 ## ignores build paths
 **/build
+
+## ignores models
+**/dense*.b*
+**/conv*.b
+

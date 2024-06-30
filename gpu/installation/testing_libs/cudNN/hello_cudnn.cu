@@ -1,3 +1,5 @@
+//nvcc -o hello_cudnn hello_cudnn.cu
+
 #include<stdio.h>
 #include<stdlib.h> 
 

@@ -4,12 +4,34 @@
 #include <iostream>
 #include <cublas_v2.h>
 
+// cpp was designed with cuDNN v7.6.3
+// Majority of errors are related to not definined classes with the latest version of cuDNNN
+//https://docs.nvidia.com/deeplearning/cudnn/archives/cudnn_763/cudnn-developer-guide/index.html#cudnnPersistentRNNPlan_t
+
 #include "../01_ann/src/helper.h"
 
-void cublas_operation(int num_linear_layers, unsigned long long  num_ops, int input_size, int hidden_size, int seq_length, int batch_size, int num_layers);
-void generate_data(const curandGenerator_t generator, float *data, int length);
+void cublas_operation(int num_linear_layers, 
+			unsigned long long  num_ops, 
+			int input_size, 
+			int hidden_size, 
+			int seq_length, 
+			int batch_size, 
+			int num_layers);
+void generate_data(const curandGenerator_t generator, 
+			float *data, 
+			int length);
 
-void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_size, int batch_size, float dropout_rate, bool bidirectional, int mode, int persistent)
+
+//////////////////////////////////////////////////////////////
+void rnn_operation(int seq_length, 
+			int num_layers, 
+			int hidden_size, 
+			int input_size, 
+			int batch_size, 
+			float dropout_rate, 
+			bool bidirectional, 
+			int mode, 
+			int persistent)
 {
     // setup inputs and outputs
     // hx, cx, hy, cy, dhy, dcy, dhx, and dcs can be null.
@@ -165,21 +187,27 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
         case 1: rnn_algo = CUDNN_RNN_ALGO_PERSIST_STATIC;   break;
         case 2: rnn_algo = CUDNN_RNN_ALGO_PERSIST_DYNAMIC;  break;
     }
-    
-    checkCudnnErrors(cudnnSetRNNDescriptor_v8(cudnnHandle,
-                                        rnn_desc,
-                                        hidden_size,
-                                        num_layers, dropout_desc, CUDNN_LINEAR_INPUT,
-                                        bidirectional ? CUDNN_BIDIRECTIONAL : CUDNN_UNIDIRECTIONAL,
-                                        rnn_mode, rnn_algo, CUDNN_DATA_FLOAT));
+   
+
+    //rnn.cpp:185:47: error: cannot convert ‘cudnnHandle_t’ {aka ‘cudnnContext*’} to ‘cudnnRNNDescriptor_t’ {aka ‘cudnnRNNStruct*’}
+//    checkCudnnErrors(cudnnSetRNNDescriptor_v8(cudnnHandle,
+//                                        rnn_desc,
+//                                        hidden_size,
+//                                        num_layers, dropout_desc, CUDNN_LINEAR_INPUT,
+//                                        bidirectional ? CUDNN_BIDIRECTIONAL : CUDNN_UNIDIRECTIONAL,
+//                                        rnn_mode, rnn_algo, CUDNN_DATA_FLOAT));
+//
 
     // initialize workspaces
     void *weights, *gweights, *workspace, *reserved_space;
     size_t weight_size, workspace_size, reserved_size;
     
-    checkCudnnErrors(cudnnGetRNNWorkspaceSize(cudnnHandle, rnn_desc, seq_length, x_desc, &workspace_size));
-    checkCudnnErrors(cudnnGetRNNTrainingReserveSize(cudnnHandle, rnn_desc, seq_length, x_desc, &reserved_size));
-    checkCudnnErrors(cudnnGetRNNParamsSize(cudnnHandle, rnn_desc, x_desc[0], &weight_size, CUDNN_DATA_FLOAT));
+////   error: ‘cudnnGetRNNTrainingReserveSize’ was not declared in this scope
+//    checkCudnnErrors(cudnnGetRNNWorkspaceSize(cudnnHandle, rnn_desc, seq_length, x_desc, &workspace_size));
+//    checkCudnnErrors(cudnnGetRNNTrainingReserveSize(cudnnHandle, rnn_desc, seq_length, x_desc, &reserved_size));
+//     checkCudnnErrors(cudnnGetRNNParamsSize(cudnnHandle, rnn_desc, x_desc[0], &weight_size, CUDNN_DATA_FLOAT));
+
+
     checkCudaErrors(cudaMalloc((void**)&weights,  weight_size));
     checkCudaErrors(cudaMalloc((void**)&gweights, weight_size));
     cudaMalloc((void**)&workspace, workspace_size);
@@ -218,7 +246,7 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
             break;
     }
 
-    for (int layer = 0; layer < num_layers; layer++) {
+     for (int layer = 0; layer < num_layers; layer++) {
         cudnnDataType_t data_type;
         cudnnTensorFormat_t format;
         int nb_dim, filter_dim[3];
@@ -228,16 +256,32 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
         for (int linear_layer = 0; linear_layer < num_linear_layers; linear_layer++) {
             // filter
             checkCudnnErrors(cudnnCreateFilterDescriptor(&linear_filter_desc));
-            checkCudnnErrors(cudnnGetRNNLinLayerMatrixParams(cudnnHandle, 
-                                                        rnn_desc, layer, x_desc[0], w_desc, weights, linear_layer, linear_filter_desc, (void**)&linear_layer_filter));
+//	    //error: ‘cudnnGetRNNLinLayerMatrixParams’ was not declared in this scope
+//            checkCudnnErrors(cudnnGetRNNLinLayerMatrixParams(cudnnHandle, 
+//                                                        	rnn_desc, 
+//								layer, 
+//								x_desc[0], 
+//								w_desc, 
+//								weights, 
+//								linear_layer, 
+//								linear_filter_desc, 
+//								(void**)&linear_layer_filter));
             checkCudnnErrors(cudnnGetFilterNdDescriptor(linear_filter_desc,
                                                         3, &data_type, &format, &nb_dim, filter_dim));
             generate_data(curand_gen, linear_layer_filter, filter_dim[0] * filter_dim[1] * filter_dim[2]);
 
             // bias
             checkCudnnErrors(cudnnCreateFilterDescriptor(&linear_bias_desc));
-            checkCudnnErrors(cudnnGetRNNLinLayerBiasParams(cudnnHandle,
-                                                        rnn_desc, layer, x_desc[0], w_desc, weights, linear_layer, linear_bias_desc, (void**)&linear_bias));
+//            //error: ‘cudnnGetRNNLinLayerBiasParams’ was not declared in this scope
+//            checkCudnnErrors(cudnnGetRNNLinLayerBiasParams(cudnnHandle,
+//                                                        	rnn_desc, 
+//								layer, 
+//								x_desc[0], 
+//								w_desc, 
+//								weights, 
+//								linear_layer, 
+//								linear_bias_desc, (void**)&linear_bias));
+
             checkCudnnErrors(cudnnGetFilterNdDescriptor(linear_bias_desc, 3, &data_type, &format, &nb_dim, filter_dim));
             generate_data(curand_gen, linear_bias, filter_dim[0] * filter_dim[1] * filter_dim[2]);
 
@@ -247,10 +291,14 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
     }
 
     /* Dynamic persistent RNN plan (if using this algorithm)*/
-    cudnnPersistentRNNPlan_t rnn_plan;
+
+	//error: ‘cudnnPersistentRNNPlan_t’ was not declared in this scope
+//    cudnnPersistentRNNPlan_t rnn_plan;
     if (rnn_algo == CUDNN_RNN_ALGO_PERSIST_DYNAMIC) {
-        checkCudnnErrors(cudnnCreatePersistentRNNPlan(rnn_desc, batch_size, CUDNN_DATA_FLOAT, &rnn_plan));
-        checkCudnnErrors(cudnnSetPersistentRNNPlan(rnn_desc, rnn_plan));
+
+//error: ‘cudnnSetPersistentRNNPlan’ was not declared 
+//      checkCudnnErrors(cudnnCreatePersistentRNNPlan(rnn_desc, batch_size, CUDNN_DATA_FLOAT, &rnn_plan));
+//        checkCudnnErrors(cudnnSetPersistentRNNPlan(rnn_desc, rnn_plan));
     }
 
     // RUN RNN
@@ -261,57 +309,64 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
     checkCudaErrors(cudaEventCreate(&start));
     checkCudaErrors(cudaEventCreate(&stop));
     checkCudaErrors(cudaEventRecord(start));
-    checkCudnnErrors(cudnnRNNForwardTraining(cudnnHandle, rnn_desc, seq_length,
-                                            x_desc, x,
-                                            hx_desc, hx,
-                                            cx_desc, cx,
-                                            w_desc, weights,
-                                            y_desc, y,
-                                            hy_desc, hy,
-                                            cy_desc, cy,
-                                            workspace, workspace_size,
-                                            reserved_space, reserved_size));
+// error: ‘cudnnRNNForwardTraining’ was not declared
+//    checkCudnnErrors(cudnnRNNForwardTraining(cudnnHandle, rnn_desc, seq_length,
+//                                            x_desc, x,
+//                                            hx_desc, hx,
+//                                            cx_desc, cx,
+//                                            w_desc, weights,
+//                                            y_desc, y,
+//                                            hy_desc, hy,
+//                                            cy_desc, cy,
+//                                            workspace, workspace_size,
+//                                            reserved_space, reserved_size));
     checkCudaErrors(cudaEventRecord(stop));
     checkCudaErrors(cudaEventSynchronize(stop));
     checkCudaErrors(cudaEventElapsedTime(&time_forward, start, stop));
 
     checkCudaErrors(cudaEventRecord(start));
-    checkCudnnErrors(cudnnRNNBackwardData(cudnnHandle, rnn_desc, seq_length,
-                                        y_desc, y,
-                                        dy_desc, dy,
-                                        dhy_desc, dhy,
-                                        dcy_desc, dcy,
-                                        w_desc, weights,
-                                        hx_desc, hx,
-                                        cx_desc, cx,
-                                        dx_desc, dx,
-                                        dhx_desc, dhx,
-                                        dcx_desc, dcx,
-                                        workspace, workspace_size,
-                                        reserved_space, reserved_size));
+//error: ‘cudnnRNNBackwardData’ was not declared 
+//    checkCudnnErrors(cudnnRNNBackwardData(cudnnHandle, rnn_desc, seq_length,
+//                                        y_desc, y,
+//                                        dy_desc, dy,
+//                                        dhy_desc, dhy,
+//                                        dcy_desc, dcy,
+//                                        w_desc, weights,
+//                                        hx_desc, hx,
+//                                        cx_desc, cx,
+//                                        dx_desc, dx,
+//                                        dhx_desc, dhx,
+//                                        dcx_desc, dcx,
+//                                        workspace, workspace_size,
+//                                        reserved_space, reserved_size));
+
     checkCudaErrors(cudaEventRecord(stop));
     checkCudaErrors(cudaEventSynchronize(stop));
     checkCudaErrors(cudaEventElapsedTime(&time_backward1, start, stop));
 
     checkCudaErrors(cudaEventRecord(start));
     checkCudaErrors(cudaMemset(gweights, 0, weight_size));
-    checkCudnnErrors(cudnnRNNBackwardWeights(cudnnHandle, rnn_desc, seq_length,
-                                            x_desc, x, hx_desc, hx, y_desc, y,
-                                            workspace, workspace_size,
-                                            dw_desc, gweights,
-                                            reserved_space, reserved_size));
+// error: ‘cudnnRNNBackwardWeights’ was not declared 
+//    checkCudnnErrors(cudnnRNNBackwardWeights(cudnnHandle, rnn_desc, seq_length,
+//                                            x_desc, x, hx_desc, hx, y_desc, y,
+//                                            workspace, workspace_size,
+//                                            dw_desc, gweights,
+//                                            reserved_space, reserved_size));
 
     checkCudaErrors(cudaEventRecord(stop));
     checkCudaErrors(cudaEventSynchronize(stop));
     checkCudaErrors(cudaEventElapsedTime(&time_backward2, start, stop));    
 
     // Calculate FLOPS
-    printf("RNN Forward: %3.0f GFLOPS\n",  num_linear_layers * 2ull * (bidirectional ? 2 : 1) * input_size * hidden_size * seq_length * batch_size * num_layers / (1e6 * time_forward));
-    // printf("Backward: %3.0f GFLOPS, ", num_linear_layers * 4ull * (bidirectional ? 2 : 1) * input_size * hidden_size * seq_length * batch_size * num_layers / (1e6 * (time_backward1 + time_backward2)));
+    printf("RNN Forward: %3.0f GFLOPS\n",  \
+		num_linear_layers * 2ull * (bidirectional ? 2 : 1) * \
+		input_size * hidden_size * seq_length * batch_size * num_layers / (1e6 * time_forward));
+    //// printf("Backward: %3.0f GFLOPS, ", num_linear_layers * 4ull * (bidirectional ? 2 : 1) * input_size * hidden_size * seq_length * batch_size * num_layers / (1e6 * (time_backward1 + time_backward2)));
 
     /* Destroy handles and resources */
-    if (rnn_algo == CUDNN_RNN_ALGO_PERSIST_DYNAMIC)
-        cudnnDestroyPersistentRNNPlan(rnn_plan);
+//error: ‘cudnnDestroyPersistentRNNPlan’ was not declared 
+//    if (rnn_algo == CUDNN_RNN_ALGO_PERSIST_DYNAMIC)
+//       cudnnDestroyPersistentRNNPlan(rnn_plan);
 
     cudaFree(x);
     cudaFree(hx);
@@ -333,8 +388,8 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
 
     for (int i = 0; i < seq_length; i++)
     {
-        cudnnDestroyTensorDescriptor(x_desc[i]);
-        cudnnDestroyTensorDescriptor(y_desc[i]);
+       cudnnDestroyTensorDescriptor(x_desc[i]);
+       cudnnDestroyTensorDescriptor(y_desc[i]);
 
         cudnnDestroyTensorDescriptor(dx_desc[i]);
         cudnnDestroyTensorDescriptor(dy_desc[i]);
@@ -359,44 +414,59 @@ void rnn_operation(int seq_length, int num_layers, int hidden_size, int input_si
     curandDestroyGenerator(curand_gen);
 }
 
-void cublas_operation(int rnn_mode, unsigned long long num_ops, int input_size, int hidden_size, int seq_length, int batch_size, int num_layers)
+
+
+
+
+
+//////////////////////////////////////////////////////////////
+void cublas_operation(int rnn_mode, 
+			unsigned long long num_ops, 
+			int input_size, 
+			int hidden_size, 
+			int seq_length, 
+			int batch_size, 
+			int num_layers)
 {
     float *input_weight, *recurrent_weight;
     float *x, *y, *h;
     float ms;
 
-    // we will emulate RNN operation with two SGEMM operation, so we can reduce the number operation per layer
-    int num_linear_layers = 0;
-    switch (rnn_mode) {
-        case CUDNN_RNN_RELU:
-        case CUDNN_RNN_TANH:
-            num_linear_layers = 1;
-            break;
-        case CUDNN_LSTM:
-            num_linear_layers = 4;
-            break;
-        case CUDNN_GRU:
-            num_linear_layers = 3;
-            break;
-    }
+     // we will emulate RNN operation with two SGEMM operation, so we can reduce the number operation per layer
+     // References on SGEMM: 
+	//https://github.com/hma02/cublasgemm-benchmark
+	//https://github.com/openai/openai-gemm
+     int num_linear_layers = 0;
+     switch (rnn_mode) {
+         case CUDNN_RNN_RELU:
+         case CUDNN_RNN_TANH:
+             num_linear_layers = 1;
+             break;
+         case CUDNN_LSTM:
+             num_linear_layers = 4;
+             break;
+         case CUDNN_GRU:
+             num_linear_layers = 3;
+             break;
+     }
 
-    checkCudaErrors(cudaMalloc((void**)&input_weight, input_size * hidden_size * sizeof(float)));
-    checkCudaErrors(cudaMalloc((void**)&recurrent_weight, hidden_size * hidden_size * sizeof(float)));
-    checkCudaErrors(cudaMalloc((void**)&x, batch_size * input_size * seq_length * sizeof(float)));
-    checkCudaErrors(cudaMalloc((void**)&y, batch_size * hidden_size * sizeof(float)));
-    checkCudaErrors(cudaMalloc((void**)&h, batch_size * hidden_size * sizeof(float)));
+     checkCudaErrors(cudaMalloc((void**)&input_weight, input_size * hidden_size * sizeof(float)));
+     checkCudaErrors(cudaMalloc((void**)&recurrent_weight, hidden_size * hidden_size * sizeof(float)));
+     checkCudaErrors(cudaMalloc((void**)&x, batch_size * input_size * seq_length * sizeof(float)));
+     checkCudaErrors(cudaMalloc((void**)&y, batch_size * hidden_size * sizeof(float)));
+     checkCudaErrors(cudaMalloc((void**)&h, batch_size * hidden_size * sizeof(float)));
 
-    // create cublas handle
-    cublasHandle_t cublas_handle;
-    cublasCreate(&cublas_handle);
+     // create cublas handle
+     cublasHandle_t cublas_handle;
+     cublasCreate(&cublas_handle);
 
-    // create cuda event
-    cudaEvent_t start, stop;
-    cudaEventCreate(&start);
-    cudaEventCreate(&stop);
+     // create cuda event
+     cudaEvent_t start, stop;
+     cudaEventCreate(&start);
+     cudaEventCreate(&stop);
 
-    // generate input data
-    curandGenerator_t curand_gen;
+     // generate input data
+     curandGenerator_t curand_gen;
     unsigned long long seed = 2019UL;
     curandCreateGenerator(&curand_gen, CURAND_RNG_PSEUDO_DEFAULT);
     curandSetPseudoRandomGeneratorSeed(curand_gen, seed);
@@ -413,8 +483,8 @@ void cublas_operation(int rnn_mode, unsigned long long num_ops, int input_size, 
     {
         for (int linear_layer = 0; linear_layer < num_linear_layers; linear_layer++)
         {
-            for (int sequence = 0; sequence < seq_length; sequence++)
-            {
+           for (int sequence = 0; sequence < seq_length; sequence++)
+           {
                 cublasSgemm(cublas_handle, CUBLAS_OP_T, CUBLAS_OP_N,
                             hidden_size, input_size, batch_size,
                             &alpha, input_weight, input_size, x, input_size, 
@@ -424,8 +494,8 @@ void cublas_operation(int rnn_mode, unsigned long long num_ops, int input_size, 
                             hidden_size, hidden_size, batch_size,
                             &alpha, recurrent_weight, hidden_size, h, hidden_size,
                             &beta, y, hidden_size);
-            }
-        }
+           }
+       }
     }
     checkCudaErrors(cudaGetLastError());
     cudaEventRecord(stop);
@@ -433,7 +503,8 @@ void cublas_operation(int rnn_mode, unsigned long long num_ops, int input_size, 
     cudaEventElapsedTime(&ms, start, stop);
 
     // Calculate Flops
-    printf("GEMM performance: %3.0f GFLOPS\n", num_linear_layers * num_ops * input_size * hidden_size * seq_length * batch_size * num_layers / (1e6 * ms));
+    printf("GEMM performance: %3.0f GFLOPS\n", \
+	num_linear_layers * num_ops * input_size * hidden_size * seq_length * batch_size * num_layers / (1e6 * ms));
 
     // destroy handles and memories
     cublasDestroy(cublas_handle);
@@ -449,11 +520,14 @@ void cublas_operation(int rnn_mode, unsigned long long num_ops, int input_size, 
     cudaFree(recurrent_weight);
 }
 
+//////////////////////////////////////////////////////////////////////////////////
 void generate_data(const curandGenerator_t generator, float *data, int length)
 {
     curandGenerateNormal(generator, data, length, 0.f, 1.f);
 }
 
+
+//////////////////////////////////////////////////////////////////////////////////
 int main()
 {
     // configuration rnn
@@ -471,7 +545,22 @@ int main()
     {
         batch_size = 32 * step;
         printf("Batch Size: %3d\n", batch_size);
-        rnn_operation(seq_length, num_layers, hidden_size, input_size, batch_size, dropout_rate, bidirectional, mode, persistent);
-        cublas_operation(mode, 2ull, input_size, hidden_size, seq_length, batch_size, num_layers);
+        rnn_operation(seq_length, 
+			num_layers, 
+			hidden_size, 
+			input_size, 
+			batch_size, 
+			dropout_rate, 
+			bidirectional, 
+			mode, 
+			persistent);
+        cublas_operation(mode, 
+				2ull, 
+				input_size, 
+				hidden_size, 
+				seq_length, 
+				batch_size, 
+				num_layers);
     }
+
 }
