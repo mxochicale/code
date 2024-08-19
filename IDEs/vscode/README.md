@@ -1,4 +1,4 @@
-# Visual Studio Code 
+# Visual Studio Code [#47](https://github.com/mxochicale/code/issues/47)
 > Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS [:books:](https://en.wikipedia.org/wiki/Visual_Studio_Code).
 
 GitHub: https://github.com/microsoft/vscode
