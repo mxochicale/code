@@ -1,6 +1,5 @@
-# Installation
+# Installation of CUDA Toolkit and cuDNN
 
-`# CUDA Toolkit and cuDNN
 1. Run bash in a terminal 
 
 ```
