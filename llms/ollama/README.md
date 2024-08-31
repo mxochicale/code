@@ -50,6 +50,9 @@ Use /path/to/file to include .jpg or .png images.
 ```
 
 # git_commit_ollama.sh
+Reference of bash scripts
+* Original with llm: https://gist.github.com/karpathy/1dd0294ef9567971c1e4348a90d69285
+* Ollama: https://gist.github.com/nikolaydubina/12e3c692eeb3a651579c9f6c25d024f8
 
 
 ## References
