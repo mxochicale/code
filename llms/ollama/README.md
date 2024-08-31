@@ -49,6 +49,9 @@ Use /path/to/file to include .jpg or .png images.
 
 ```
 
+# git_commit_ollama.sh
+
+
 ## References
 https://github.com/ollama/ollama?tab=readme-ov-file#terminal  
 
