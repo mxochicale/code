@@ -7,13 +7,11 @@
 ## 01 Installation in Ubuntu 18.04, 20.04, 22.04, 22.10 
 In the terminal, enter: bash [download-install.sh](download-install.sh):
 ```
-bash download-install-miniconda.bash ##70-ish MB of space
-bash download-install.bash  #750-ish MB
+bash download-install-miniconda.bash
+bash download-install.bash
 ```
 
 During the installation:
-
-
 ```
 
 Welcome to Anaconda3 $YEAR
@@ -30,13 +28,12 @@ Do you accept the license terms? [yes|no]
 
 
 Anaconda3 will now be installed into this location:
-/home/mxochicale/anaconda3
-
+/home/$USER/anaconda3 # or /home/$USER/miniconda3
   - Press ENTER to confirm the location
   - Press CTRL-C to abort the installation
   - Or specify a different location below
 
-[/home/mxochicale/anaconda3] >>> [PRESS ENTER]
+[/home/$USER/anaconda3 (or mininconda3)] >>> [PRESS ENTER]
 
 installation finished.
 Do you wish the installer to initialize Anaconda3
@@ -53,11 +50,6 @@ Open and close terminal
 ```
 conda update -n base -c defaults conda
 ```
-
-* auto deactivation
-conda config --set auto_activate_base false
-
-
 
 ## 03 Deactivate conda base
 
@@ -91,18 +83,16 @@ unset __conda_setup
 
 ```
 
-
-
-```
 ## 05 Source PATH 
+```
 source ~/.bashrc
 ```
 
 
 ## Path of installation
 ```
-Anaconda3 will now be installed into this location:
-$HOME/anaconda3
+Anaconda3 or Miniconda3 is going to be installed into this location:
+$HOME/anaconda3 # or $HOME/miniconda3
 ```
 
 

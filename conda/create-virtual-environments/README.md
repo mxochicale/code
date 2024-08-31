@@ -1,5 +1,13 @@
 # Creating virtual environments
 
+## Create an experimental (eVE) conda virtual environnments
+```
+conda create -n "eVE" python=3.12 pip -c conda-forge
+conda activate eVE
+#conda deactivate
+#conda remove -n eVE --all
+```
+
 ## Sort of automatic creation 
 See virtual environments [here](../../pyVEs)
 
