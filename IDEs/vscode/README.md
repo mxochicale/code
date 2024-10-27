@@ -12,6 +12,11 @@ sudo echo
 bash install.bash
 ```
 
+## Commit changes
+```
+git commit -m 'code <add code --version> #47'
+```
+
 ## Extensions 
 * markdownlint 
 Go to `View>Extensions` and search for markdownlint. 
