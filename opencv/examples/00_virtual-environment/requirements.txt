@@ -1,3 +1,5 @@
 numpy
 matplotlib
+imutils
 opencv-python
+opencv-contrib-python

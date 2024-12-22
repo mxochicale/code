@@ -55,3 +55,7 @@ FullHead.raw.gz
 **/dense*.b*
 **/conv*.b
 
+## opencv
+**/haarcascade_eye.xml
+**/haarcascade_frontalface_default.xml
+**/haarcascade_smile.xml
