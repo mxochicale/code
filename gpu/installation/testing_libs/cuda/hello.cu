@@ -7,8 +7,13 @@ void saxpy(int n, float a, float *x, float *y)
   if (i < n) y[i] = a*x[i] + y[i];
 }
 
+__global__ void cuda_hello(){
+    printf("Hello World from GPU! (kernel launch <<M_thread_blocks, T_parallel_threads>>)\n");
+}
+
 int main(void)
 {
+  cuda_hello<<<1,1>>>();
   int N = 1<<20;
   float *x, *y, *d_x, *d_y;
   x = (float*)malloc(N*sizeof(float));
