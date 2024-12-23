@@ -3,3 +3,4 @@ matplotlib
 imutils
 opencv-python
 opencv-contrib-python
+dlib
