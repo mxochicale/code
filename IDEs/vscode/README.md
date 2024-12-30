@@ -8,25 +8,27 @@ Versions: https://code.visualstudio.com/updates/
 * Run [install.sh](install.sh). See [logs](logs.md).
 ```
 cd $HOME/repositories/mxochicale/code/IDEs/vscode
-sudo echo
 bash install.bash
+#Add Microsoft apt repository for Visual Studio Code? <Yes>
 ```
 
 ## Commit changes
 ```
+#export V=$(code --version | awk '{print $3}')
 git commit -m 'code <add code --version> #47'
 ```
 
 ## Extensions 
+* GitHub.copilot
+Open vscode and search for `GitHub.copilot` at Menu: View/Extensions. 
+See more [here](../../copilot/)
+
 * markdownlint 
 Go to `View>Extensions` and search for markdownlint. 
 Alternatively, you might also like to do this from the terminal.
 ```
 code --install-extension DavidAnson.vscode-markdownlint
 ```
-* GitHub.copilot
-Open vscode and search for `GitHub.copilot` at Menu: View/Extensions. 
-See more [here](../../copilot/)
 
 ## Remove vscode
 ```
