@@ -1,4 +1,7 @@
-# LOG
+# LOG    
+
+# Sat  8 Feb 10:00:21 GMT 2025 
+code --version: 1.97.0 33fc5a94a3f99ebe7087e8fe79fbe1d37a251016 x64 
 
 ## Mon Dec 30 12:29:47 AM GMT 2024
 code --version
@@ -93,7 +96,7 @@ x64
 
 ```
 
-* logs
+* logs 
 ```
 $ bash install.bash 
 [sudo] password for mxochicale: 
@@ -123,7 +126,9 @@ x64
 
 ```
 
-* logs
+* logs 
+# Sat  8 Feb 09:44:36 GMT 2025 
+brave-version: 131.1.73.104
 
 ```
 $ sudo bash install.bash 

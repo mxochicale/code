@@ -14,8 +14,11 @@ bash install.bash
 
 ## Commit changes
 ```
-#export V=$(code --version | awk '{print $3}')
-git commit -m 'code <add code --version> #47'
+export V=$(code --version | awk '{printf "%s ", $1}')
+echo $V
+sed -i "/\<LOG\>/ s/$/ \n\n# $(date) \ncode --version: $V/" log.md #insert date and version
+git add .
+git commit -m 'code --version: $V #47'
 ```
 
 ## Extensions 
