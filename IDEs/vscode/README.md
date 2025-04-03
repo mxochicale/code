@@ -19,6 +19,7 @@ echo $V
 sed -i "/\<LOG\>/ s/$/ \n\n## $(date) \ncode --version: $V/" log.md #insert date and version
 git add .
 git commit -m "code --version: $V #47"
+git push origin main
 ```
 
 ## Extensions 
