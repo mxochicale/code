@@ -20,8 +20,7 @@ x, target = torch.randn((1,)), torch.tensor([0.])  # 4. Setup data
 for i in range(10):
     output = net(x)
     loss = criterion(output, target)
-    print("  loss", {round(loss.item(), 3)})
-
+    print("  loss", round(loss.item(), 3))
     net.zero_grad()
     loss.backward()
     optimizer.step()
