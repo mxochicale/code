@@ -8,25 +8,26 @@ cd ~/Downloads
 
 ## SETTING VARIABLES
 CUDA_URL=https://developer.download.nvidia.com/compute/cuda
-MAJOR_V=12 #12.5.0,11.8.0
-MINOR_V=6
-PATCH_V=3
+MAJOR_V=13
+MINOR_V=0
+PATCH_V=1
 CUDA_VERSION_dots=${MAJOR_V}.${MINOR_V}.${PATCH_V}
 CUDA_VERSION_dashes=${MAJOR_V}-${MINOR_V}
-UBUNTU_VERSION=ubuntu2204
-Linux_x86_64_Driver_Version=560.35.05
+UBUNTU_VERSION=ubuntu2404
+Linux_x86_64_Driver_Version=580.82.07
 
-## REPO with UBUNTU VERSION
+
+## REPO PACKAGE with UBUNTU VERSION
 #CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-ubuntu2004-11-4-local_11.4.2-470.57.02-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION_dots-520.61.05-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION_dots-520.61.05-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-555.42.02-1_amd64.deb #Length: 3302514250 (3.1G) 
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-560.28.03-1_amd64.deb #Length: 3355715790 (3.1G) [application/x-deb]
-CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-${Linux_x86_64_Driver_Version}-1_amd64.deb #Length: 3355715790 (3.1G) [application/x-deb]
+CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-${Linux_x86_64_Driver_Version}-1_amd64.deb 
 
 echo $CUDA_REPO_PKG
-wget $CUDA_URL/repos/ubuntu2204/x86_64/cuda-$UBUNTU_VERSION.pin -O cuda-$UBUNTU_VERSION.pin 
+wget $CUDA_URL/repos/$UBUNTU_VERSION/x86_64/cuda-$UBUNTU_VERSION.pin -O cuda-$UBUNTU_VERSION.pin 
 sudo mv cuda-$UBUNTU_VERSION.pin /etc/apt/preferences.d/cuda-repository-pin-600
 wget $CUDA_URL/$CUDA_VERSION_dots/local_installers/$CUDA_REPO_PKG -O $CUDA_REPO_PKG
 sudo dpkg -i $CUDA_REPO_PKG  
@@ -65,7 +66,4 @@ echo ''
 } >> ~/.bashrc
 
 
-## REBOOT MACHINE00
 
-## Remove package
-rm $CUDA_REPO_PKG

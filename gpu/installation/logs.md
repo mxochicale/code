@@ -32,8 +32,44 @@ cudnn-local-repo-ubuntu2204....
 
 
 
+## Sat Sep  6 12:33:18 PM BST 2025: 13.0.1
+* Before installation
+```
+nvidia-smi
+Sat Sep  6 12:38:38 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.120                Driver Version: 550.120        CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX 2000 Ada Gene...    Off |   00000000:01:00.0 Off |                  N/A |
+| N/A   35C    P0            588W /   35W |       9MiB /   8188MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A      2358      G   /usr/lib/xorg/Xorg                              4MiB |
++-----------------------------------------------------------------------------------------+
+```
+
+* Installation
+Length: 4035438226 (3.8G) [application/x-deb]
+Saving to: ‘cuda-repo-ubuntu2404-13-0-local_13.0.1-580.82.07-1_amd64.deb’
+
+
+
+
+
+
 ## Tue 27 Aug 18:32:54 BST 2024
 cuda 12.6
+Length: 3355715790 (3.1G) [application/x-deb]
 
 * system
 ```
@@ -90,7 +126,6 @@ Build cuda_12.6.r12.6/compiler.34431801_0
 
 
 
-
 ## Sun  2 Jun 16:44:38 BST 2024
 CUDA Toolkit 12.5
 
@@ -116,45 +151,6 @@ Codename:	jammy
 ```
 
 cuda-repo-ubuntu2204-12-5-local_12.5.0-555.42.02-1_a 100%[=====================================================================================================================>]   3.08G  2.41MB/s    in 9m 9s   
-
-
-Get:1 file:/var/cuda-repo-ubuntu2204-12-5-local  InRelease [1,572 B]
-Get:1 file:/var/cuda-repo-ubuntu2204-12-5-local  InRelease [1,572 B]
-Hit:2 http://gb.archive.ubuntu.com/ubuntu jammy InRelease
-Hit:3 http://gb.archive.ubuntu.com/ubuntu jammy-updates InRelease                                                                                                                                            
-Hit:4 http://gb.archive.ubuntu.com/ubuntu jammy-backports InRelease                                                                                                                                               
-Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                                                                                                                  
-Get:6 file:/var/cuda-repo-ubuntu2204-12-5-local  Packages [40.9 kB]                                                                                                                                               
-Hit:7 https://brave-browser-apt-release.s3.brave.com stable InRelease                           
-Hit:8 https://download.docker.com/linux/ubuntu jammy InRelease      
-Get:9 https://packages.microsoft.com/repos/vscode stable InRelease [3,594 B]
-Hit:10 https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ InRelease
-Fetched 3,594 B in 1s (3,421 B/s)     
-Reading package lists... Done
-W: https://cloud.r-project.org/bin/linux/ubuntu/jammy-cran40/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following packages were automatically installed and are no longer required:
-  libcmark-gfm-extensions0.29.0.gfm.3 libcmark-gfm0.29.0.gfm.3 libegl-mesa0:i386 libegl1:i386 libflashrom1 libftdi1-2 libgbm1:i386 libgles2:i386 libllvm13 libllvm13:i386 libnvidia-cfg1-520
-  libnvidia-compute-520:i386 libnvidia-decode-520:i386 libnvidia-encode-520:i386 libnvidia-extra-520 libnvidia-fbc1-520:i386 libnvidia-gl-520:i386 libopengl0:i386 libvulkan1:i386 libwayland-client0:i386
-  libwayland-server0:i386 libxcb-randr0:i386 mesa-vulkan-drivers:i386 pandoc-data
-Use 'sudo apt autoremove' to remove them.
-The following additional packages will be installed:
-  cuda-cccl-12-5 cuda-command-line-tools-12-5 cuda-compiler-12-5 cuda-crt-12-5 cuda-cudart-12-5 cuda-cudart-dev-12-5 cuda-cuobjdump-12-5 cuda-cupti-12-5 cuda-cupti-dev-12-5 cuda-cuxxfilt-12-5
-  cuda-documentation-12-5 cuda-driver-dev-12-5 cuda-gdb-12-5 cuda-libraries-12-5 cuda-libraries-dev-12-5 cuda-nsight-12-5 cuda-nsight-compute-12-5 cuda-nsight-systems-12-5 cuda-nvcc-12-5 cuda-nvdisasm-12-5
-  cuda-nvml-dev-12-5 cuda-nvprof-12-5 cuda-nvprune-12-5 cuda-nvrtc-12-5 cuda-nvrtc-dev-12-5 cuda-nvtx-12-5 cuda-nvvm-12-5 cuda-nvvp-12-5 cuda-opencl-12-5 cuda-opencl-dev-12-5 cuda-profiler-api-12-5
-  cuda-sanitizer-12-5 cuda-toolkit-12-5-config-common cuda-toolkit-12-config-common cuda-tools-12-5 cuda-visual-tools-12-5 gds-tools-12-5 libcublas-12-5 libcublas-dev-12-5 libcufft-12-5 libcufft-dev-12-5
-  libcufile-12-5 libcufile-dev-12-5 libcurand-12-5 libcurand-dev-12-5 libcusolver-12-5 libcusolver-dev-12-5 libcusparse-12-5 libcusparse-dev-12-5 libnpp-12-5 libnpp-dev-12-5 libnvfatbin-12-5
-  libnvfatbin-dev-12-5 libnvjitlink-12-5 libnvjitlink-dev-12-5 libnvjpeg-12-5 libnvjpeg-dev-12-5 nsight-compute-2024.2.0 nsight-systems-2024.2.3
-The following NEW packages will be installed
-  cuda-cccl-12-5 cuda-command-line-tools-12-5 cuda-compiler-12-5 cuda-crt-12-5 cuda-cudart-12-5 cuda-cudart-dev-12-5 cuda-cuobjdump-12-5 cuda-cupti-12-5 cuda-cupti-dev-12-5 cuda-cuxxfilt-12-5
-  cuda-documentation-12-5 cuda-driver-dev-12-5 cuda-gdb-12-5 cuda-libraries-12-5 cuda-libraries-dev-12-5 cuda-nsight-12-5 cuda-nsight-compute-12-5 cuda-nsight-systems-12-5 cuda-nvcc-12-5 cuda-nvdisasm-12-5
-  cuda-nvml-dev-12-5 cuda-nvprof-12-5 cuda-nvprune-12-5 cuda-nvrtc-12-5 cuda-nvrtc-dev-12-5 cuda-nvtx-12-5 cuda-nvvm-12-5 cuda-nvvp-12-5 cuda-opencl-12-5 cuda-opencl-dev-12-5 cuda-profiler-api-12-5
-  cuda-sanitizer-12-5 cuda-toolkit-12-5 cuda-toolkit-12-5-config-common cuda-toolkit-12-config-common cuda-tools-12-5 cuda-visual-tools-12-5 gds-tools-12-5 libcublas-12-5 libcublas-dev-12-5 libcufft-12-5
-  libcufft-dev-12-5 libcufile-12-5 libcufile-dev-12-5 libcurand-12-5 libcurand-dev-12-5 libcusolver-12-5 libcusolver-dev-12-5 libcusparse-12-5 libcusparse-dev-12-5 libnpp-12-5 libnpp-dev-12-5 libnvfatbin-12-5
-  libnvfatbin-dev-12-5 libnvjitlink-12-5 libnvjitlink-dev-12-5 libnvjpeg-12-5 libnvjpeg-dev-12-5 nsight-compute-2024.2.0 nsight-systems-2024.2.3
-0 to upgrade, 60 to newly install, 0 to remove and 230 not to upgrade.
 
 
 ```
@@ -196,54 +192,6 @@ Build cuda_12.5.r12.5/compiler.34177558_0
 * bash installation_cudNN.bash 
 ```
 cudnn-local-repo-ubuntu2204-9.1.1_1.0-1_amd64.deb    100%[======================>]   1.63G  5.47MB/s    in 4m 57s  
-
-Get:1 file:/var/cuda-repo-ubuntu2204-12-5-local  InRelease [1,572 B]
-Get:2 file:/var/cudnn-local-repo-ubuntu2204-9.1.1  InRelease [1,572 B]
-Get:1 file:/var/cuda-repo-ubuntu2204-12-5-local  InRelease [1,572 B]
-Get:2 file:/var/cudnn-local-repo-ubuntu2204-9.1.1  InRelease [1,572 B]
-Hit:3 http://gb.archive.ubuntu.com/ubuntu jammy InRelease                                       
-Get:4 http://gb.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]                                                                                                                                        
-Get:5 file:/var/cudnn-local-repo-ubuntu2204-9.1.1  Packages [3,106 B]                                                                                                                                             
-Hit:6 https://download.docker.com/linux/ubuntu jammy InRelease                                                                                                                                                    
-Get:7 https://packages.microsoft.com/repos/vscode stable InRelease [3,594 B]                                                                                                             
-Hit:8 https://brave-browser-apt-release.s3.brave.com stable InRelease                                                                                  
-Get:9 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]                                                                              
-Hit:10 http://gb.archive.ubuntu.com/ubuntu jammy-backports InRelease                        
-Hit:11 https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ InRelease                 
-Fetched 261 kB in 1s (227 kB/s)                                        
-Reading package lists... Done
-W: https://cloud.r-project.org/bin/linux/ubuntu/jammy-cran40/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following packages were automatically installed and are no longer required:
-  libcmark-gfm-extensions0.29.0.gfm.3 libcmark-gfm0.29.0.gfm.3 libegl-mesa0:i386 libegl1:i386 libflashrom1 libftdi1-2 libgbm1:i386 libgles2:i386 libllvm13 libllvm13:i386 libnvidia-cfg1-520
-  libnvidia-compute-520:i386 libnvidia-decode-520:i386 libnvidia-encode-520:i386 libnvidia-extra-520 libnvidia-fbc1-520:i386 libnvidia-gl-520:i386 libopengl0:i386 libvulkan1:i386 libwayland-client0:i386
-  libwayland-server0:i386 libxcb-randr0:i386 mesa-vulkan-drivers:i386 pandoc-data
-Use 'sudo apt autoremove' to remove them.
-The following additional packages will be installed:
-  cudnn9 cudnn9-cuda-12 cudnn9-cuda-12-4 libcudnn9-cuda-12 libcudnn9-dev-cuda-12 libcudnn9-samples libcudnn9-static-cuda-12
-The following NEW packages will be installed
-  cudnn cudnn9 cudnn9-cuda-12 cudnn9-cuda-12-4 libcudnn9-cuda-12 libcudnn9-dev-cuda-12 libcudnn9-samples libcudnn9-static-cuda-12
-0 to upgrade, 8 to newly install, 0 to remove and 230 not to upgrade.
-Need to get 0 B/877 MB of archives.
-
-
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-Note, selecting 'cudnn9-cuda-12' instead of 'cudnn-cuda-12'
-cudnn9-cuda-12 is already the newest version (9.1.1.17-1).
-cudnn9-cuda-12 set to manually installed.
-The following packages were automatically installed and are no longer required:
-  libcmark-gfm-extensions0.29.0.gfm.3 libcmark-gfm0.29.0.gfm.3 libegl-mesa0:i386 libegl1:i386 libflashrom1 libftdi1-2 libgbm1:i386 libgles2:i386 libllvm13 libllvm13:i386 libnvidia-cfg1-520
-  libnvidia-compute-520:i386 libnvidia-decode-520:i386 libnvidia-encode-520:i386 libnvidia-extra-520 libnvidia-fbc1-520:i386 libnvidia-gl-520:i386 libopengl0:i386 libvulkan1:i386 libwayland-client0:i386
-  libwayland-server0:i386 libxcb-randr0:i386 mesa-vulkan-drivers:i386 pandoc-data
-Use 'sudo apt autoremove' to remove them.
-0 to upgrade, 0 to newly install, 0 to remove and 230 not to upgrade.
-cp: cannot stat 'include/*': No such file or directory
-cp: cannot stat 'lib/libcudnn*': No such file or directory
-chmod: cannot access '/usr/local/cuda/lib64/libcudnn*': No such file or directory
 
 ```
 

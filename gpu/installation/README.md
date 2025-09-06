@@ -6,7 +6,14 @@
 bash installing_cuda.bash
 ```
 
-2. Check versions
+2. Reboot device
+
+N. Remove package
+```
+~/Desktop/$CUDA_REPO_PKG
+```
+
+3. Check versions
 ```
 nvidia-smi
 nvcc -V
