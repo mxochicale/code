@@ -1,4 +1,5 @@
-## :r !date
+# LOGS
+## Add data in vim using :r !date
 * CUDA VERSION
 * system
 ```
@@ -6,30 +7,18 @@ uname -m
 lsb_release -a
 ```
 
-
-
 * bash installing_cuda.bash
-```
-...
-```
 * Check versions
 ```
 nvidia-smi
-
 nvcc -V
-
 ```
 
 * bash installation_cudNN.bash 
-```
-
-```
-
 
 * Packages size
 cuda-repo-ubuntu2204....
 cudnn-local-repo-ubuntu2204....
-
 
 
 ## Sat Sep  6 12:33:18 PM BST 2025: 13.0.1
@@ -61,6 +50,15 @@ Sat Sep  6 12:38:38 2025
 * Installation
 Length: 4035438226 (3.8G) [application/x-deb]
 Saving to: ‘cuda-repo-ubuntu2404-13-0-local_13.0.1-580.82.07-1_amd64.deb’
+
+```
+nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+```
 
 
 
