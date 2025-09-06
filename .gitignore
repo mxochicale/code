@@ -1,6 +1,12 @@
 # Ignores:
 ## pycharm project path
 .idea
+
+##uv
+**uv.lock
+
+## installed pyproject
+**.egg-info/
 ## pycache path
 __pycache__/
 ## checkpoints
