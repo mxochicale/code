@@ -6,6 +6,19 @@
 bash installing_cuda.bash
 ```
 
+1.1 Install the NVIDIA Container Toolkit:
+```bash
+bash install-nvidia-container-toolkit.bash
+```
+
+1.2 Verify NVIDIA Container Toolkit
+```bash
+docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+#docker rmi --force <ID>
+#docker system prune -f --volumes
+```
+
+
 2. Reboot device
 
 3. Remove package
