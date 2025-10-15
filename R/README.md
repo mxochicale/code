@@ -1,4 +1,4 @@
-# R #71
+# R [#71](https://github.com/mxochicale/code/issues/71)
 > R is a programming language for statistical computing and data visualization. It has been adopted in the fields of data mining, bioinformatics, and data analysis https://en.wikipedia.org/wiki/R_(programming_language).
 
 See my [R Source Code Repository](https://github.com/mxochicale/r), I guess I would like to mention that I started using R in 2014 for [PhD thesis](https://github.com/mxochicale-phd/thesis).
