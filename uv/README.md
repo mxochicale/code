@@ -8,7 +8,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Test
 ```bash
-uv venv --python 3.12
+#uv venv --python 3.10 --system-site-packages
+uv venv --python 3.12 --system-site-packages
 source .venv/bin/activate
 ```
 
