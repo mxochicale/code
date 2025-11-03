@@ -19,15 +19,13 @@ R --version
 ## RStudio IDE for linux
 * Download your IDE based on your OS https://posit.co/download/rstudio-desktop/
 ```bash
-wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.09.1-401-amd64.deb -O rstudio-2025.09.1-401-amd64.deb
-
-sudo apt-get install gdebi-core
-sudo gdebi rstudio-2025.09.1-401-amd64.deb
+bash rstudio-installation.bash
 ```
 * Launch it
 ```bash
 rstudio
 #2025.09.1 Build 401
+#2025.09.2 Build 418
 ```
 
 ## References
