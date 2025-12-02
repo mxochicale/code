@@ -27,6 +27,11 @@ rstudio
 #2025.09.1 Build 401
 #2025.09.2 Build 418
 ```
+* Remove it
+```
+sudo apt-get remove rstudio
+```
+
 
 ## References
 * https://cran.r-project.org/bin/linux/ubuntu/
