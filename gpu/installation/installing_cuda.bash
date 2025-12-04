@@ -10,12 +10,11 @@ cd ~/Downloads
 CUDA_URL=https://developer.download.nvidia.com/compute/cuda
 MAJOR_V=13
 MINOR_V=0
-PATCH_V=1
+PATCH_V=2
 CUDA_VERSION_dots=${MAJOR_V}.${MINOR_V}.${PATCH_V}
 CUDA_VERSION_dashes=${MAJOR_V}-${MINOR_V}
 UBUNTU_VERSION=ubuntu2404
-Linux_x86_64_Driver_Version=580.82.07
-
+Linux_x86_64_Driver_Version=580.95.05
 
 ## REPO PACKAGE with UBUNTU VERSION
 #CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
