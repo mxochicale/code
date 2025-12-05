@@ -123,3 +123,41 @@ Install NVIDIA drivers and CUDA for Ubuntu 18.04 LTS  [https://gist.github.com/j
 bash uninstall.bash
 ```
 
+## Known errors
+
+```
+cuda-toolkit-13-0 is already the newest version (13.0.2-1).
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ libnvidia-gl-580 : Depends: libnvidia-egl-gbm1 (>= 1.1.2.1) but it is not going to be installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+
+
+sudo apt --fix-broken install
+
+The following additional packages will be installed:
+  libnvidia-egl-gbm1
+The following NEW packages will be installed:
+  libnvidia-egl-gbm1
+
+
+
+Error! Installation aborted.
+
+Autoinstall on 6.14.0-36-generic failed for module(s) nvidia(6).
+
+Error! One or more modules failed to install during autoinstall.
+Refer to previous errors for more information.
+run-parts: /etc/kernel/postinst.d/dkms exited with return code 1
+dpkg: error processing package linux-image-6.14.0-36-generic (--configure):
+ installed linux-image-6.14.0-36-generic package post-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ nvidia-dkms-580-open
+ nvidia-driver-580-open
+ linux-image-6.14.0-36-generic
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+W: Operation was interrupted before it could finish
+
+
+
+```
