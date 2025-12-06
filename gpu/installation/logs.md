@@ -21,6 +21,172 @@ cuda-repo-ubuntu2204....
 cudnn-local-repo-ubuntu2204....
 
 
+## Sat Dec  6 06:22:11 AM GMT 2025
+
+```
+$ uname -m
+x86_64
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.3 LTS
+Release:	24.04
+Codename:	noble
+```
+
+```
+nvidia-smi 
+Sat Dec  6 06:21:32 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX 2000 Ada Gene...    On  |   00000000:01:00.0 Off |                  N/A |
+| N/A   38C    P8              1W /   35W |      15MiB /   8188MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3028      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+```
+
+```
+$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+```
+
+
+* Before driver installation
+```bash
+dpkg -l | grep nvidia  # For Ubuntu/Debian
+
+#with 
+#nvidia-smi 
+#NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+
+ii  libnvidia-cfg1-550:amd64                      550.120-0ubuntu0.24.04.1                 amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-common-550                          550.120-0ubuntu0.24.04.1                 all          Shared files used by the NVIDIA libraries
+ii  libnvidia-compute-550:amd64                   550.120-0ubuntu0.24.04.1                 amd64        NVIDIA libcompute package
+ii  libnvidia-container-tools                     1.18.1-1                                 amd64        NVIDIA container runtime library (command-line tools)
+ii  libnvidia-container1:amd64                    1.18.1-1                                 amd64        NVIDIA container runtime library
+ii  libnvidia-decode-550:amd64                    550.120-0ubuntu0.24.04.1                 amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-egl-wayland1:amd64                  1:1.1.13-1build1                         amd64        Wayland EGL External Platform library -- shared library
+ii  libnvidia-encode-550:amd64                    550.120-0ubuntu0.24.04.1                 amd64        NVENC Video Encoding runtime library
+ii  libnvidia-extra-550:amd64                     550.120-0ubuntu0.24.04.1                 amd64        Extra libraries for the NVIDIA driver
+ii  libnvidia-fbc1-550:amd64                      550.120-0ubuntu0.24.04.1                 amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-gl-550:amd64                        550.120-0ubuntu0.24.04.1                 amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  linux-modules-nvidia-550-6.11.0-17-generic    6.11.0-17.17~24.04.2+1                   amd64        Linux kernel nvidia modules for version 6.11.0-17
+ii  linux-modules-nvidia-550-generic-hwe-24.04    6.11.0-17.17~24.04.2+1                   amd64        Extra drivers for nvidia-550 for the generic-hwe-24.04 flavour
+ii  linux-objects-nvidia-550-6.11.0-17-generic    6.11.0-17.17~24.04.2+1                   amd64        Linux kernel nvidia modules for version 6.11.0-17 (objects)
+ii  linux-signatures-nvidia-6.11.0-17-generic     6.11.0-17.17~24.04.2+1                   amd64        Linux kernel signatures for nvidia modules for version 6.11.0-17-generic
+ii  nvidia-compute-utils-550                      550.120-0ubuntu0.24.04.1                 amd64        NVIDIA compute utilities
+ii  nvidia-container-toolkit                      1.18.1-1                                 amd64        NVIDIA Container toolkit
+ii  nvidia-container-toolkit-base                 1.18.1-1                                 amd64        NVIDIA Container Toolkit Base
+ii  nvidia-driver-550                             550.120-0ubuntu0.24.04.1                 amd64        NVIDIA driver metapackage
+ii  nvidia-firmware-550-550.120                   550.120-0ubuntu0.24.04.1                 amd64        Firmware files used by the kernel module
+ii  nvidia-kernel-common-550                      550.120-0ubuntu0.24.04.1                 amd64        Shared files used with the kernel module
+ii  nvidia-kernel-source-550                      550.120-0ubuntu0.24.04.1                 amd64        NVIDIA kernel source package
+ii  nvidia-prime                                  0.8.17.2                                 all          Tools to enable NVIDIA's Prime
+ii  nvidia-settings                               510.47.03-0ubuntu4                       amd64        Tool for configuring the NVIDIA graphics driver
+ii  nvidia-utils-550                              550.120-0ubuntu0.24.04.1                 amd64        NVIDIA driver support binaries
+ii  screen-resolution-extra                       0.18.3                                   all          Extension for the nvidia-settings control panel
+ii  xserver-xorg-video-nvidia-550                 550.120-0ubuntu0.24.04.1                 amd64        NVIDIA binary Xorg driver
+```
+
+* After driver installation
+```
+$ dpkg -l | grep nvidia  # For Ubuntu/Debian
+ii  libnvidia-cfg1-550:amd64                        550.163.01-0ubuntu0.24.04.2              amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-cfg1-580:amd64                        580.95.05-0ubuntu1                       amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-common-550                            550.163.01-0ubuntu0.24.04.2              all          Shared files used by the NVIDIA libraries
+ii  libnvidia-common-580                            580.95.05-0ubuntu1                       all          Shared files used by the NVIDIA libraries
+ii  libnvidia-compute-550:amd64                     550.163.01-0ubuntu0.24.04.2              amd64        NVIDIA libcompute package
+ii  libnvidia-compute-580:amd64                     580.95.05-0ubuntu1                       amd64        NVIDIA libcompute package
+ii  libnvidia-container-tools                       1.18.1-1                                 amd64        NVIDIA container runtime library (command-line tools)
+ii  libnvidia-container1:amd64                      1.18.1-1                                 amd64        NVIDIA container runtime library
+ii  libnvidia-decode-550:amd64                      550.163.01-0ubuntu0.24.04.2              amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-decode-580:amd64                      580.95.05-0ubuntu1                       amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-egl-gbm1:amd64                        1.1.2.1-1ubuntu1                         amd64        GBM EGL external platform library for NVIDIA
+ii  libnvidia-egl-wayland1:amd64                    1:1.1.20-1ubuntu1                        amd64        Wayland EGL External Platform library -- shared library
+ii  libnvidia-egl-xcb1:amd64                        1.0.3-1ubuntu1                           amd64        This is an EGL platform library for the NVIDIA driver to support
+ii  libnvidia-egl-xlib1:amd64                       1.0.3-1ubuntu1                           amd64        This is an EGL platform library for the NVIDIA driver to support
+ii  libnvidia-encode-550:amd64                      550.163.01-0ubuntu0.24.04.2              amd64        NVENC Video Encoding runtime library
+ii  libnvidia-encode-580:amd64                      580.95.05-0ubuntu1                       amd64        NVENC Video Encoding runtime library
+ii  libnvidia-extra-550:amd64                       550.163.01-0ubuntu0.24.04.2              amd64        Extra libraries for the NVIDIA Server Driver
+ii  libnvidia-extra-580:amd64                       580.95.05-0ubuntu1                       amd64        Extra libraries for the NVIDIA driver
+ii  libnvidia-fbc1-550:amd64                        550.163.01-0ubuntu0.24.04.2              amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-fbc1-580:amd64                        580.95.05-0ubuntu1                       amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-gl-550:amd64                          550.163.01-0ubuntu0.24.04.2              amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  libnvidia-gl-580:amd64                          580.95.05-0ubuntu1                       amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  libnvidia-gpucomp-580:amd64                     580.95.05-0ubuntu1                       amd64        NVIDIA binary GPU compiler library
+ii  linux-modules-nvidia-580-open-6.14.0-36-generic 6.14.0-36.36~24.04.1+1                   amd64        Linux kernel nvidia modules for version 6.14.0-36
+ii  linux-modules-nvidia-580-open-generic-hwe-24.04 6.14.0-36.36~24.04.1+1                   amd64        Extra drivers for nvidia-580-open for the generic-hwe-24.04 flavour
+ii  linux-objects-nvidia-550-6.11.0-17-generic      6.11.0-17.17~24.04.2+1                   amd64        Linux kernel nvidia modules for version 6.11.0-17 (objects)
+ii  linux-objects-nvidia-580-6.14.0-36-generic      6.14.0-36.36~24.04.1+1                   amd64        Linux kernel nvidia modules for version 6.14.0-36 (objects)
+ii  linux-signatures-nvidia-6.11.0-17-generic       6.11.0-17.17~24.04.2+1                   amd64        Linux kernel signatures for nvidia modules for version 6.11.0-17-generic
+ii  linux-signatures-nvidia-6.14.0-36-generic       6.14.0-36.36~24.04.1+1                   amd64        Linux kernel signatures for nvidia modules for version 6.14.0-36-generic
+iF  nvidia-dkms-580-open                            580.95.05-0ubuntu1                       amd64        NVIDIA DKMS package (open kernel module)
+iU  nvidia-driver-580-open                          580.95.05-0ubuntu1                       amd64        NVIDIA driver (open kernel) metapackage
+ii  nvidia-firmware-580                             580.95.05-0ubuntu1                       amd64        Firmware files used by the kernel module
+ii  nvidia-kernel-common-580                        580.95.05-0ubuntu1                       amd64        Shared files used with the kernel module
+ii  nvidia-kernel-source-580-open                   580.95.05-0ubuntu1                       amd64        NVIDIA kernel source package
+ii  nvidia-modprobe                                 580.95.05-0ubuntu1                       amd64        Load the NVIDIA kernel driver and create device files
+ii  nvidia-persistenced                             580.95.05-0ubuntu1                       amd64        daemon to maintain persistent software state in the NVIDIA driver
+ii  nvidia-settings                                 580.95.05-0ubuntu1                       amd64        Tool for configuring the NVIDIA graphics driver
+ii  screen-resolution-extra                         0.18.3ubuntu0.24.04.1                    all          Extension for the nvidia-settings control panel
+ii  xserver-xorg-video-nvidia-550                   550.163.01-0ubuntu0.24.04.2              amd64        NVIDIA binary Xorg driver
+ii  xserver-xorg-video-nvidia-580                   580.95.05-0ubuntu1                       amd64        NVIDIA binary Xorg driver
+
+```
+
+
+```
+$ ubuntu-drivers devices
+udevadm hwdb is deprecated. Use systemd-hwdb instead (displayed 10x)
+== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
+modalias : pci:v000010DEd000028B8sv00001028sd00000CC8bc03sc00i00
+vendor   : NVIDIA Corporation
+model    : AD107GLM [RTX 2000 Ada Generation Laptop GPU]
+driver   : nvidia-driver-570-server - distro non-free
+driver   : nvidia-driver-570-server-open - distro non-free
+driver   : nvidia-driver-535 - distro non-free
+driver   : nvidia-driver-580-open - third-party non-free recommended
+driver   : nvidia-driver-580-server - distro non-free
+driver   : nvidia-driver-570 - distro non-free
+driver   : nvidia-driver-535-server - distro non-free
+driver   : nvidia-driver-535-open - distro non-free
+driver   : nvidia-driver-580 - third-party non-free
+driver   : nvidia-driver-580-server-open - distro non-free
+driver   : nvidia-driver-570-open - distro non-free
+driver   : nvidia-driver-535-server-open - distro non-free
+driver   : xserver-xorg-video-nouveau - distro free builtin
+
+== /sys/devices/pci0000:00/0000:00:1f.4 ==
+modalias : pci:v00008086d00007E22sv00001028sd00000CC8bc0Csc05i00
+vendor   : Intel Corporation
+model    : Meteor Lake-P SMBus Controller
+driver   : oem-somerville-magmar-meta - third-party free
+
+== /sys/devices/pci0000:00/0000:00:05.0 ==
+modalias : pci:v00008086d00007D19sv00001028sd00000CC8bc04sc80i00
+vendor   : Intel Corporation
+driver   : intel-ipu6-dkms - distro free
+driver   : libcamhal-ipu6epmtl - third-party free
+```
+
+
 ## Sat Sep  6 12:33:18 PM BST 2025: 13.0.1
 * Before installation
 ```
