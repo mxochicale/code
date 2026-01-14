@@ -1,4 +1,4 @@
-# docker
+# docker [#51](https://github.com/mxochicale/code/issues/51)  
 > Docker is a platform designed to help developers build, share, and run container applications. We handle the tedious setup, so you can focus on the code.
 https://en.wikipedia.org/wiki/Docker_(software)
 
@@ -9,24 +9,7 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
 
 1. Installation
 ```bash
-# Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-```
-
-Install the Docker packages.
-```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+bash install-docker.bash
 ```
 
 2. Linux post-installation steps for Docker Engine
@@ -82,10 +65,13 @@ podman-docker
 https://docs.docker.com/engine/install/ubuntu/
 
 
+## Commit changes
+```
+export V=$(docker --version | awk '{print $3 $4 $5}')
+echo $V
+sed -i "/\<logs\>/ s/$/ \n \n## $(date) \ndocker-version: $V/" logs.md #insert date and version
+git commit -am "docker $V #51"
+git push origin main
+```
 
-* Drafts
-```
-reboot
-#?chmod 777 /var/run/docker.sock
-#?sudo chmod 666 /var/run/docker.sock
-```
+
