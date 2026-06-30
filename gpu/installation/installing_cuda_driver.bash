@@ -20,10 +20,17 @@ sudo apt update
 ubuntu-drivers list
 
 # Install the open-source driver version
-sudo apt install -y nvidia-driver-580
+#sudo apt install -y nvidia-driver-550 #errors
+sudo apt install -y nvidia-driver-580 #no errors
 
 #Step 4: Reboot and Verify
 #sudo reboot
 #nvidia-smi
+
+
+#nvidia-smi (before rebooting)
+#Failed to initialize NVML: Driver/library version mismatch
+#NVML library version: 580.173 
+
 
 
