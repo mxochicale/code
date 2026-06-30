@@ -13,11 +13,14 @@ curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x
 echo "deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/ /" | sudo tee /etc/apt/sources.list.d/cuda-ubuntu2404-x86_64.list
 
 #Step 3: Update and Install the Correct Driver
-
 sudo apt update
 
+
+# List nvidia drivers
+ubuntu-drivers list
+
 # Install the open-source driver version
-sudo apt install -y nvidia-driver-550
+sudo apt install -y nvidia-driver-580
 
 #Step 4: Reboot and Verify
 #sudo reboot
