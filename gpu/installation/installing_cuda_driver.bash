@@ -17,11 +17,7 @@ echo "deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://devel
 sudo apt update
 
 # Install the open-source driver version
-sudo apt install -y nvidia-driver-580-open nvidia-utils-580
-
-# If the above fails, try installing the standard (proprietary) driver
-# sudo apt install -y nvidia-driver-580 nvidia-utils-580
-
+sudo apt install -y nvidia-driver-550
 
 #Step 4: Reboot and Verify
 #sudo reboot
