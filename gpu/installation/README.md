@@ -6,6 +6,11 @@
 bash installing_cuda.bash
 ```
 
+1.0 Install cuda driver
+```bash
+bash installing_cuda_driver.bash
+```
+
 1.1 Install the NVIDIA Container Toolkit:
 ```bash
 bash install-nvidia-container-toolkit.bash
