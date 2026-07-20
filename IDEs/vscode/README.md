@@ -17,6 +17,7 @@ bash install.bash
 export V=$(code --version | awk '{printf "%s ", $1}')
 echo $V
 sed -i "/\<LOG\>/ s/$/ \n\n## $(date) \ncode --version: $V/" log.md #insert date and version
+cd $HOME/repositories/mxochicale/code
 git add .
 git commit -m "code --version: $V #47"
 git push origin main
