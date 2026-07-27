@@ -29,8 +29,8 @@ sudo chown $USER:$USER /var/run/docker.sock #Solution 3: Change socket permissio
 ```bash
 
 sudo service docker status
-sudo docker run hello-world
-sudo docker pull hello-world
+docker run hello-world
+docker pull hello-world
 
 ```
 
