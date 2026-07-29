@@ -14,8 +14,7 @@ bash install.bash
 
 ## Commit changes
 ```
-export V=$(code --version | awk '{printf "%s ", $1}')
-echo $V
+export V=$(code --version | awk '{printf "%s ", $1}') && echo $V
 sed -i "/\<LOG\>/ s/$/ \n\n## $(date) \ncode --version: $V/" log.md #insert date and version
 cd $HOME/repositories/mxochicale/code
 git add .
