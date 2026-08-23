@@ -12,6 +12,11 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
 bash install-docker.bash
 ```
 
+docker-compose
+```bash
+sudo apt install docker-compose-v2
+```
+
 2. Linux post-installation steps for Docker Engine
 ```bash
 sudo groupadd docker
