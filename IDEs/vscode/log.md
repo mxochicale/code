@@ -1,4 +1,10 @@
-# LOG           
+# LOGS             
+
+## Wed Sep  2 08:07:56 PM BST 2026
+code-version: 1.136.0 520fb30b2d3d324b4cb2342f6e88e2cd93751de1 x64 
+os: Ubuntu 24.04.4 LTS
+kernel: Linux 7.0.0-30-generic
+arch: x86-64
 
 ## Fri Jul 31 09:51:28 AM BST 2026 
 code --version: 1.131.0 e4c7e7b1d6d060162f4aa7f8225271b67ce1df75 x64 
@@ -118,6 +124,11 @@ x64
 ```
 
 * logs 
+# Wed Sep  2 07:50:48 PM BST 2026
+code-version: 1.136.0 520fb30b2d3d324b4cb2342f6e88e2cd93751de1 x64 
+os: Ubuntu 24.04.4 LTS
+kernel: Linux 7.0.0-30-generic
+arch: x86-64
 ```
 $ bash install.bash 
 [sudo] password for mxochicale: 
@@ -148,6 +159,11 @@ x64
 ```
 
 * logs 
+# Wed Sep  2 07:50:48 PM BST 2026
+code-version: 1.136.0 520fb30b2d3d324b4cb2342f6e88e2cd93751de1 x64 
+os: Ubuntu 24.04.4 LTS
+kernel: Linux 7.0.0-30-generic
+arch: x86-64
 # Sat  8 Feb 09:44:36 GMT 2025 
 brave-version: 131.1.73.104
 

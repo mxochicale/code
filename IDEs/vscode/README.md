@@ -14,11 +14,16 @@ bash install.bash
 
 ## Commit changes
 ```
-export V=$(code --version | awk '{printf "%s ", $1}') && echo $V
-sed -i "/\<LOG\>/ s/$/ \n\n## $(date) \ncode --version: $V/" log.md #insert date and version
+# Extract info
+export VERSION=$(code --version | awk '{printf "%s ", $1}') && echo ${VERSION}
+os=$(hostnamectl | grep "Operating System" | sed 's/.*Operating System: //')
+kernel=$(hostnamectl | grep "Kernel" | sed 's/.*Kernel: //')
+arch=$(hostnamectl | grep "Architecture" | sed 's/.*Architecture: //')
+# Append to logs.md
+sed -i "/\<LOGS\>/ s/$/ \n\n## $(date)\ncode-version: ${VERSION}\nos: ${os}\nkernel: ${kernel}\narch: ${arch}/" log.md
 cd $HOME/repositories/mxochicale/code
 git add .
-git commit -m "code --version: $V #47"
+git commit -m "code --version: ${VERSION} under ${os} ${kernel} ${arch} #47"
 git push origin main
 ```
 
