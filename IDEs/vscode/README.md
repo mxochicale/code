@@ -15,10 +15,11 @@ bash install.bash
 ## Commit changes
 ```
 # Extract info
-export VERSION=$(code --version | awk '{printf "%s ", $1}') && echo ${VERSION}
+VERSION=$(code --version | awk '{printf "%s ", $1}')
 os=$(hostnamectl | grep "Operating System" | sed 's/.*Operating System: //')
 kernel=$(hostnamectl | grep "Kernel" | sed 's/.*Kernel: //')
 arch=$(hostnamectl | grep "Architecture" | sed 's/.*Architecture: //')
+echo $VERSION $os $kernel $arch
 # Append to logs.md
 sed -i "/\<LOGS\>/ s/$/ \n\n## $(date)\ncode-version: ${VERSION}\nos: ${os}\nkernel: ${kernel}\narch: ${arch}/" log.md
 cd $HOME/repositories/mxochicale/code
