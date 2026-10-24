@@ -4,6 +4,7 @@
 
 ```bash
 bash installing_cuda.bash
+bash installing_cuda_source.bash
 ```
 
 1.0 Install cuda driver

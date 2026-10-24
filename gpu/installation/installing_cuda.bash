@@ -9,12 +9,14 @@ cd ~/Downloads
 ## SETTING VARIABLES
 CUDA_URL=https://developer.download.nvidia.com/compute/cuda
 MAJOR_V=13
-MINOR_V=3
-PATCH_V=1
+MINOR_V=4
+PATCH_V=3
 CUDA_VERSION_dots=${MAJOR_V}.${MINOR_V}.${PATCH_V}
 CUDA_VERSION_dashes=${MAJOR_V}-${MINOR_V}
 UBUNTU_VERSION=ubuntu2404
-Linux_x86_64_Driver_Version=610.43.02
+Linux_x86_64_Driver_Version=-610.43.02
+#UBUNTU_VERSION=ubuntu2204
+#Linux_x86_64_Driver_Version=
 
 ## REPO PACKAGE with UBUNTU VERSION
 #CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
@@ -23,7 +25,7 @@ Linux_x86_64_Driver_Version=610.43.02
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-11-8-local_$CUDA_VERSION_dots-520.61.05-1_amd64.deb
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-555.42.02-1_amd64.deb #Length: 3302514250 (3.1G) 
 #CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-560.28.03-1_amd64.deb #Length: 3355715790 (3.1G) [application/x-deb]
-CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots-${Linux_x86_64_Driver_Version}-1_amd64.deb 
+CUDA_REPO_PKG=cuda-repo-$UBUNTU_VERSION-$CUDA_VERSION_dashes-local_$CUDA_VERSION_dots${Linux_x86_64_Driver_Version}-1_amd64.deb 
 
 echo $CUDA_REPO_PKG
 wget $CUDA_URL/repos/$UBUNTU_VERSION/x86_64/cuda-$UBUNTU_VERSION.pin -O cuda-$UBUNTU_VERSION.pin 
@@ -46,23 +48,6 @@ sudo apt-get -y install cuda-toolkit-$CUDA_VERSION_dashes
 # "Enroll MOK" and "Change Secure Boot state" menus that will be presented to you when this system reboots.
 # If you proceed but do not confirm the password upon reboot, Ubuntu will still be able to boot on your system 
 # but any hardware that requires third-party drivers to work correctly may not be usable.
-
-##################################
-#### Adding cuda paths to bashrc file [https://sh-tsang.medium.com/tutorial-cuda-v10-2-cudnn-v7-6-5-installation-ubuntu-18-04-3d24c157473f] 
-#### You might need to check .bashrc to avoid duplication of cuda paths
-{
-echo ''
-echo ''
-echo '#============================================================'
-echo '#'
-echo '#  CUDA PATHS'
-echo '#'
-echo "export PATH=/usr/local/cuda/bin:${PATH}  "
-echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}  "
-echo ''
-echo ''
-echo ''
-} >> ~/.bashrc
 
 
 
