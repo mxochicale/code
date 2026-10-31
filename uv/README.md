@@ -2,7 +2,7 @@
 > An extremely fast Python package and project manager, written in Rust.
 
 ## Installation
-```
+```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 

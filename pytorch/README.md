@@ -1,11 +1,14 @@
 # Pytorch
 > An open source machine learning framework that accelerates the path from research prototyping to production deployment. 
-See releases https://github.com/pytorch/pytorch/releases 
+Releases:
+* https://github.com/pytorch/pytorch/releases 
+* https://pypi.org/project/torch/#history
 
 ## Install uv and deps
 ```bash
-uv venv --python 3.12
-uv pip install -e .
+# curl -LsSf https://astral.sh/uv/install.sh | sh # install uv
+uv venv --python 3.13
+uv sync
 uv pip list
 source .venv/bin/activate
 ```
@@ -33,4 +36,3 @@ vim examples/optimisation_tutorial
 * https://pytorch.org/get-started/locally     
 * https://en.wikipedia.org/wiki/PyTorch   
 * https://stackoverflow.com/questions/48152674/how-do-i-check-if-pytorch-is-using-the-gpu
-
