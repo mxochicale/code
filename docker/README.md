@@ -2,14 +2,15 @@
 > Docker is a platform designed to help developers build, share, and run container applications. We handle the tedious setup, so you can focus on the code.
 https://en.wikipedia.org/wiki/Docker_(software)
 
-0. Clean your system to uninstall all conflicting packages:
-```
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-
 1. Installation
+* Debian
 ```bash
-bash install-docker.bash
+su -c "cd $(pwd); bash"
+bash install-docker-debian.bash
+```
+* Ubuntu
+```bash
+bash install-docker-ubuntu.bash
 ```
 
 2. Linux post-installation steps for Docker Engine
@@ -28,7 +29,7 @@ sudo chown $USER:$USER /var/run/docker.sock #Solution 3: Change socket permissio
 3. Verify Docker
 ```bash
 
-sudo service docker status
+#sudo service docker status
 docker run hello-world
 docker pull hello-world
 
@@ -59,24 +60,19 @@ docker system prune -f --volumes #clean unused systems
 sudo systemctl start docker
 ```
 
-## Notes
-* The unofficial packages to uninstall are:
-```
-docker.io
-docker-compose
-docker-compose-v2
-docker-doc
-podman-docker
-```
-https://docs.docker.com/engine/install/ubuntu/
-
 
 ## Commit changes
-```
-export V=$(docker --version | awk '{print $3 $4 $5}')
-echo $V
-sed -i "/\<logs\>/ s/$/ \n \n## $(date) \ndocker-version: $V/" logs.md #insert date and version
-git commit -am "docker $V #51"
+```bash
+
+OSNAME=$(hostnamectl | grep "Operating System" | sed 's/.*Operating System: //')
+KERNEL=$(hostnamectl | grep "Kernel" | sed 's/.*Kernel: //')
+ARCH=$(hostnamectl | grep "Architecture" | sed 's/.*Architecture: //')
+V=$(docker --version | awk '{print $3 $4 $5}')
+echo ${V}${OSNAME}${KERNEL}${ARCH}
+
+sed -i "\|logs| s|.*|&\n\n## $(date) \ndocker-version: ${V}${OSNAME}${KERNEL}${ARCH}|" logs.md
+
+git commit -am "docker ${V} on ${OSNAME}${KERNEL}${ARCH} #51"
 git push origin main
 ```
 
